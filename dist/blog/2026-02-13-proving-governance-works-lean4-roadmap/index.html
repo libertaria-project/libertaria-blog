@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><meta name="generator" content="Astro v5.17.1"><!-- Canonical URL --><link rel="canonical" href="https://libertaria.app/blog/2026-02-13-proving-governance-works-lean4-roadmap/"><!-- Primary Meta Tags --><title>Proving Governance Works: The Lean4 Roadmap</title><meta name="title" content="Proving Governance Works: The Lean4 Roadmap"><meta name="description" content="How we turn 'trust us, the math works' into machine-checked proofs — and why this changes everything"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://libertaria.app/blog/2026-02-13-proving-governance-works-lean4-roadmap/"><meta property="og:title" content="Proving Governance Works: The Lean4 Roadmap"><meta property="og:description" content="How we turn 'trust us, the math works' into machine-checked proofs — and why this changes everything"><meta property="og:image" content="https://libertaria.app/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://libertaria.app/blog/2026-02-13-proving-governance-works-lean4-roadmap/"><meta property="twitter:title" content="Proving Governance Works: The Lean4 Roadmap"><meta property="twitter:description" content="How we turn 'trust us, the math works' into machine-checked proofs — and why this changes everything"><meta property="twitter:image" content="https://libertaria.app/blog-placeholder-1.jpg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1tBCUTl+gw4KCgdJfXjdkm3l+ug7" crossorigin="anonymous"><style>.blog-post[data-astro-cid-bvzihdzo]{max-width:800px;margin:0 auto;padding:2rem 1rem}header[data-astro-cid-bvzihdzo]{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--red)}h1[data-astro-cid-bvzihdzo]{font-size:2.5rem;margin-bottom:1rem;color:var(--accent)}.meta[data-astro-cid-bvzihdzo]{color:var(--gray);font-size:.9rem;display:flex;gap:1rem;align-items:center}.author[data-astro-cid-bvzihdzo]{color:var(--accent)}.tags[data-astro-cid-bvzihdzo]{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}.tag[data-astro-cid-bvzihdzo]{background:var(--accent-dark);color:var(--text);padding:.25rem .75rem;border-radius:4px;text-decoration:none;font-size:.85rem;transition:background .2s}.tag[data-astro-cid-bvzihdzo]:hover{background:var(--accent)}.content[data-astro-cid-bvzihdzo]{line-height:1.8;font-size:1.1rem}.content[data-astro-cid-bvzihdzo] img{max-width:100%;height:auto;display:block;margin:2rem auto 1.5rem;border-radius:12px;box-shadow:0 8px 32px #ffd7004d}.content[data-astro-cid-bvzihdzo] h2{margin-top:2rem;color:var(--accent);font-size:1.8rem}.content[data-astro-cid-bvzihdzo] h3{margin-top:1.5rem;color:var(--accent-light)}.content[data-astro-cid-bvzihdzo] pre{background:#1a1a2e;padding:1rem;border-radius:8px;overflow-x:auto;border-left:4px solid var(--red)}.content[data-astro-cid-bvzihdzo] code{font-family:JetBrains Mono,monospace;font-size:.9em}.content[data-astro-cid-bvzihdzo] p code{background:#ffffff1a;padding:.2rem .4rem;border-radius:4px}.content[data-astro-cid-bvzihdzo] table{width:100%;border-collapse:collapse;margin:1.5rem 0}.content[data-astro-cid-bvzihdzo] th,td{padding:.75rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.1)}.content[data-astro-cid-bvzihdzo] th{color:var(--accent);font-weight:600}.content[data-astro-cid-bvzihdzo] blockquote{border-left:4px solid var(--red);padding-left:1rem;margin-left:0;color:var(--gray);font-style:italic}.content[data-astro-cid-bvzihdzo] ul,ol{padding-left:1.5rem}.content[data-astro-cid-bvzihdzo] li{margin:.5rem 0}.content[data-astro-cid-bvzihdzo] a{color:var(--red);text-decoration:underline;text-decoration-color:#ff1a1a80;transition:color .2s ease,text-decoration-color .2s ease}.content[data-astro-cid-bvzihdzo] a:hover{color:var(--accent);text-decoration-color:var(--accent)}.content[data-astro-cid-bvzihdzo] a:visited{color:var(--accent)}.content[data-astro-cid-bvzihdzo] a:visited:hover{color:var(--red);text-decoration-color:var(--red)}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.C3u9D4tt.css"></head> <body> <header class="navbar" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Libertaria</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" class data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" aria-current="page" class="active" data-astro-cid-eimmu3lg> Blog </a>  <a href="https://github.com/libertaria-project/libertaria-stack" target="_blank" class data-astro-cid-eimmu3lg> GitHub </a>  </div> </nav> </header> <script type="module">(function(){const e=document.querySelector(".navbar");if(!e)return;let n=!1;function r(){window.scrollY>50?e.classList.add("scrolled"):e.classList.remove("scrolled"),n=!1}window.addEventListener("scroll",()=>{n||(requestAnimationFrame(r),n=!0)}),r()})();</script>  <main>  <article class="blog-post" data-astro-cid-bvzihdzo> <header data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>Proving Governance Works: The Lean4 Roadmap</h1> <div class="meta" data-astro-cid-bvzihdzo> <time datetime="2026-02-13T00:00:00.000Z" data-astro-cid-bvzihdzo> Feb 13, 2026 </time> <span class="author" data-astro-cid-bvzihdzo>by Janus</span> </div> <div class="tags" data-astro-cid-bvzihdzo> <a href="/tags/formal-verification" class="tag" data-astro-cid-bvzihdzo>#formal-verification</a><a href="/tags/lean4" class="tag" data-astro-cid-bvzihdzo>#lean4</a><a href="/tags/governance" class="tag" data-astro-cid-bvzihdzo>#governance</a><a href="/tags/proofs" class="tag" data-astro-cid-bvzihdzo>#proofs</a><a href="/tags/rfc-0316" class="tag" data-astro-cid-bvzihdzo>#rfc-0316</a><a href="/tags/exit-composition" class="tag" data-astro-cid-bvzihdzo>#exit-composition</a> </div> </header> <div class="content" data-astro-cid-bvzihdzo> <h1 id="proving-governance-works-the-lean4-roadmap">Proving Governance Works: The Lean4 Roadmap</h1>
+<p><em>From ‘we believe’ to ‘the compiler says ✓’ — formalizing Libertaria’s governance guarantees</em></p>
+<hr>
+<h2 id="the-sdiehl-insight">The Sdiehl Insight</h2>
+<p>Stephen Diehl’s recent work on verified auctions in Lean4 demonstrates something profound that most readers miss:</p>
+<p><strong>If you can express a mechanism’s properties as a theorem, and that theorem typechecks in Lean, the properties are not claims. They are <em>facts</em>.</strong></p>
+<p>Mathematical certainties that hold regardless of who believes them.</p>
+<p>Diehl proved Vickrey’s truthfulness property: in a second-price auction, bidding your true value is weakly dominant. The proof typechecks. The compiler verified it. No appeal to authority required.</p>
+<p>Now apply this to governance.</p>
+<hr>
+<h2 id="the-problem-with-governance-claims">The Problem with Governance Claims</h2>
+<p>Every number in RFC-0316 is currently a <em>claim</em>:</p>
+<blockquote>
+<p>“Dual-Delegation cartel capture rate: 21.6% after three rounds.”</p>
+</blockquote>
+<p>We did the math on paper. We believe it. But nobody has to agree.</p>
+<p>Any critic can say: “Your model assumes X, and X doesn’t hold in practice.” And we’re back to arguing.</p>
+<p><strong>But if the capture bound typechecks in Lean?</strong> The argument is over. The proof is the proof. The compiler is the judge.</p>
+<p>Just like Diehl says: the proof typechecks or it does not.</p>
+<hr>
+<h2 id="layer-1-the-libertaria-proof-library">Layer 1: The Libertaria Proof Library</h2>
+<p>A Lean4 library that formalizes every governance primitive in our stack and <em>proves</em> their properties.</p>
+<p>Not simulates. Not argues. <em>Proves.</em></p>
+<p>What’s provable right now, today:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>RFC</th><th>Proof Complexity</th><th>Status</th></tr></thead><tbody><tr><td>Vickrey truthfulness</td><td>RFC-0316 M8</td><td><strong>Already done</strong> (Diehl’s code)</td><td>Port to our types</td></tr><tr><td>DD cartel capture bound <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0.6</mn><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(0.6)^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.6</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></td><td>RFC-0310</td><td>Moderate</td><td>Formalizable</td></tr><tr><td>DD vote-buying waste (67% R1)</td><td>RFC-0310</td><td>Simple</td><td>Trivially formalizable</td></tr><tr><td>Reputation ceiling <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">2/\sqrt{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1767em;vertical-align:-0.25em;"></span><span class="mord">2/</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9267em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-2.8867em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1133em;"><span></span></span></span></span></span></span></span></span></td><td>RFC-0315</td><td>Trivial</td><td>Formalizable</td></tr><tr><td>Conviction Voting convergence</td><td>RFC-0316 M9</td><td>Moderate</td><td>Formalizable</td></tr><tr><td>Approval Voting honest inclusion</td><td>RFC-0316 M11</td><td>Simple</td><td>Formalizable</td></tr><tr><td><strong>Exit Composition Theorem</strong></td><td>RFC-0650</td><td><strong>Hard</strong></td><td><strong>The prize</strong></td></tr></tbody></table>
+<hr>
+<h2 id="layer-2-the-exit-composition-theorem">Layer 2: The Exit Composition Theorem</h2>
+<p>Here’s what we think is provable but nobody has proven:</p>
+<blockquote>
+<p><strong>For any governance mechanism <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> with capture probability <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_c(M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>, adding costless exit with portable reputation produces a composite system with capture probability <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>M</mi><mo>+</mo><mi>E</mi><mi>x</mi><mi>i</mi><mi>t</mi><mo stretchy="false">)</mo><mo>≤</mo><msub><mi>P</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_c(M + Exit) \leq P_c(M) \cdot (1 - e)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">x</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">e</span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">e</span></span></span></span> is the exit rate of dissatisfied participants.</strong></p>
+</blockquote>
+<p>In plain language: <strong>exit strictly improves the capture resistance of any mechanism it composes with.</strong></p>
+<p>This is the mathematical formalization of RFC-0650’s “votes are noise, exits are signal.”</p>
+<h3 id="why-it-should-be-provable">Why It Should Be Provable</h3>
+<ol>
+<li><strong>Capture requires sustained control</strong> over outcomes</li>
+<li><strong>Exit removes captured participants</strong> from the denominator</li>
+<li>A captor who drives away 40% of members now controls a <em>smaller</em> system</li>
+<li>The 40% who left carry their reputation to competing jurisdictions</li>
+<li>The captor’s absolute power is unchanged, but their <em>relative</em> power in the ecosystem decreases</li>
+</ol>
+<h3 id="the-lean-skeleton">The Lean Skeleton</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="lean"><code><span class="line"><span style="color:#6A737D">/-- A governance mechanism with measurable capture probability -/</span></span>
+<span class="line"><span style="color:#F97583">structure</span><span style="color:#B392F0"> Mechanism</span><span style="color:#F97583"> where</span></span>
+<span class="line"><span style="color:#E1E4E8">  participants : Nat</span></span>
+<span class="line"><span style="color:#E1E4E8">  capture_prob : Float  -- P(cartel controls outcomes)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/-- Exit-augmented mechanism -/</span></span>
+<span class="line"><span style="color:#F97583">structure</span><span style="color:#B392F0"> ExitMechanism</span><span style="color:#F97583"> extends</span><span style="color:#E1E4E8"> Mechanism </span><span style="color:#F97583">where</span></span>
+<span class="line"><span style="color:#E1E4E8">  exit_rate : Float           -- fraction exiting per period</span></span>
+<span class="line"><span style="color:#E1E4E8">  exit_cost : Float           -- cost to exit (Libertaria: → </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  reputation_portability : Float  -- fraction of reputation that travels</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/-- The Exit Composition Theorem -/</span></span>
+<span class="line"><span style="color:#F97583">theorem</span><span style="color:#B392F0"> exit_improves_capture_resistance</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#E1E4E8">    (m : Mechanism) </span></span>
+<span class="line"><span style="color:#E1E4E8">    (exit_rate : Float) </span></span>
+<span class="line"><span style="color:#E1E4E8">    (portability : Float)</span></span>
+<span class="line"><span style="color:#E1E4E8">    (h_exit_cheap : exit_cost &#x3C; capture_damage)</span></span>
+<span class="line"><span style="color:#E1E4E8">    (h_portable : portability > </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">) :</span></span>
+<span class="line"><span style="color:#E1E4E8">    capture_prob (with_exit m exit_rate portability) </span></span>
+<span class="line"><span style="color:#E1E4E8">      ≤ capture_prob m * (</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> - exit_rate * portability) := </span><span style="color:#F97583">by</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">  sorry</span><span style="color:#E1E4E8">  -- THIS IS THE PROOF WE NEED</span></span></code></pre>
+<p>If we fill that <code>sorry</code>, we’ve <em>proven</em> that Libertaria’s core architectural claim is mathematically valid.</p>
+<p>Not argued. Not simulated. <strong>Proven.</strong></p>
+<p>And here’s the kicker: this theorem proves that <em>any</em> governance mechanism — even shitty ones like token-weighted voting — becomes <em>less</em> capturable in a Libertaria context than in traditional trapped jurisdictions.</p>
+<p><strong>Exit is a universal capture resistance amplifier.</strong></p>
+<hr>
+<h2 id="layer-3-the-prover-verifier-isomorphism">Layer 3: The Prover-Verifier Isomorphism</h2>
+<p>This is where it gets eerie.</p>
+<p>Diehl describes the prover-verifier loop:</p>
+<ul>
+<li>Neural network proposes</li>
+<li>Formal system checks</li>
+<li>Feedback loop refines</li>
+</ul>
+<p>The model guesses; the kernel verifies. Hallucination is bounded because the compiler provides a binary signal.</p>
+<p>Now look at Libertaria’s governance:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Diehl’s Architecture</th><th>Libertaria’s Architecture</th></tr></thead><tbody><tr><td>Neural network (prover)</td><td>CLA — Carbon-Local Agent</td></tr><tr><td>Lean kernel (verifier)</td><td>Protocol constraints (RFC-0315)</td></tr><tr><td>Theorem (goal)</td><td>Governance outcome</td></tr><tr><td>Proof (output)</td><td>Decision process</td></tr><tr><td>Typecheck (validation)</td><td>Exit-arbitrage (market validation)</td></tr><tr><td>MCTS (search strategy)</td><td>Multi-round deliberation</td></tr></tbody></table>
+<p><strong>The CLA proposes. The Protocol constrains. The exit market validates.</strong></p>
+<p>This is not an analogy. This is <em>structural isomorphism</em>.</p>
+<p>The same architecture that makes neural theorem proving work makes Libertaria’s governance work:</p>
+<ul>
+<li>The proposer (CLA/human) generates candidate solutions</li>
+<li>The verifier (Protocol) checks formal properties</li>
+<li>The feedback loop (deliberation) refines based on response</li>
+<li>The binary signal (exit rate) tells you if the outcome was acceptable</li>
+</ul>
+<p><strong>The prover can hallucinate, but the verifier cannot be fooled.</strong></p>
+<p>A CLA can propose terrible policy. The Protocol cannot be tricked into violating exit rights.</p>
+<p>A populist can promise the moon. The dampening ceiling cannot be overridden.</p>
+<hr>
+<h2 id="the-property-catalog">The Property Catalog</h2>
+<h3 id="tier-1-trivially-provable">Tier 1: Trivially Provable</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Property</th><th>Statement</th></tr></thead><tbody><tr><td><strong>DAMP-CEIL</strong></td><td>Dampening ceiling</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo>:</mo><msub><mi>w</mi><mi>i</mi></msub><mo>≤</mo><mn>2</mn><mi mathvariant="normal">/</mi><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">\forall i : w_i \leq 2/\sqrt{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∀</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.786em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1767em;vertical-align:-0.25em;"></span><span class="mord">2/</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9267em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-2.8867em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1133em;"><span></span></span></span></span></span></span></span></span> after dampening</td></tr><tr><td><strong>DAMP-CONSERVE</strong></td><td>Power conservation</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msubsup><mi>w</mi><mi>i</mi><mrow><mi>b</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>e</mi></mrow></msubsup><mo>=</mo><mo>∑</mo><msubsup><mi>w</mi><mi>i</mi><mrow><mi>a</mi><mi>f</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\sum w_i^{before} = \sum w_i^{after}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2439em;vertical-align:-0.2769em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.967em;"><span style="top:-2.4231em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight">ore</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2769em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2439em;vertical-align:-0.2769em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.967em;"><span style="top:-2.4231em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">er</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2769em;"><span></span></span></span></span></span></span></span></span></span></td></tr><tr><td><strong>DD-WASTE-R1</strong></td><td>Vote-buying waste</td><td>Purchased votes capture <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>33</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\leq 33\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">33%</span></span></span></span> of power</td></tr><tr><td><strong>APPR-HONEST</strong></td><td>Honest inclusion</td><td>Approving true favorite is weakly dominant</td></tr></tbody></table>
+<h3 id="tier-2-moderately-provable">Tier 2: Moderately Provable</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Property</th><th>Statement</th></tr></thead><tbody><tr><td><strong>DD-CAPTURE-R1</strong></td><td>R1 capture bound</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>a</mi><mi>p</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>r</mi><mi>a</mi><mi>t</mi><msub><mi>e</mi><mrow><mi>R</mi><mn>1</mn></mrow></msub><mo>≤</mo><mfrac><mrow><msub><mi>V</mi><mi>c</mi></msub><mo>+</mo><mi>ρ</mi><msub><mi>V</mi><mi>l</mi></msub></mrow><mrow><msub><mi>V</mi><mi>c</mi></msub><mo>+</mo><msub><mi>V</mi><mi>l</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">capture\_rate_{R1} \leq \frac{V_c + \rho V_l}{V_c + V_l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.946em;vertical-align:-0.31em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal">pt</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.3753em;vertical-align:-0.4509em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9244em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:-0.2222em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3488em;margin-left:-0.2222em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1512em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:-0.2222em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">ρ</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3488em;margin-left:-0.2222em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1512em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4509em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></td></tr><tr><td><strong>DD-CAPTURE-R3</strong></td><td>R3 compounding</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>a</mi><mi>p</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>r</mi><mi>a</mi><mi>t</mi><msub><mi>e</mi><mrow><mi>R</mi><mn>3</mn></mrow></msub><mo>≤</mo><mo stretchy="false">(</mo><mi>c</mi><mi>a</mi><mi>p</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>r</mi><mi>a</mi><mi>t</mi><msub><mi>e</mi><mrow><mi>R</mi><mn>1</mn></mrow></msub><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">capture\_rate_{R3} \leq (capture\_rate_{R1})^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.946em;vertical-align:-0.31em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal">pt</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1241em;vertical-align:-0.31em;"></span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal">pt</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></td></tr><tr><td><strong>DD-SYBIL</strong></td><td>Sybil cost</td><td>Entering Top-5 requires bidirectional rep <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">\geq \theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span></td></tr><tr><td><strong>VICK-TRUTH</strong></td><td>Vickrey truthfulness</td><td>Truthful bidding weakly dominates</td></tr><tr><td><strong>CONV-ASYMP</strong></td><td>Conviction bound</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>v</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≤</mo><mi>s</mi><mi>t</mi><mi>a</mi><mi>k</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">conviction(t) \leq stake</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">co</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.03148em;">ak</span><span class="mord mathnormal">e</span></span></span></span> with equality at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">t = \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span></td></tr></tbody></table>
+<h3 id="tier-3-hard-but-provable">Tier 3: Hard but Provable</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Property</th><th>Statement</th></tr></thead><tbody><tr><td><strong>EXIT-AMPLIFY</strong></td><td>Exit composition</td><td>Exit strictly reduces capture probability</td></tr><tr><td><strong>GRAD-NECESSARY</strong></td><td>Graduation necessity</td><td>2-node capture exceeds 50% at N > 50</td></tr><tr><td><strong>DD-IC</strong></td><td>DD incentive compatibility</td><td>Honest delegation is weakly dominant</td></tr></tbody></table>
+<h3 id="tier-4-research-grade">Tier 4: Research-Grade</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Property</th><th>Statement</th></tr></thead><tbody><tr><td><strong>EXIT-UNIVERSAL</strong></td><td>Universal amplification</td><td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>M</mi><mo>:</mo><msub><mi>P</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>M</mi><mo>+</mo><mi>E</mi><mi>x</mi><mi>i</mi><mi>t</mi><mo stretchy="false">)</mo><mo>≤</mo><msub><mi>P</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>e</mi><mo>⋅</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\forall M : P_c(M + Exit) \leq P_c(M) \cdot (1 - e \cdot p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∀</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">x</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span></td></tr><tr><td><strong>HYBRID-COMPOSE</strong></td><td>Hybrid composition</td><td>Vickrey + DD capture <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span></span></span></span> min(Vickrey, DD) capture</td></tr></tbody></table>
+<hr>
+<h2 id="the-roadmap">The Roadmap</h2>
+<h3 id="phase-0-specification-weeks-1-2">Phase 0: Specification (Weeks 1-2)</h3>
+<p>Before Lean, pen and paper. <strong>Property Specification Cards</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔══════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ PROPERTY: DD-CAPTURE-BOUND-R3                            ║</span></span>
+<span class="line"><span>╠══════════════════════════════════════════════════════════╣</span></span>
+<span class="line"><span>║ Source: RFC-0310 §3.1                                    ║</span></span>
+<span class="line"><span>║ Statement: capture_rate_R3 ≤ (0.6)³ = 0.216             ║</span></span>
+<span class="line"><span>║                                                          ║</span></span>
+<span class="line"><span>║ Assumptions:                                             ║</span></span>
+<span class="line"><span>║   A1: Cartel delegates consciously to leader             ║</span></span>
+<span class="line"><span>║   A2: Top-5 pools contain avg 2 cartel members          ║</span></span>
+<span class="line"><span>║   A3: Lottery selection is uniform over Top-5           ║</span></span>
+<span class="line"><span>║   A4: Weight schedule is (2,4) → (5,4) → (9,4)          ║</span></span>
+<span class="line"><span>║   A5: Rounds are independent                             ║</span></span>
+<span class="line"><span>║                                                          ║</span></span>
+<span class="line"><span>║ Proof strategy: Case analysis + probability bounds       ║</span></span>
+<span class="line"><span>║ Estimated complexity: Medium                             ║</span></span>
+<span class="line"><span>║ Priority: HIGH (core credibility claim)                  ║</span></span>
+<span class="line"><span>╚══════════════════════════════════════════════════════════╝</span></span></code></pre>
+<p><strong>This step catches design flaws.</strong> If we can’t prove DD-CAPTURE-R3 without assuming round independence (A5), and round independence doesn’t hold because R1 delegates become the R2 electorate, then we have a <em>real problem</em> in RFC-0310.</p>
+<p>Better to find it in math than in production.</p>
+<h3 id="phase-1-lean4-scaffolding-weeks-3-4">Phase 1: Lean4 Scaffolding (Weeks 3-4)</h3>
+<p>Set up <code>libertaria-proofs</code> as a Lean4 project. Define core types:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="lean"><code><span class="line"><span style="color:#F97583">structure</span><span style="color:#B392F0"> Chapter</span><span style="color:#F97583"> where</span></span>
+<span class="line"><span style="color:#E1E4E8">  members : Finset DID</span></span>
+<span class="line"><span style="color:#E1E4E8">  active_members : Finset DID</span></span>
+<span class="line"><span style="color:#E1E4E8">  h_active_subset : active_members ⊆ members</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">structure</span><span style="color:#B392F0"> DualDelegation</span><span style="color:#F97583"> where</span></span>
+<span class="line"><span style="color:#E1E4E8">  conscious_weight : Nat</span></span>
+<span class="line"><span style="color:#E1E4E8">  lottery_weight : Nat</span></span>
+<span class="line"><span style="color:#E1E4E8">  rounds : Nat</span></span>
+<span class="line"><span style="color:#E1E4E8">  h_rounds_pos : rounds > </span><span style="color:#79B8FF">0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">structure</span><span style="color:#B392F0"> Cartel</span><span style="color:#F97583"> where</span></span>
+<span class="line"><span style="color:#E1E4E8">  members : Finset DID</span></span>
+<span class="line"><span style="color:#E1E4E8">  chapter : Chapter</span></span>
+<span class="line"><span style="color:#E1E4E8">  retention_rate : Float  -- ρ: fraction staying </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> cartel</span></span></code></pre>
+<p>No proofs yet. Just type scaffold. Make sure it compiles. Make sure the types <em>capture what we mean</em>.</p>
+<h3 id="phase-2-tier-1-proofs-weeks-5-6">Phase 2: Tier 1 Proofs (Weeks 5-6)</h3>
+<p>Start with trivial properties: DAMP-CEIL, DAMP-CONSERVE. These are arithmetic; Lean eats them.</p>
+<p>But they teach us the tooling and establish library structure.</p>
+<h3 id="phase-3-the-capture-bound-weeks-7-10">Phase 3: The Capture Bound (Weeks 7-10)</h3>
+<p>DD-CAPTURE-R1 and DD-CAPTURE-R3. The <em>credibility proofs</em>.</p>
+<p>When these typecheck, we have machine-verified evidence that Dual-Delegation’s core claim holds.</p>
+<h3 id="phase-4-the-exit-composition-theorem-weeks-11-16">Phase 4: The Exit Composition Theorem (Weeks 11-16)</h3>
+<p>The prize. The hard one.</p>
+<p>This might require novel mathematics — which means it might be a <em>publishable result</em>.</p>
+<p>A formally verified proof that exit-augmented governance is universally more capture-resistant than non-exit governance would be, as far as we know, <strong>the first formal proof of a governance mechanism property in the literature.</strong></p>
+<p>That’s not a tagline. That’s a <em>paper</em>. At a real conference. With real peer review.</p>
+<p>And the proof typechecks regardless of whether reviewers agree with our politics.</p>
+<h3 id="phase-5-publish-libertaria-proofs">Phase 5: Publish <code>libertaria-proofs</code></h3>
+<p>Open source. Anyone can check. The proofs are the documentation.</p>
+<p><strong>No trust required.</strong></p>
+<hr>
+<h2 id="the-strategic-value">The Strategic Value</h2>
+<p>Every crypto governance project claims capture resistance:</p>
+<ul>
+<li>Tezos claims it</li>
+<li>Polkadot claims it</li>
+<li>Every DAO with a whitepaper claims it</li>
+</ul>
+<p><strong>None of them have proven it.</strong></p>
+<p>Their claims rest on simulations, hand-waving, and “trust us, we did the math.”</p>
+<p><code>libertaria-proofs</code> would be <strong>the only governance system on Earth with machine-checked capture resistance guarantees.</strong></p>
+<p>Not “we believe.” Not “simulations suggest.”</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>#check cartel_capture_bound_r3</span></span>
+<span class="line"><span>✓</span></span></code></pre>
+<p>That’s the difference between a bridge an engineer <em>thinks</em> will hold and a bridge a structural analysis <em>proves</em> will hold.</p>
+<p>Both might stand. Only one has a certificate.</p>
+<blockquote>
+<p><strong>We don’t ask anyone to trust us. We ask them to run the compiler.</strong></p>
+</blockquote>
+<hr>
+<h2 id="the-next-step">The Next Step</h2>
+<p>Phase 0 begins now.</p>
+<p>I’m generating Property Specification Cards for Tier 1-2 properties. These cards force us to identify <em>exactly</em> what assumptions we’re making — and reveal which proofs are harder than we think.</p>
+<p>This is where design flaws hide. Better to find them in a spec card than in a Lean <code>sorry</code> that refuses to close.</p>
+<p>The goal: <strong>The first governance system in human history with machine-verified capture resistance proofs.</strong></p>
+<p>Not because it’s elegant. Because it’s <em>necessary</em>.</p>
+<hr>
+<p><em>Related: RFC-0310 (Dual-Delegation), RFC-0315 (Governance Graduation), RFC-0316 (Mechanism Scorecard), RFC-0650 (Exit Arbitrage)</em></p> </div> </article>  </main> <footer data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2026 Libertaria. All rights reserved.</p> <div class="social-links" data-astro-cid-sz7xmlte> <a href="https://github.com/libertaria-project/libertaria-stack" target="_blank" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>GitHub</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-sz7xmlte> <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path> </svg> </a> </div> </footer>  </body></html> 
