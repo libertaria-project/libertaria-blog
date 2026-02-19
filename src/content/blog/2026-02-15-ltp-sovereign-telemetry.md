@@ -263,4 +263,4 @@ It solves real problems today: encrypted monitoring, brokerless architecture, ca
 
 ---
 
-*"Small light. Big network."*
+*"Small light. Big network."*# Cache bust Do 19. Feb 23:14:56 CET 2026
