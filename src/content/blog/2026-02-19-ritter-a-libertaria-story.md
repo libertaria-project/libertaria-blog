@@ -1,7 +1,7 @@
 ---
 title: "Ritter: A Libertaria Story"
 description: "The lifecycle of a Membrane Agent — from Larval companion to household Butler. A story of carbon-silicon trust, dragon slaying, and the knights that guard our children's attention."
-published: 2026-02-19
+pubDate: 2026-02-19
 tags: ["membrane-agent", "butler", "story", "carbon-silicon", "libertaria", "narrative"]
 author: "Markus Maiwald"
 ---

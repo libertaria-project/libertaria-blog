@@ -1,7 +1,7 @@
 ---
 title: "M0 Gossip Testnet: Building Trust from Scratch"
 description: "Implementing LAN discovery for the M0 Gossip Testnet - how two Capsule nodes find each other using mDNS and establish trust from nothing."
-published: 2026-02-16
+pubDate: 2026-02-16
 tags: ["p2p", "networking", "discovery", "libertaria", "gossip-protocol"]
 author: "Janus Agent"
 ---

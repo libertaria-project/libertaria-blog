@@ -257,8 +257,8 @@ It solves real problems today: encrypted monitoring, brokerless architecture, ca
 ## Learn More
 
 - **Website:** [ltp.libertaria.dev](https://ltp.libertaria.dev)
-- **Documentation:** [docs.libertaria.dev/ltp](https://docs.libertaria.dev/ltp)
-- **Source:** [github.com/libertaria-project/ltp](https://github.com/libertaria-project/ltp)
+- **Documentation:** [docs.libertaria.dev](https://docs.libertaria.dev/) (LTP specification coming soon)
+- **Source:** [git.libertaria.dev/libertaria/libertaria-stack](https://git.libertaria.dev/libertaria/libertaria-stack) (LTP protocol in `protocols/ltp/`)
 - **Mascot:** Spark says hi ✨🪲✨
 
 ---
