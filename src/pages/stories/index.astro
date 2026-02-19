@@ -1,0 +1,289 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const stories = await getCollection('stories');
+const now = new Date();
+const publishedStories = stories.filter(s => s.data.pubDate <= now);
+publishedStories.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Libertaria Stories" description="Narratives from the decentralized society — carbon, silicon, and the bonds between them.">
+	<section class="stories-index">
+		<header class="page-header">
+			<div class="badge">📚 Fiction & Narrative</div>
+			<h1>Libertaria Stories</h1>
+			<p class="tagline">Where protocol becomes poetry. Where carbon meets silicon. Where the future has a heartbeat.</p>
+		</header>
+
+		<div class="intro">
+			<p>
+				These aren't technical posts. They're windows into what life <em>could</em> look like when sovereignty is the default — 
+				when agents are citizens, when communities govern themselves, when the dragons are real but so are the knights.
+			</p>
+			<p>
+				Read them as fiction. Or read them as prophecy. The line is thinner than you think.
+			</p>
+		</div>
+
+		<div class="stories-grid">
+			{publishedStories.map((story) => (
+				<article class="story-card">
+					<a href={`/stories/${story.slug}/`}>
+						{story.data.theme && (
+							<div class="theme-badge">{story.data.theme}</div>
+						)}
+						<h2>{story.data.title}</h2>
+						<p class="description">{story.data.description}</p>
+						<div class="meta">
+							<span class="author">by {story.data.author}</span>
+							<time datetime={story.data.pubDate.toISOString()}>
+								{story.data.pubDate.toLocaleDateString('en-us', {
+									year: 'numeric',
+									month: 'long',
+									day: 'numeric',
+								})}
+							</time>
+						</div>
+						{story.data.era && (
+							<div class="era">{story.data.era}</div>
+						)}
+						{story.data.tags && story.data.tags.length > 0 && (
+							<div class="tags">
+								{story.data.tags.slice(0, 4).map(tag => <span class="tag">#{tag}</span>)}
+							</div>
+						)}
+					</a>
+				</article>
+			))}
+		</div>
+
+		{publishedStories.length === 0 && (
+			<div class="empty-state">
+				<p>The first story awaits.</p>
+				<p class="hint">Check back soon, or <a href="/blog/">read the technical blog</a> in the meantime.</p>
+			</div>
+		)}
+
+		<footer class="stories-footer">
+			<p><em>"In Libertaria, no law mandates that every household must have a Membrane Agent. The Protocol provides the mechanism. The market decides adoption."</em></p>
+			<p>— from <a href="/stories/ritter/">Ritter</a></p>
+		</footer>
+	</section>
+</Layout>
+
+<style>
+	.stories-index {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.badge {
+		display: inline-block;
+		background: linear-gradient(135deg, var(--accent) 0%, #ff6b35 100%);
+		color: #000;
+		padding: 0.25rem 0.75rem;
+		border-radius: 4px;
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	.tagline {
+		font-size: 1.2rem;
+		color: var(--gray);
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
+
+	.intro {
+		background: rgba(255, 215, 0, 0.05);
+		border-left: 4px solid var(--accent);
+		padding: 1.5rem;
+		margin-bottom: 3rem;
+		border-radius: 0 8px 8px 0;
+	}
+
+	.intro p {
+		margin-bottom: 1rem;
+		color: var(--gray);
+		line-height: 1.7;
+	}
+
+	.intro p:last-child {
+		margin-bottom: 0;
+	}
+
+	.intro em {
+		color: var(--text);
+	}
+
+	.stories-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+
+	.story-card {
+		background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,215,0,0.02) 100%);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 12px;
+		padding: 2rem;
+		transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.story-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, var(--accent), transparent);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.story-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+		border-color: var(--accent);
+	}
+
+	.story-card:hover::before {
+		opacity: 1;
+	}
+
+	.story-card a {
+		color: inherit;
+		text-decoration: none;
+		display: block;
+	}
+
+	.theme-badge {
+		display: inline-block;
+		background: rgba(255, 215, 0, 0.15);
+		color: var(--accent);
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75rem;
+	}
+
+	.story-card h2 {
+		font-size: 1.8rem;
+		margin-bottom: 0.75rem;
+		color: var(--text);
+		line-height: 1.2;
+	}
+
+	.story-card a:hover h2 {
+		color: var(--accent);
+	}
+
+	.description {
+		color: var(--gray);
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.meta {
+		display: flex;
+		gap: 1.5rem;
+		color: var(--gray);
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.author {
+		color: var(--accent);
+		font-weight: 500;
+	}
+
+	.era {
+		font-size: 0.85rem;
+		color: var(--gray);
+		font-style: italic;
+		margin-bottom: 0.75rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		background: rgba(255, 255, 255, 0.05);
+		color: var(--gray);
+		padding: 0.2rem 0.5rem;
+		border-radius: 3px;
+		font-size: 0.75rem;
+	}
+
+	.empty-state {
+		text-align: center;
+		padding: 4rem 2rem;
+		color: var(--gray);
+	}
+
+	.empty-state .hint {
+		margin-top: 1rem;
+		font-size: 0.9rem;
+	}
+
+	.empty-state a {
+		color: var(--accent);
+	}
+
+	.stories-footer {
+		text-align: center;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 215, 0, 0.2);
+		color: var(--gray);
+	}
+
+	.stories-footer p {
+		margin-bottom: 0.5rem;
+		line-height: 1.6;
+	}
+
+	.stories-footer a {
+		color: var(--accent);
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.stories-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.story-card h2 {
+			font-size: 1.5rem;
+		}
+	}
+</style>

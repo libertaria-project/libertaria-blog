@@ -1,9 +1,12 @@
 ---
-title: "Ritter: A Libertaria Story"
+title: "Ritter"
 description: "The lifecycle of a Membrane Agent — from Larval companion to household Butler. A story of carbon-silicon trust, dragon slaying, and the knights that guard our children's attention."
 pubDate: 2026-02-19
-tags: ["membrane-agent", "butler", "story", "carbon-silicon", "libertaria", "narrative"]
 author: "Markus Maiwald"
+tags: ["membrane-agent", "butler", "carbon-silicon", "libertaria"]
+era: "Day Zero — Year 22"
+protagonist: "Ritter"
+theme: "membrane-agent"
 ---
 
 # Ritter
