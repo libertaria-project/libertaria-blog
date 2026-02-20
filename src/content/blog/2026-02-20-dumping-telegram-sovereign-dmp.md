@@ -113,15 +113,16 @@ This is what DMP unlocks:
 | **Multi-device** | N/A | 7 devices, single session hierarchy |
 | **External bridges** | N/A | XMPP/SMTP with trust boundaries |
 
-**Stack before DMP:**
+**Stack before DMP (Sovereign Shell V3.0):**
 - L0 (Transport): ✅ UTCP/QUIC
-- L1 (Session): ✅ Noise
-- L2 (Gossip): ✅ QVL
-- L3 (Application): ⚠️ Partial
-- L4 (World): ❌ No messaging
+- L1 (Identity): ✅ SoulKey
+- L2 (Session): ✅ Noise
+- L3 (Gossip): ✅ QVL
+- L4 (Federation): ⚠️ Partial
+- L5 (Applications): ❌ No messaging
 
 **Stack after DMP:**
-- L4 (World): ✅ MESSAGE tier fully specified
+- L5 (Applications/Civilization): ✅ MESSAGE tier fully specified
 
 The birth canal of sovereign interaction is now in the protocol.
 
@@ -131,7 +132,19 @@ This isn't just a spec. It's operational doctrine.
 
 **Voxis builds. Virgil reviews.**
 
-Every messaging implementation must pass RFC-0835 compliance review:
+But the review gate isn't enough. The root cause of Voxis's original spec failure (libp2p, AES-256-GCM, no OPQ/Entropy/Membrane) was building *without reading the existing RFCs first*. The fix isn't just a compliance checklist at review time — it's a **pre-flight knowledge load** before any spec work begins.
+
+**Pre-flight requirements (before any implementation spec):**
+1. Read RFC-0835 (DMP architecture, wire types, session lifecycle)
+2. Read RFC-0830 (MESSAGE tier definition, PQXDH)
+3. Read RFC-0500 (ns-msg routing — your transport layer)
+4. Read RFC-0020 (OPQ — offline survival)
+5. Read RFC-0100 (Entropy Stamps — anti-spam)
+6. Read RFC-0110 (Membrane Agent — trust gating)
+
+Only then do you write specs. Otherwise you reinvent what we've already decided.
+
+**Compliance checklist (at review time):**
 
 - ✅ Wire types in 0x0A80-0x0A8F / 0x0AB0-0x0ABF
 - ✅ Routing through ns-msg (NOT libp2p Gossipsub)
