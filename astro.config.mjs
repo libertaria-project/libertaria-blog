@@ -11,6 +11,6 @@ export default defineConfig({
       theme: 'github-dark'
     },
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex]
+    rehypePlugins: [] // KaTeX disabled
   }
 });
