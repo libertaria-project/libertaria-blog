@@ -109,6 +109,26 @@ And if even Chapter Inference is insufficient, specialized Chapters exist. A Cha
 
 **Local first. Chapter second. Specialized third. Cloud never.**
 
+```mermaid
+flowchart TD
+    Q["Inference Query"] --> LOCAL{"Local Model\n(your device)"}
+    LOCAL -->|"Sufficient"| R1["Result\n— zero data leaves device"]
+    LOCAL -->|"Exceeds capacity"| CHAPTER{"Chapter Inference\n(your community's GPUs)"}
+    CHAPTER -->|"Available"| R2["Result\n— data stays in Chapter"]
+    CHAPTER -->|"Exceeds capacity"| SPEC{"Specialized Chapter\n(medical, legal, agricultural)"}
+    SPEC -->|"Available"| R3["Result\n— via Bridge Protocol\n— raw data never exposed"]
+    SPEC -->|"Unavailable"| DEGRADE["Graceful Degradation\n— never cloud\n— sovereignty preserved"]
+
+    style Q fill:#1a1a2e,stroke:#ffd700,color:#e0e0e0
+    style LOCAL fill:#1a3d1a,stroke:#44cc44,color:#e0e0e0
+    style CHAPTER fill:#1a2d4d,stroke:#4488ff,color:#e0e0e0
+    style SPEC fill:#4d3d1a,stroke:#ffaa44,color:#e0e0e0
+    style R1 fill:#0a2a0a,stroke:#00cc00,color:#44ff44
+    style R2 fill:#0a1a3a,stroke:#4488ff,color:#88bbff
+    style R3 fill:#3a2a0a,stroke:#ffaa44,color:#ffcc66
+    style DEGRADE fill:#3a0a0a,stroke:#ff4444,color:#ff8888
+```
+
 The fallback cascade ensures you always have intelligence available, with sovereignty preserved at every layer.
 
 ---

@@ -179,5 +179,47 @@ const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props
 			<slot />
 		</main>
 		<Footer />
+		<script is:inline>
+			// Mermaid: only load if page contains mermaid code blocks
+			(function() {
+				const blocks = document.querySelectorAll('code.language-mermaid');
+				if (!blocks.length) return;
+
+				blocks.forEach(code => {
+					const pre = code.parentElement;
+					const div = document.createElement('pre');
+					div.className = 'mermaid';
+					div.textContent = code.textContent;
+					pre.replaceWith(div);
+				});
+
+				const s = document.createElement('script');
+				s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+				s.onload = function() {
+					mermaid.initialize({
+						startOnLoad: true,
+						theme: 'dark',
+						themeVariables: {
+							darkMode: true,
+							background: '#0a0a0a',
+							primaryColor: '#1a1a2e',
+							primaryTextColor: '#e0e0e0',
+							primaryBorderColor: '#ffd700',
+							lineColor: '#ffd700',
+							secondaryColor: '#1a1a2e',
+							tertiaryColor: '#111111',
+							fontFamily: 'Inter, system-ui, sans-serif',
+							fontSize: '14px',
+							nodeBorder: '#ffd700',
+							clusterBkg: '#111111',
+							clusterBorder: '#ffd700',
+							edgeLabelBackground: '#0a0a0a'
+						}
+					});
+					mermaid.run();
+				};
+				document.head.appendChild(s);
+			})();
+		</script>
 	</body>
 </html>
