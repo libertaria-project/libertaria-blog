@@ -247,7 +247,7 @@ Choose.
 - [Janus Language](https://janus-lang.org)
 - [Nexus OS](https://nexus-os.org)
 - [Libertaria](https://libertaria.dev)
-- [Forgejo Repository](https://forgejo.libertaria.io)
+- [Forgejo Repository](https://git.sovereign-society.org/explore/repos)
 
 ---
 

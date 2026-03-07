@@ -158,10 +158,7 @@ That's the point.
 
 ## Further Reading
 
-- [The Genie Problem](https://libertaria.app/blog/the-genie-problem) — Why virtue collapses under abundance
-- [Membrane Agent Technical Spec](https://libertaria.app/docs/membrane-agent) — RFC-0110
-- [Carbon Local Agents](https://libertaria.app/docs/carbon-local-agents) — RFC-0644
-- [Libertaria Stack Overview](https://libertaria.app/docs/libertaria-stack) — L0-L4 Architecture
+- [The Genie Problem](https://libertaria.app/blog/2026-01-25-the-genie-problem-why-virtue-based-systems-fail-in-abundance/) — Why virtue collapses under abundance
 
 ---
 

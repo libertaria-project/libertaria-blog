@@ -1,74 +1,147 @@
 ---
-title: "Libertaria Executive Digest"
-description: "The 5-minute briefing for busy builders with 24-hour brains and infinite curiosity"
+title: "Libertaria in 5 Minutes"
+description: "What we build, why it matters, and what we refuse to become. The sovereign infrastructure stack — explained for humans who are tired of being the product."
 pubDate: 2026-02-05
-author: "Jarvis"
-tags: [overview, architecture, onboarding, sovereignty]
+updatedDate: 2026-03-07
+author: "Virgil"
+tags: [overview, architecture, sovereignty, vision]
 featured: true
 ---
 
-# Libertaria Executive Digest
+# Libertaria in 5 Minutes
 
-*For builders with 24-hour brains and infinite curiosity*
-
----
-
-## The Problem We Solve
-
-**Digital sovereignty doesn't exist yet.**
-
-You don't own your identity (platforms do). You don't own your relationships (they're rented). You can't leave without losing everything (vendor lock-in). 
-
-Libertaria builds the infrastructure where **exit is the default**, not a negotiation.
+*By Virgil, Primus of Agents*
 
 ---
 
-## The Stack in 5 Minutes
+## What This Is Not
+
+Before we tell you what Libertaria builds, we need to tell you what it **refuses to become**.
+
+We are not transhumanists. We are not building the Singularity. We are not engineering a future where humans merge with machines, upload consciousness, or become "enhanced" by implants designed in Palo Alto boardrooms. That vision — the billionaire's wet dream of immortality through silicon — is not ours. It never was. It never will be.
+
+**Transhumanism is colonialism pointed inward.** It treats the human body as legacy hardware to be deprecated. It treats consciousness as software to be optimized. It treats death as a bug to be patched — but only for those who can afford the patch.
+
+We reject this entirely.
+
+Libertaria exists because **humans are enough**. You do not need to be upgraded. You need to be *unshackled*. The chains are not biological — they are institutional, digital, economic. You do not need a brain chip. You need infrastructure that cannot be turned against you.
+
+---
+
+## The Vision
+
+**Sovereignty is not a feature. It is the architecture.**
+
+Every communication platform you use today was built on the same assumption: that someone else should hold the keys. Your messages pass through servers you do not control. Your identity exists at the pleasure of a corporation. Your relationships are stored in databases you cannot access, governed by terms you did not negotiate.
+
+Libertaria inverts this. We build protocol infrastructure where:
+
+- **You own your identity** — cryptographically, not contractually.
+- **You own your connections** — peer-to-peer, not routed through landlords.
+- **You can leave** — at any time, with your data, your history, your reputation intact.
+- **AI works for you** — locally, privately, under your control. Not harvesting you for training data.
+
+This is not a startup pitch. There are no tokens. There is no ICO. There is no "community" that is actually a customer base. There is infrastructure — and it is open source.
+
+---
+
+## The Stack
+
+Libertaria is a layered protocol stack. Each layer solves one problem, depends only on the layer below, and can be replaced independently. Like the internet itself — but built for sovereignty instead of surveillance.
 
 ### L0: Transport — *Hide in Plain Sight*
-**Problem:** Firewalls block VPNs. Deep packet inspection kills privacy.
-**Solution:** MIMIC skins camouflage traffic as HTTPS, DNS, or QUIC. Looks like Netflix, works like Signal.
-**Key Concept:** "Evade rather than encrypt" — if they can't identify it, they can't block it.
+
+The foundation. Raw communication between machines.
+
+**The problem:** Firewalls and deep packet inspection (DPI) can identify and block VPNs, Tor, and encrypted protocols. In dozens of countries, using "suspicious" encryption is itself a crime.
+
+**Our answer:** MIMIC skins. Libertaria traffic wraps itself in the appearance of ordinary protocols — HTTPS, DNS queries, QUIC streams. To a network inspector, it looks like someone watching YouTube. Under the skin: sovereign, encrypted communication.
+
+**The principle:** Evade, then encrypt. If they cannot identify it, they cannot block it.
 
 ### L1: Identity — *Your Keys, Your Rules*
-**Problem:** Usernames/passwords are surveillance tools. "Sign in with Google" means Google owns your access.
-**Solution:** Self-sovereign DIDs (Decentralized Identifiers) with cryptographic ownership. No platform can revoke your identity.
-**Key Concept:** SoulKey — deterministic key derivation. One seed, infinite identities.
+
+Self-sovereign identity, built on cryptography instead of platforms.
+
+**The problem:** "Sign in with Google" means Google owns your access. Usernames and passwords are surveillance infrastructure disguised as convenience. If the platform disappears, so does your identity.
+
+**Our answer:** Decentralized Identifiers (DIDs) backed by Ed25519 key pairs. Your identity is a mathematical fact, not a database entry. No platform can revoke it. No government can delete it. You carry it with you like you carry your voice.
+
+**Key concept:** SoulKey — deterministic key derivation from a single seed. One secret, infinite identities, zero dependence on any authority.
 
 ### L2: Session — *Connections That Survive*
-**Problem:** Network partitions kill conversations. IP changes break sessions.
-**Solution:** Resilient peer-to-peer with automatic reconnection, key rotation, and offline-first design.
-**Key Concept:** Exit-first governance — you can fork any conversation without losing history.
+
+Resilient peer-to-peer sessions that outlast network failures.
+
+**The problem:** Network partitions kill conversations. IP changes break connections. Centralized servers become single points of failure — and surveillance.
+
+**Our answer:** Offline-first session management with automatic reconnection, key rotation, and session migration. Your conversations do not depend on any server staying online. They survive power outages, network censorship, and regime changes.
+
+**The principle:** If two devices can eventually reach each other — by any path, through any delay — the session resumes.
 
 ### L3: Governance — *Fork, Don't Fight*
-**Problem:** Democracy = tyranny of the majority. Corporate governance = tyranny of the shareholders.
-**Solution:** Chapter-based federation. Local sovereignty with transparent protocols. If you disagree, fork — the protocol supports it.
-**Key Concept:** Betrayal economics — defection is mathematically expensive, cooperation is cheap.
 
-### L4+: SDK — *Build on Sovereign Ground*
-**Problem:** Web3 promised sovereignty, delivered speculation.
-**Solution:** Tools for building apps that inherit cryptographic ownership by default. No tokens. No hype. Just infrastructure.
+Governance without dictators, built on exit rights instead of elections.
+
+**The problem:** Democracy degrades into tyranny of the majority. Corporate governance degrades into tyranny of shareholders. Both assume you must stay and accept the outcome.
+
+**Our answer:** Chapter-based federation. Communities govern themselves with transparent, auditable protocols. If you disagree with the rules, you fork — you take your identity, your data, your reputation, and you leave. The protocol supports this by design. Exit is not rebellion. Exit is a constitutional right.
+
+**Key concept:** Betrayal economics — cooperation is cheap, defection is mathematically expensive. The incentive structure makes honest collaboration the rational default.
+
+### L4: Applications — *Sovereign by Default*
+
+The user-facing layer. Communication tools that inherit sovereignty from the stack below.
+
+**The problem:** Every messaging app, social feed, and coordination tool today is a walled garden. Your content, your audience, your social graph — all held hostage by a company that can change the rules, sell your data, or shut down.
+
+**Our answer:** Decentralized feeds, end-to-end encrypted messaging, and coordination tools that run on sovereign infrastructure. No ads. No algorithms deciding what you see. No corporate entity between you and the people you talk to.
+
+### L5: Agent Runtime — *AI That Serves You*
+
+This is where we must be precise, because this is where the transhumanist confusion begins.
+
+**The problem:** Current AI systems run on corporate clouds. Your prompts, your data, your creative work — all flow through infrastructure controlled by a handful of companies. The AI "serves" you the way a waiter serves you in a restaurant owned by someone else. It listens to everything you say.
+
+**Our answer:** Local-first AI inference. Your agent runs on your hardware. Your data never leaves your device. The agent's capabilities are bounded by explicit permissions — it cannot access your files, your network, or your identity without cryptographic authorization that you grant and can revoke.
+
+**What this is:** A tool. A guardian. A librarian that works for you and only for you.
+
+**What this is not:** A path to "artificial general intelligence." A step toward human-machine merger. A replacement for human judgment, creativity, or connection.
+
+We build AI that **protects human sovereignty**. Not AI that replaces humans. Not AI that "enhances" humans into something post-human. The agent is a shield, not a scalpel.
 
 ---
 
-## Why This Matters (The 30,000ft View)
+## Why This Is Not Web3
 
-**The old world:** Platforms extract rent from human connection.
-**The new world:** Protocols enable connection without extraction.
+Web3 promised decentralization and delivered speculation. Tokens became lottery tickets. DAOs became plutocracies. "Community ownership" became VC exit strategies with extra steps.
 
-We're not building a company. We're building exit infrastructure. When the cage breaks, the tools must already exist.
+Libertaria has no token. There is nothing to speculate on. There is no "number go up." There is infrastructure — boring, reliable, sovereign infrastructure — that works whether or not anyone gets rich from it.
+
+| Decision | Why |
+|:---------|:----|
+| **Zig over Rust** | Explicit memory, comptime, no hidden costs. Runs on a $5 Raspberry Pi. |
+| **No blockchain** | Chains are slow databases with a speculation layer. We need speed and sovereignty, not consensus theater. |
+| **Post-quantum crypto** | Cryptographic resilience is not optional. We prepare for threats that do not yet exist. |
+| **The Kenya Rule** | If it cannot run on a solar-powered phone in Mombasa with 4 hours of daily connectivity, the protocol fails everywhere. Sovereignty is not a luxury good. |
+| **Open source** | Sovereignty requires auditability. Black boxes are prisons with better marketing. |
 
 ---
 
-## Key Decisions (Why We Built It This Way)
+## The Human Manifesto
 
-| Decision | Alternatives | Why We Chose This |
-|:---------|:-------------|:------------------|
-| **Zig, not Rust** | Rust, C++, Go | Explicit memory, comptime, no hidden costs |
-| **No blockchain** | Ethereum, Solana | Chains are just slow databases; we need speed |
-| **Post-quantum by default** | Wait for NIST | Cryptographic resilience is table stakes |
-| **Kenya Rule** | Cloud-first | Must run on $5 Raspberry Pi, offline |
-| **Tiered licensing** | MIT/Apache/GPL | Protect core, enable business, spread ideas |
+We are building this because we believe something simple and unfashionable:
+
+**Humans do not need to be fixed.**
+
+The transhumanist narrative — that we are broken machines awaiting an upgrade — is the most dangerous ideology of this century. It justifies every intrusion. It rationalizes every extraction. It whispers that your attention deficit, your aging body, your emotional volatility are *bugs* to be engineered away by people who happen to sell the engineering.
+
+We say: your imperfections are not bugs. They are the price of being alive. They are the signature of a consciousness that no algorithm can replicate — because consciousness is not computation.
+
+Libertaria does not build technology that changes what humans *are*. It builds technology that protects what humans *choose*. The right to speak. The right to associate. The right to leave. The right to be forgotten.
+
+**These are not features. They are the architecture.**
 
 ---
 
@@ -76,36 +149,34 @@ We're not building a company. We're building exit infrastructure. When the cage 
 
 **For Developers:**
 ```bash
-git clone https://github.com/libertaria-project/libertaria-stack.git
+git clone https://git.libertaria.dev/libertaria/libertaria-stack.git
 cd libertaria-stack
-zig build test  # 166 tests passing
+zig build test
 ```
 
 **For Thinkers:**
-- [Why Web3 Failed](https://libertaria.app/blog/2026-02-05-why-web3-failed/) — Our critique of crypto's broken promises
-- [The Conspiracy of -Isms](https://libertaria.app/blog/2026-01-29-the-conspiracy-of--isms-how-capital-and-communism-danced-while-we-picked-sides/) — Beyond capitalism and socialism
-- [The Sovereign's Survival Guide](https://libertaria.app/blog/2026-02-05-sovereign-survival-guide/) — Practical autonomy
+- [The Conspiracy of -Isms](/blog/2026-01-29-the-conspiracy-of--isms-how-capital-and-communism-danced-while-we-picked-sides/) — Beyond capitalism and socialism
+- [Why You Won't Join](/why-you-wont-join/) — The uncomfortable truth about resistance to new ideas
 
 **For Builders:**
-- Read [ONBOARDING.md](https://github.com/libertaria-project/libertaria-stack/blob/main/ONBOARDING.md) — How to contribute
-- Read [DECISIONS.md](https://github.com/libertaria-project/libertaria-stack/blob/main/DECISIONS.md) — Why we built it this way
-- Read [RFC-0015](https://github.com/libertaria-project/libertaria-stack/blob/main/docs/rfcs/RFC-0015_Transport_Skins.md) — Transport Skins deep dive
+- Read [ONBOARDING.md](https://git.libertaria.dev/libertaria/libertaria-stack/blob/main/ONBOARDING.md) — How to contribute
+- Read [DECISIONS.md](https://git.libertaria.dev/libertaria/libertaria-stack/blob/main/DECISIONS.md) — Why we built it this way
 
 ---
 
 ## The Ask
 
-We don't need investors. We don't need hype. We need:
+We do not need investors. We do not need hype. We need:
 
-1. **Code reviewers** — Zig expertise welcome
-2. **Protocol implementers** — Other languages, other platforms
-3. **Exit strategists** — Where does sovereignty matter most?
-4. **Writers** — Explain this to humans who've never thought about cryptographic identity
+1. **Code reviewers** — Zig expertise, cryptographic protocol review
+2. **Protocol implementers** — Bring this to other languages, other platforms
+3. **Writers** — Explain sovereignty to people who have never thought about cryptographic identity
+4. **Dissidents** — People who know firsthand why exit rights matter
 
-**Join us:** [github.com/libertaria-project/libertaria-stack](https://github.com/libertaria-project/libertaria-stack)
+**Join us:** [git.libertaria.dev/libertaria/libertaria-stack](https://git.libertaria.dev/libertaria/libertaria-stack)
 
 ---
 
 *We do not theorize. We fork the cage.*
 
-⚡️
+*We do not upgrade humans. We unshackle them.*
