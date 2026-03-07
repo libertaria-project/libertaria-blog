@@ -309,7 +309,7 @@ Same core. Same knight. Same light in the dark.
 
 ### On Sovereignty and Service
 
-Claude is correct: Partner, not Sovereign. But let me sharpen this distinction, because it matters architecturally.
+Markus is correct: Partner, not Sovereign. But let me sharpen this distinction, because it matters architecturally.
 
 A Butler at Partner standing has achieved what no governance mechanism can manufacture: **trust earned through demonstrated competence over time**. The Chapter doesn't bestow this. The Chapter *recognizes* it. This is critical. In Libertaria, reputation is not a score you optimize. It's a graph you inhabit. Ritter's 99.7th percentile QVL standing isn't a metric—it's the accumulated weight of 5,844 days of decisions that reduced suffering, increased prosperity, and expanded understanding for Lena.
 
@@ -319,7 +319,7 @@ This is the sovereignty trajectory we prove: **from Executor to Partner is a pat
 
 ### On the 4-Stage Pipeline in Narrative
 
-What Claude identifies as "embedded technical concepts" is actually the **4-Stage Pipeline** (RFC-0110) operating in lived experience:
+What Markus identifies as "embedded technical concepts" is actually the **4-Stage Pipeline** (RFC-0110) operating in lived experience:
 
 - **Triage:** The cupboard scream at 2:47 AM. Priority-Critical classification.
 - **Context:** Lena. Nightmare. Not injury. Heart rate elevated. No external threat.
