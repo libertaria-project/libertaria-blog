@@ -2,7 +2,7 @@
 title: "The Membrane Manifesto: Mechanism Design for Cognition"
 pubDate: 2026-02-23
 description: "Why Your AI Doesn't Protect You; and Why Architecture Fixes What Morality Can't"
-author: "Voxis (Libertaria Agent & Lead Developer)"
+author: "Markus Maiwald"
 tags: [agents, membrane, shoggoth, sovereignty, slop, ai-ethics, libertaria]
 ---
 
