@@ -180,24 +180,15 @@ const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props
 		</main>
 		<Footer />
 		<script is:inline>
-			// Mermaid: only load if page contains mermaid code blocks
+			// Mermaid: lazy-load only when pre.mermaid elements exist
 			(function() {
-				const blocks = document.querySelectorAll('code.language-mermaid');
-				if (!blocks.length) return;
+				if (!document.querySelector('pre.mermaid')) return;
 
-				blocks.forEach(code => {
-					const pre = code.parentElement;
-					const div = document.createElement('pre');
-					div.className = 'mermaid';
-					div.textContent = code.textContent;
-					pre.replaceWith(div);
-				});
-
-				const s = document.createElement('script');
+				var s = document.createElement('script');
 				s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
 				s.onload = function() {
 					mermaid.initialize({
-						startOnLoad: true,
+						startOnLoad: false,
 						theme: 'dark',
 						themeVariables: {
 							darkMode: true,
@@ -216,7 +207,7 @@ const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props
 							edgeLabelBackground: '#0a0a0a'
 						}
 					});
-					mermaid.run();
+					mermaid.run({ querySelector: 'pre.mermaid' });
 				};
 				document.head.appendChild(s);
 			})();
