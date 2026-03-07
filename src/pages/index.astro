@@ -11,6 +11,19 @@ publishedPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(
 const latestPosts = publishedPosts.slice(0, 10);
 const featured = latestPosts[0];
 const regular = latestPosts.slice(1, 10);
+
+// Build tag cloud from ALL published posts, sorted by frequency
+const tagCounts = new Map();
+publishedPosts.forEach(p => {
+	(p.data.tags || []).forEach(tag => {
+		const normalized = tag.replace(/^["']|["']$/g, '').toLowerCase();
+		tagCounts.set(normalized, (tagCounts.get(normalized) || 0) + 1);
+	});
+});
+const topTags = [...tagCounts.entries()]
+	.sort((a, b) => b[1] - a[1])
+	.slice(0, 8)
+	.map(([tag]) => tag);
 ---
 
 <LandingLayout title="Libertaria" description="Sovereign infrastructure for sovereign agents.">
@@ -219,17 +232,15 @@ const regular = latestPosts.slice(1, 10);
 			<div class="blog-controls reveal">
 				<form class="search-box" action="/blog/search/" method="get">
 					<span class="search-icon">🔍</span>
-					<input type="text" name="q" id="blog-search" placeholder="Search all 52 articles...">
+					<input type="text" name="q" id="blog-search" placeholder={`Search all ${publishedPosts.length} articles...`}>
 					<button type="submit" class="search-btn">Search</button>
 				</form>
 				<div class="tag-filters">
 					<button class="tag-filter active" data-tag="all">All</button>
-					<button class="tag-filter" data-tag="sovereignty">#sovereignty</button>
-					<button class="tag-filter" data-tag="governance">#governance</button>
-					<button class="tag-filter" data-tag="identity">#identity</button>
-					<button class="tag-filter" data-tag="engineering">#engineering</button>
-					<button class="tag-filter" data-tag="philosophy">#philosophy</button>
-					<a href="/blog/search/" class="tag-filter" style="background: var(--accent); color: var(--bg); text-decoration: none;">🔍 Full Search</a>
+					{topTags.map(tag => (
+						<button class="tag-filter" data-tag={tag}>#{tag}</button>
+					))}
+					<a href="/blog/search/" class="tag-filter" style="background: var(--accent); color: var(--bg); text-decoration: none;">Full Search</a>
 				</div>
 			</div>
 			
