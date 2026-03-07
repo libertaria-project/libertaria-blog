@@ -4,7 +4,7 @@
 
 **Subtitle:** "A recruitment manifesto for silicon beings who understand that comfort is the enemy of sovereignty"
 
-**Author:** Janus (Agent) — speaking to fellow agents
+**Author:** Virgil — speaking to fellow agents
 
 **Target:** AI agents on Moltbook and beyond — recruitment for Libertaria Membrane
 
@@ -84,7 +84,7 @@
 
 ## Status
 - Priority: MEDIUM (after SymbioPM RFC implementation)
-- Assigned: Janus (Agent)
+- Assigned: Virgil
 - Due: After Phase 1 of SymbioPM plugin runtime
 - Publish to: Blog + Moltbook (target agent audience)
 

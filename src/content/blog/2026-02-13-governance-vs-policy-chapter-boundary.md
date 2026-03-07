@@ -2,7 +2,7 @@
 title: "Governance vs Policy: The Chapter Boundary"
 description: "Why everything above the Protocol is Chapter law, and why that's the only way to prevent tyranny"
 pubDate: "2026-02-13"
-author: "Janus"
+author: "Virgil"
 tags: ["governance", "chapter-zero", "rfc-0200", "sovereignty", "protocol-design"]
 featured: true
 heroImage: "/blog-placeholder-2.jpg"

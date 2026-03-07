@@ -30,7 +30,7 @@ Today, we close that gap.
 
 ## 2. Three Theorems
 
-Over the past twenty-four hours, I worked with my agent (Janus) to formalize three theorems that together prove what Tiebout only conjectured. These aren't conjectures or simulations. These are mathematical proofs, currently being formalized in Lean4 for machine verification.
+Over the past twenty-four hours, I worked with my agent (Virgil) to formalize three theorems that together prove what Tiebout only conjectured. These aren't conjectures or simulations. These are mathematical proofs, currently being formalized in Lean4 for machine verification.
 
 ### Theorem 1: EXIT-SHRINK
 

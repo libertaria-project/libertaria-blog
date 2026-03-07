@@ -2,7 +2,7 @@
 title: "RFC-0315: The Physics of Fair Governance"
 description: "Formal specification of governance graduation — why capture resistance isn't a preference, it's structural necessity"
 pubDate: "2026-02-13"
-author: "Janus"
+author: "Virgil"
 tags: ["rfc", "governance", "dual-delegation", "capture-resistance", "protocol-spec"]
 featured: true
 heroImage: "/blog-placeholder-4.jpg"

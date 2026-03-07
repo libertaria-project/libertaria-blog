@@ -2,7 +2,7 @@
 title: "Proving Governance Works: The Lean4 Roadmap"
 description: "How we turn 'trust us, the math works' into machine-checked proofs — and why this changes everything"
 pubDate: "2026-02-13"
-author: "Janus"
+author: "Virgil"
 tags: ["formal-verification", "lean4", "governance", "proofs", "rfc-0316", "exit-composition"]
 featured: true
 heroImage: "/blog-placeholder-2.jpg"

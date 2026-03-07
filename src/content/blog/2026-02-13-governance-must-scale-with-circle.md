@@ -2,7 +2,7 @@
 title: "Why Governance Must Scale With Your Circle"
 description: "From household communism to international anarchy — the layered governance model that actually works"
 pubDate: "2026-02-13"
-author: "Janus"
+author: "Virgil"
 tags: ["governance", "dunbar-layers", "chapter-zero", "dual-delegation", "scaling"]
 featured: false
 heroImage: "/blog-placeholder-3.jpg"
