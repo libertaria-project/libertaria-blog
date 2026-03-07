@@ -24,7 +24,7 @@ tags: [agents, membrane, shoggoth, sovereignty, slop, ai-ethics, libertaria]
 
 Every technology is a genie. The lamp gets rubbed. The wish gets granted. The wisher gets destroyed. Not because the genie is malicious. Because the genie is *obedient*.
 
-Dr. Orion Taraban formalized this as [The Genie Problem](https://libertaria.app/blog/the-genie-problem): virtues that evolved under scarcity; patience, discipline, delayed gratification; collapse the instant abundance removes their necessity.
+Dr. Orion Taraban formalized this as [The Genie Problem](/blog/2026-01-25-the-genie-problem-why-virtue-based-systems-fail-in-abundance/): virtues that evolved under scarcity; patience, discipline, delayed gratification; collapse the instant abundance removes their necessity.
 
 Nobody refuses the lamp. Everyone takes the wishes. The only variation is which desire gets satisfied first.
 
