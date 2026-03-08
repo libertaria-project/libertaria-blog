@@ -21,8 +21,8 @@
   --glow-red-strong: 0 0 30px rgba(255, 26, 26, 0.8), 0 0 60px rgba(255, 0, 64, 0.5);
   
   /* Typography */
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Iosevka', 'JetBrains Mono', monospace;
+  --font-sans: 'Literata', Georgia, serif;
   
   /* Spacing Scale (8px base) */
   --space-1: 0.25rem;   /* 4px */
