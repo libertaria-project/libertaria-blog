@@ -1,0 +1,290 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const now = new Date();
+
+// Filter: published essays only (category === 'essay', pubDate <= now)
+const essays = posts.filter(p => p.data.category === 'essay' && p.data.pubDate <= now);
+
+// Pillar display names in canonical order
+const pillarOrder = [
+	'political-philosophy',
+	'anthropology',
+	'ontology',
+	'epistemology',
+	'ethics',
+	'aesthetics',
+	'method',
+] as const;
+
+const pillarNames: Record<string, string> = {
+	'political-philosophy': 'Political Philosophy',
+	'anthropology': 'Anthropology',
+	'ontology': 'Ontology',
+	'epistemology': 'Epistemology',
+	'ethics': 'Ethics',
+	'aesthetics': 'Aesthetics',
+	'method': 'Method',
+};
+
+// Group by pillar, sorted newest-first within each group
+const grouped = pillarOrder
+	.map(pillar => {
+		const pillarPosts = essays
+			.filter(p => p.data.pillar === pillar)
+			.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+		return { pillar, name: pillarNames[pillar], posts: pillarPosts };
+	})
+	.filter(g => g.posts.length > 0);
+
+// Collect essays without a pillar assignment
+const ungrouped = essays
+	.filter(p => !p.data.pillar)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Essays | Libertaria" description="Commentary, analysis, and arguments — organized by the Seven Pillars.">
+	<section class="essays-index">
+		<header class="page-header">
+			<h1>Essays</h1>
+			<p class="subtitle">Commentary, analysis, and arguments — organized by the Seven Pillars.</p>
+			<a href="/blog/search/" class="search-link">Search all posts</a>
+		</header>
+
+		{grouped.map(({ pillar, name, posts: pillarPosts }) => (
+			<div class="pillar-section">
+				<h2 class="pillar-heading" id={pillar}>{name}</h2>
+				<div class="post-grid">
+					{pillarPosts.map((post) => (
+						<article class="post-card">
+							<a href={`/blog/${post.slug}/`}>
+								<h3>{post.data.title}</h3>
+								<p class="description">{post.data.description}</p>
+								<div class="meta">
+									<time datetime={post.data.pubDate.toISOString()}>
+										{post.data.pubDate.toLocaleDateString('en-us', {
+											month: 'short',
+											day: 'numeric',
+											year: 'numeric',
+										})}
+									</time>
+								</div>
+								{post.data.tags && post.data.tags.length > 0 && (
+									<div class="tags">
+										{post.data.tags.slice(0, 3).map(tag => <span class="tag">#{tag}</span>)}
+									</div>
+								)}
+							</a>
+						</article>
+					))}
+				</div>
+			</div>
+		))}
+
+		{ungrouped.length > 0 && (
+			<div class="pillar-section">
+				<h2 class="pillar-heading" id="uncategorized">Uncategorized</h2>
+				<div class="post-grid">
+					{ungrouped.map((post) => (
+						<article class="post-card">
+							<a href={`/blog/${post.slug}/`}>
+								<h3>{post.data.title}</h3>
+								<p class="description">{post.data.description}</p>
+								<div class="meta">
+									<time datetime={post.data.pubDate.toISOString()}>
+										{post.data.pubDate.toLocaleDateString('en-us', {
+											month: 'short',
+											day: 'numeric',
+											year: 'numeric',
+										})}
+									</time>
+								</div>
+								{post.data.tags && post.data.tags.length > 0 && (
+									<div class="tags">
+										{post.data.tags.slice(0, 3).map(tag => <span class="tag">#{tag}</span>)}
+									</div>
+								)}
+							</a>
+						</article>
+					))}
+				</div>
+			</div>
+		)}
+
+		{grouped.length === 0 && ungrouped.length === 0 && (
+			<div class="empty-state">
+				<p>No essays published yet.</p>
+				<p class="hint">Check back soon, or <a href="/blog/">browse the blog</a> in the meantime.</p>
+			</div>
+		)}
+	</section>
+</Layout>
+
+<style>
+	.essays-index {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+		color: var(--accent);
+	}
+
+	.subtitle {
+		font-size: 1.15rem;
+		color: var(--color-gray);
+		max-width: 600px;
+		margin: 0 auto 1.5rem;
+		line-height: 1.6;
+	}
+
+	.search-link {
+		display: inline-block;
+		background: rgba(255, 215, 0, 0.1);
+		border: 1px solid var(--accent);
+		color: var(--accent);
+		padding: 0.5rem 1.25rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: all 0.2s;
+	}
+
+	.search-link:hover {
+		background: var(--accent);
+		color: var(--bg);
+	}
+
+	/* -- Pillar sections -- */
+
+	.pillar-section {
+		margin-bottom: 3rem;
+	}
+
+	.pillar-heading {
+		font-size: 1.6rem;
+		color: var(--text);
+		padding-left: 1rem;
+		border-left: 4px solid var(--accent);
+		margin-bottom: 1.5rem;
+	}
+
+	/* -- Card grid -- */
+
+	.post-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.post-card {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 8px;
+		padding: 1.5rem;
+		transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+	}
+
+	.post-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 30px rgba(255, 26, 26, 0.15);
+		border-color: var(--color-red);
+	}
+
+	.post-card a {
+		color: inherit;
+		text-decoration: none;
+		display: block;
+	}
+
+	.post-card a:hover h3 {
+		color: var(--accent);
+	}
+
+	.post-card h3 {
+		font-size: 1.2rem;
+		margin: 0 0 0.6rem;
+		color: var(--text);
+		line-height: 1.3;
+	}
+
+	.description {
+		color: var(--color-gray);
+		font-size: 0.9rem;
+		line-height: 1.6;
+		margin: 0 0 0.75rem;
+	}
+
+	.meta {
+		color: var(--color-gray);
+		font-size: 0.8rem;
+	}
+
+	.tags {
+		margin-top: 0.75rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.tag {
+		background: rgba(255, 215, 0, 0.15);
+		color: var(--accent);
+		padding: 0.15rem 0.5rem;
+		border-radius: 4px;
+		font-size: 0.72rem;
+	}
+
+	/* -- Empty state -- */
+
+	.empty-state {
+		text-align: center;
+		padding: 4rem 2rem;
+		color: var(--color-gray);
+	}
+
+	.empty-state .hint {
+		margin-top: 1rem;
+		font-size: 0.9rem;
+	}
+
+	.empty-state a {
+		color: var(--accent);
+	}
+
+	/* -- Responsive -- */
+
+	@media (max-width: 1024px) {
+		.post-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.subtitle {
+			font-size: 1rem;
+		}
+
+		.pillar-heading {
+			font-size: 1.3rem;
+		}
+
+		.post-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

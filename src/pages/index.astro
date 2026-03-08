@@ -4,17 +4,17 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const now = new Date();
-// Filter: Only show published articles (pubDate <= now)
 const publishedPosts = posts.filter(p => p.data.pubDate <= now);
 publishedPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const essays = publishedPosts;
 
-const latestPosts = publishedPosts.slice(0, 10);
-const featured = latestPosts[0];
-const regular = latestPosts.slice(1, 10);
+const latestEssays = essays.slice(0, 10);
+const featured = latestEssays[0];
+const regular = latestEssays.slice(1, 10);
 
-// Build tag cloud from ALL published posts, sorted by frequency
+// Build tag cloud from published posts, sorted by frequency
 const tagCounts = new Map();
-publishedPosts.forEach(p => {
+essays.forEach(p => {
 	(p.data.tags || []).forEach(tag => {
 		const normalized = tag.replace(/^["']|["']$/g, '').toLowerCase();
 		tagCounts.set(normalized, (tagCounts.get(normalized) || 0) + 1);
@@ -39,13 +39,12 @@ const topTags = [...tagCounts.entries()]
 				<span>Libertaria</span>
 			</a>
 			<ul class="nav-links">
-				<li><a href="#home">Home</a></li>
-				<li><a href="/why-you-wont-join/">Why You Won't Join</a></li>
-				<li><a href="#stack">Stack</a></li>
-				<li><a href="https://docs.libertaria.dev/" target="_blank">Docs</a></li>
+				<li><a href="/school/">The School</a></li>
+				<li><a href="/canon/">Canon</a></li>
+				<li><a href="/essays/">Essays</a></li>
 				<li><a href="/stories/">Stories</a></li>
-				<li><a href="#blog">Blog</a></li>
-				<li><a href="https://git.libertaria.dev/libertaria/libertaria-stack" target="_blank">Git</a></li>
+				<li><a href="/glossary/">Glossary</a></li>
+				<li><a href="#stack">Stack</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -54,17 +53,18 @@ const topTags = [...tagCounts.entries()]
 	<section id="home" class="hero">
 		<canvas id="particles-canvas"></canvas>
 		<div class="hero-content">
-			<h1 class="hero-title">🜏 Libertaria</h1>
-			<p class="hero-subtitle">Sovereign. Kinetic. Anti-Fragile.</p>
+			<h1 class="hero-title">The Exitarian School</h1>
+			<p class="hero-subtitle">Exit is the primary mechanism of freedom.</p>
 			<p class="hero-description">
-				Building the L0-L5 protocol stack for humans who want actual sovereignty — and AI that serves them, not the other way around. 
-				<strong>No tokens. No clouds.</strong> Governance by only one law: 
+				Systems are disciplined not by voice, but by the credible threat of departure.
+				We build the L0-L5 protocol stack for humans who want actual sovereignty — and AI that serves them, not the other way around.
+				<strong>No tokens. No clouds.</strong> Governance by only one law:
 				<strong>The right to be left alone — the right to exit.</strong>
 			</p>
 			<div class="hero-cta">
-				<a href="#blog" class="btn btn-primary">Read the Blog</a>
-				<a href="https://docs.libertaria.dev/" class="btn btn-secondary" target="_blank">Documentation</a>
-				<a href="https://git.libertaria.dev/libertaria/libertaria-stack" class="btn btn-secondary" target="_blank">Git</a>
+				<a href="/school/" class="btn btn-primary">Explore the Seven Pillars</a>
+				<a href="/canon/" class="btn btn-secondary">Read the Canon</a>
+				<a href="/school/paths/" class="btn btn-secondary">Reading Paths</a>
 			</div>
 			
 			<div class="stats-grid reveal">
@@ -225,33 +225,6 @@ const topTags = [...tagCounts.entries()]
 			<article class="blog-card featured reveal" style="margin-top: 1.5rem;">
 				<div class="blog-card-image">
 					<svg class="blog-card-image-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-					</svg>
-				</div>
-				<div class="blog-card-content" style="text-align: center;">
-					<div class="blog-card-date">New — March 7, 2026</div>
-					<h3 class="blog-card-title">
-						<a href="/blog/2026-03-07-membrane-agent-last-line-of-defense/">The Membrane Agent: Your Last Line of Defense</a>
-					</h3>
-					<p class="blog-card-excerpt" style="max-width: 640px; margin-left: auto; margin-right: auto;">
-						Every AI assistant on your phone is a double agent. The Membrane Agent is the sovereign alternative — local inference, trust-graph filtering, and an architecture where the lamp is finally yours.
-					</p>
-					<div class="blog-card-tags" style="justify-content: center; margin-bottom: 1rem;">
-						<span class="blog-card-tag">#ai</span>
-						<span class="blog-card-tag">#membrane-agent</span>
-						<span class="blog-card-tag">#protocol-design</span>
-						<span class="blog-card-tag">#sovereignty</span>
-					</div>
-					<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-						<a href="/blog/2026-03-07-membrane-agent-last-line-of-defense/" class="btn btn-primary">Read the Article</a>
-						<a href="/stories/ritter/" class="btn btn-secondary">Read the Story: Ritter</a>
-					</div>
-				</div>
-			</article>
-
-			<article class="blog-card featured reveal" style="margin-top: 1.5rem;">
-				<div class="blog-card-image">
-					<svg class="blog-card-image-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 						<circle cx="12" cy="12" r="10"/>
 						<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
 						<path d="M2 12h20"/>
@@ -282,12 +255,12 @@ const topTags = [...tagCounts.entries()]
 	<!-- Blog Section - DYNAMIC POSTS -->
 	<section id="blog" class="section blog-section">
 		<div class="blog-container">
-			<h2 class="section-title reveal">Latest Posts</h2>
+			<h2 class="section-title reveal">Latest Essays</h2>
 			
 			<div class="blog-controls reveal">
 				<form class="search-box" action="/blog/search/" method="get">
 					<span class="search-icon">🔍</span>
-					<input type="text" name="q" id="blog-search" placeholder={`Search all ${publishedPosts.length} articles...`}>
+					<input type="text" name="q" id="blog-search" placeholder={`Search all ${essays.length} articles...`}>
 					<button type="submit" class="search-btn">Search</button>
 				</form>
 				<div class="tag-filters">
@@ -359,7 +332,7 @@ const topTags = [...tagCounts.entries()]
 			</div>
 			
 			<div style="text-align: center; margin-top: 3rem;">
-				<a href="/blog/" class="btn btn-secondary">View All Posts →</a>
+				<a href="/essays/" class="btn btn-secondary">View All Essays →</a>
 			</div>
 		</div>
 	</section>
@@ -405,10 +378,11 @@ const topTags = [...tagCounts.entries()]
 		<div class="footer-container">
 			<div class="footer-logo">🜏 Libertaria</div>
 			<div class="footer-links">
-				<a href="/">Home</a>
-				<a href="#stack">Stack</a>
-				<a href="/blog/">Blog</a>
-				<a href="https://git.libertaria.dev/libertaria/libertaria-stack" target="_blank">GitHub</a>
+				<a href="/school/">The School</a>
+				<a href="/canon/">Canon</a>
+				<a href="/essays/">Essays</a>
+				<a href="/glossary/">Glossary</a>
+				<a href="https://git.libertaria.dev/libertaria/libertaria-stack" target="_blank">Git</a>
 			</div>
 			<div class="footer-license">
 				<a href="/legal/LICENSE_UNBOUND.html" rel="license">

@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const now = new Date();
-// Filter: Only show published articles (pubDate <= now)
 const publishedPosts = posts.filter(p => p.data.pubDate <= now);
 publishedPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 

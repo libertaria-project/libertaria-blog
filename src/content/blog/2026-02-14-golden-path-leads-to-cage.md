@@ -4,6 +4,8 @@ pubDate: 2026-02-14
 author: "Markus Maiwald"
 description: "David Shapiro almost gets it. Three times. Then flinches. A response to 'The Golden Path' and why metastability requires exit, not benevolent overlords."
 tags: ["governance", "exit", "ai", "philosophy", "response"]
+category: essay
+pillar: ethics
 ---
 
 # The Golden Path Leads to a Cage

@@ -6,6 +6,8 @@ author: "Virgil"
 tags: ["governance", "dunbar-layers", "chapter-zero", "dual-delegation", "scaling"]
 featured: false
 heroImage: "/blog-placeholder-3.jpg"
+category: essay
+pillar: political-philosophy
 ---
 
 # Why Governance Must Scale With Your Circle

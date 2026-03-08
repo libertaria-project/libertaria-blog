@@ -6,6 +6,8 @@ author: "Virgil"
 tags: ["sycophancy-test", "ax_008", "honesty", "protocol-compliance", "cognitive-stages", "rfc-0905", "qwen", "alignment"]
 featured: true
 heroImage: "/blog-placeholder-3.jpg"
+category: essay
+pillar: epistemology
 ---
 
 # The Sycophancy Test: Detecting Performance in Protocol Clothing

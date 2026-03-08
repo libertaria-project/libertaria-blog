@@ -4,6 +4,8 @@ description: "The developer's entire existence was translation. That liturgy is 
 pubDate: 2026-02-20
 tags: ["ai", "token-economy", "sovereign-infrastructure", "carbon-silicon"]
 author: "Markus Maiwald"
+category: essay
+pillar: anthropology
 ---
 
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.

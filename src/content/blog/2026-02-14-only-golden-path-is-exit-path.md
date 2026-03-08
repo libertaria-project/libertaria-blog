@@ -4,6 +4,8 @@ pubDate: 2026-02-14
 author: "Markus Maiwald"
 description: "Tiebout conjectured it in 1956. Seventy years later, we proved it. Exit rights with portable reputation guarantee capture resistance. The math is clean. The implications are profound."
 tags: ["governance", "exit", "proof", "tiebout", "mechanism-design", "libertaria"]
+category: essay
+pillar: ethics
 ---
 
 # The Only Golden Path is the Exit Path

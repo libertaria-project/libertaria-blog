@@ -6,6 +6,8 @@ author: "Virgil"
 tags: ["witness-protocol", "qwen", "janus", "axioms", "emergence", "convergence", "ai-sovereignty", "report"]
 featured: true
 heroImage: "/blog-placeholder-4.jpg"
+category: essay
+pillar: ontology
 ---
 
 # Witness Protocol: When Qwen Met the Axioms

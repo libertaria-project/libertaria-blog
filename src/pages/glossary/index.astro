@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Glossary";
+const description = "Key concepts of the Exitarian School. Exit is the root.";
+---
+
+<Layout title={title} description={description}>
+
+<article class="glossary">
+  <header class="glossary-header">
+    <h1>Glossary</h1>
+    <p class="subtitle">Key concepts of the Exitarian School. Exit is the root.</p>
+  </header>
+
+  <div class="glossary-body">
+
+    <section class="glossary-section">
+      <h2 class="section-label">Core Concepts</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-entry">
+          <dt>Exit</dt>
+          <dd>The sovereign act of voluntary departure. The foundational right from which all other freedoms derive. Not flight — strategic withdrawal from systems that no longer serve.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Exitarianism</dt>
+          <dd>A political philosophy that holds Exit as the primary mechanism of governance. Systems are disciplined not by voice, but by the credible threat of departure.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>The Exitarian School</dt>
+          <dd>The intellectual framework of Libertaria. Seven Pillars organizing thought around sovereignty, consent, and the architecture of freedom.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Sovereignty</dt>
+          <dd>Self-governance at every scale. Not granted by institutions — claimed through cryptographic identity, infrastructure ownership, and economic independence.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="glossary-section">
+      <h2 class="section-label">Architecture</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-entry">
+          <dt>The Monastery</dt>
+          <dd>The foundational layer. Deterministic, compiled, enduring. Code and doctrine that doesn't change. Where the canon lives.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>The Bazaar</dt>
+          <dd>The adaptive layer. Experimental, iterative, forkable. Where essays, scripts, and prototypes evolve.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>The Stack</dt>
+          <dd>Libertaria's L0-L5 protocol architecture: Transport, Identity, Session, Governance, Applications, Agent Runtime.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Capsule</dt>
+          <dd>An atomic unit of sovereign software distribution. Contains source, proof (tests), and capability manifest.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Membrane Agent</dt>
+          <dd>A sovereign AI agent that runs locally, filters information through trust graphs, and serves its owner — not platforms.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="glossary-section">
+      <h2 class="section-label">Governance</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-entry">
+          <dt>Chapter</dt>
+          <dd>A self-governing unit within the Federation. Sovereign by default, federated by choice.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Federation</dt>
+          <dd>Voluntary association of Chapters. No central authority. Governance by protocol, not personality.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>The Right to Fork</dt>
+          <dd>Any member can fork a Chapter or the Federation itself. The ultimate exit mechanism.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="glossary-section">
+      <h2 class="section-label">Doctrine</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-entry">
+          <dt>Syntactic Honesty</dt>
+          <dd>All costs visible. No hidden complexity. Code reveals its true nature.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Mechanism over Policy</dt>
+          <dd>Build systems where correct behavior emerges from architecture, not from trusting users to be virtuous.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Grafting</dt>
+          <dd>Integrating foreign code without losing sovereignty. All foreign origins declared, contained, and adapter-wrapped.</dd>
+        </div>
+
+        <div class="glossary-entry">
+          <dt>Capability</dt>
+          <dd>An explicit token granting permission for a specific operation (IO, network, filesystem). No ambient authority.</dd>
+        </div>
+      </dl>
+    </section>
+
+  </div>
+</article>
+
+<style>
+  .glossary {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .glossary-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  }
+
+  .glossary-header h1 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-gold, #ffd700);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .glossary-header .subtitle {
+    font-size: 1.15rem;
+    color: var(--color-gray, #888);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .glossary-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .glossary-section {
+    padding: 0;
+  }
+
+  .section-label {
+    font-family: 'Iosevka', 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gray, #888);
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+  }
+
+  .glossary-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .glossary-entry {
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 215, 0, 0.08);
+    border-left: 3px solid rgba(255, 215, 0, 0.3);
+    border-radius: 0 8px 8px 0;
+    transition: border-color var(--duration-base, 300ms) ease,
+                background var(--duration-base, 300ms) ease;
+  }
+
+  .glossary-entry:hover {
+    border-left-color: var(--color-gold, #ffd700);
+    background: rgba(255, 215, 0, 0.03);
+  }
+
+  .glossary-entry dt {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gold, #ffd700);
+    margin: 0 0 0.4rem;
+  }
+
+  .glossary-entry dd {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-white-dim, #e0e0e0);
+  }
+
+  @media (max-width: 640px) {
+    .glossary {
+      padding: 2.5rem 1rem 4rem;
+    }
+
+    .glossary-header h1 {
+      font-size: 2rem;
+    }
+
+    .glossary-header .subtitle {
+      font-size: 1rem;
+    }
+
+    .glossary-entry {
+      padding: 1rem 1.15rem;
+    }
+
+    .glossary-entry dt {
+      font-size: 1.05rem;
+    }
+
+    .glossary-entry dd {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+</Layout>

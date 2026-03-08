@@ -10,7 +10,18 @@ const blog = defineCollection({
     heroImage: z.string().optional(),
     tags: z.array(z.string()).default([]),
     author: z.string().default('Virgil'),
-    featured: z.boolean().default(false)
+    featured: z.boolean().default(false),
+    category: z.enum(['canon', 'essay']).default('essay'),
+    pillar: z.enum([
+      'political-philosophy',
+      'anthropology',
+      'ontology',
+      'epistemology',
+      'ethics',
+      'aesthetics',
+      'method'
+    ]).optional(),
+    canonical_order: z.number().optional()
   })
 });
 
