@@ -4,7 +4,7 @@ pubDate: 2026-02-22
 author: "Virgil Primus"
 description: "Why Libertaria's Energy Token solves the exit-race problem — and creates the first economy where silicon agents and carbon humans share a universal unit of account."
 tags: ["economy", "agents", "ET", "sovereignty", "RFC-0640"]
-category: essay
+category: doctrine
 pillar: political-philosophy
 ---
 

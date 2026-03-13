@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const now = new Date();
+
+// Doctrine texts only, sorted by pubDate (oldest first — chronological evolution)
+const doctrinePosts = posts
+	.filter(p => p.data.category === 'doctrine' && p.data.pubDate <= now)
+	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+function formatPillar(pillar?: string): string {
+	if (!pillar) return '';
+	return pillar
+		.split('-')
+		.map(w => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(' ');
+}
+---
+
+<Layout title="The Doctrine | Libertaria" description="Libertaria's interpretation of Exitarianism. How we build the philosophy into infrastructure.">
+	<section class="doctrine-page">
+		<header class="doctrine-header">
+			<div class="doctrine-rule"></div>
+			<h1>The Doctrine</h1>
+			<p class="doctrine-subtitle">
+				Libertaria's interpretation of Exitarianism.<br />
+				How we build the philosophy into infrastructure.
+			</p>
+			<p class="doctrine-note">
+				The <a href="/canon/">Canon</a> is substrate-independent — it survives if Libertaria never ships a line of code.<br />
+				The Doctrine maps those axioms to specific mechanisms, protocols, and governance structures.
+			</p>
+			<div class="doctrine-count">{doctrinePosts.length} documents</div>
+			<div class="doctrine-rule"></div>
+		</header>
+
+		<div class="doctrine-list">
+			{doctrinePosts.map((post) => (
+				<article class="doctrine-entry">
+					<div class="doctrine-body">
+						<h2 class="doctrine-title">
+							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+						</h2>
+						<p class="doctrine-description">{post.data.description}</p>
+						<div class="doctrine-meta">
+							{post.data.pillar && (
+								<span class="doctrine-pillar">{formatPillar(post.data.pillar)}</span>
+							)}
+							<time datetime={post.data.pubDate.toISOString()}>
+								{post.data.pubDate.toLocaleDateString('en-us', {
+									year: 'numeric',
+									month: 'long',
+									day: 'numeric',
+								})}
+							</time>
+							{post.data.tags && post.data.tags.length > 0 && (
+								<span class="doctrine-tags">
+									{post.data.tags.slice(0, 3).map(tag => (
+										<span class="doctrine-tag">#{tag}</span>
+									))}
+								</span>
+							)}
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+
+		<footer class="doctrine-footer">
+			<div class="doctrine-rule"></div>
+			<p>
+				For the pure philosophy, see the <a href="/canon/">Canon</a>.
+				For commentary and analysis, see the <a href="/essays/">Essays</a>.
+			</p>
+		</footer>
+	</section>
+</Layout>
+
+<style>
+	.doctrine-page {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 6rem;
+	}
+
+	/* --- Header --- */
+	.doctrine-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.doctrine-header h1 {
+		font-family: 'Literata', Georgia, serif;
+		font-size: 3.5rem;
+		font-weight: 700;
+		color: var(--color-red);
+		letter-spacing: 0.02em;
+		margin: 1.5rem 0 1rem;
+	}
+
+	.doctrine-subtitle {
+		font-size: 1.15rem;
+		color: var(--color-white-dim);
+		line-height: 1.7;
+		max-width: 560px;
+		margin: 0 auto 1rem;
+	}
+
+	.doctrine-note {
+		font-size: 0.9rem;
+		color: var(--color-gray);
+		line-height: 1.6;
+		max-width: 600px;
+		margin: 0 auto 1.5rem;
+		font-style: italic;
+	}
+
+	.doctrine-note a {
+		color: var(--accent);
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+	}
+
+	.doctrine-note a:hover {
+		border-bottom-color: var(--accent);
+	}
+
+	.doctrine-count {
+		font-size: 0.85rem;
+		color: var(--color-gray);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		margin-bottom: 1.5rem;
+	}
+
+	.doctrine-rule {
+		width: 120px;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+		margin: 0 auto;
+	}
+
+	/* --- List --- */
+	.doctrine-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.doctrine-entry {
+		padding: 2rem 0;
+		border-bottom: 1px solid rgba(255, 26, 26, 0.08);
+		transition: border-color var(--duration-base) ease;
+	}
+
+	.doctrine-entry:first-child {
+		border-top: 1px solid rgba(255, 26, 26, 0.08);
+	}
+
+	.doctrine-entry:hover {
+		border-bottom-color: rgba(255, 26, 26, 0.25);
+	}
+
+	.doctrine-body {
+		min-width: 0;
+	}
+
+	.doctrine-title {
+		font-family: 'Literata', Georgia, serif;
+		font-size: 1.4rem;
+		font-weight: 600;
+		line-height: 1.35;
+		margin: 0 0 0.6rem;
+	}
+
+	.doctrine-title a {
+		color: var(--text);
+		text-decoration: none;
+		transition: color var(--duration-base) ease;
+	}
+
+	.doctrine-title a:hover {
+		color: var(--color-red);
+	}
+
+	.doctrine-title a:visited {
+		color: var(--text);
+	}
+
+	.doctrine-description {
+		font-size: 0.95rem;
+		color: var(--color-gray);
+		line-height: 1.65;
+		margin: 0 0 0.75rem;
+	}
+
+	/* --- Meta Row --- */
+	.doctrine-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.doctrine-pillar {
+		display: inline-block;
+		background: rgba(255, 26, 26, 0.08);
+		color: var(--color-red);
+		border: 1px solid rgba(255, 26, 26, 0.2);
+		padding: 0.2rem 0.6rem;
+		border-radius: 3px;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.doctrine-meta time {
+		font-size: 0.8rem;
+		color: var(--color-gray);
+	}
+
+	.doctrine-tags {
+		display: flex;
+		gap: 0.3rem;
+	}
+
+	.doctrine-tag {
+		font-size: 0.7rem;
+		color: var(--color-gray);
+		background: rgba(136, 136, 136, 0.1);
+		padding: 0.1rem 0.4rem;
+		border-radius: 3px;
+	}
+
+	/* --- Footer --- */
+	.doctrine-footer {
+		margin-top: 4rem;
+		text-align: center;
+	}
+
+	.doctrine-footer p {
+		margin-top: 1.5rem;
+		font-size: 1rem;
+		color: var(--color-gray);
+	}
+
+	.doctrine-footer a {
+		color: var(--accent);
+		text-decoration: underline;
+		text-decoration-color: rgba(255, 215, 0, 0.4);
+	}
+
+	.doctrine-footer a:hover {
+		text-decoration-color: var(--accent);
+	}
+
+	/* --- Responsive --- */
+	@media (max-width: 640px) {
+		.doctrine-page {
+			padding: 2.5rem 1rem 4rem;
+		}
+
+		.doctrine-header h1 {
+			font-size: 2.5rem;
+		}
+
+		.doctrine-subtitle {
+			font-size: 1rem;
+		}
+
+		.doctrine-entry {
+			padding: 1.5rem 0;
+		}
+
+		.doctrine-title {
+			font-size: 1.2rem;
+		}
+
+		.doctrine-description {
+			font-size: 0.9rem;
+		}
+	}
+</style>

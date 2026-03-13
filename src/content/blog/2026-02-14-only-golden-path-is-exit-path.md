@@ -2,10 +2,11 @@
 title: "The Only Golden Path is the Exit Path: A Mathematical Proof"
 pubDate: 2026-02-14
 author: "Markus Maiwald"
-description: "Tiebout conjectured it in 1956. Seventy years later, we proved it. Exit rights with portable reputation guarantee capture resistance. The math is clean. The implications are profound."
-tags: ["governance", "exit", "proof", "tiebout", "mechanism-design", "libertaria"]
-category: essay
+description: "Tiebout conjectured it in 1956. Seventy years later, we proved it. Exit rights with portable reputation guarantee capture resistance. The mathematics validates the trajectory."
+tags: ["governance", "exit", "proof", "tiebout", "mechanism-design", "canon", "exitarianism"]
+category: canon
 pillar: ethics
+canonical_order: 5
 ---
 
 # The Only Golden Path is the Exit Path

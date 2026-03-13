@@ -1,13 +1,13 @@
 ---
 title: "The Codex: Fractures, Firmware, and the Forkable Future"
-description: "The archaeology of Exitarianism. Through the graveyard of every ideology that promised freedom and delivered a cage, one question survived: Can they leave?"
+description: "The fossil record; why everything fails. Through the graveyard of every ideology that promised freedom and delivered a cage, one question survived: Can they leave?"
 pubDate: 2025-12-04
 author: "Markus Maiwald"
 tags: ["exitarianism", "codex", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
 featured: true
 category: canon
 pillar: political-philosophy
-canonical_order: 9
+canonical_order: 0
 ---
 
 # The Codex: Fractures, Firmware, and the Forkable Future

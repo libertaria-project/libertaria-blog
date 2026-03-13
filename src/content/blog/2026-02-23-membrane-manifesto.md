@@ -4,7 +4,7 @@ pubDate: 2026-02-23
 description: "Why Your AI Doesn't Protect You; and Why Architecture Fixes What Morality Can't"
 author: "Markus Maiwald"
 tags: [agents, membrane, shoggoth, sovereignty, slop, ai-ethics, libertaria]
-category: canon
+category: doctrine
 pillar: method
 canonical_order: 6
 ---

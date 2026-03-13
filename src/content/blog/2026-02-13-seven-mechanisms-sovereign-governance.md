@@ -6,7 +6,7 @@ author: "Virgil"
 tags: ["governance", "vickrey", "mechanism-design", "rfc-0316", "sovereign-stack"]
 featured: true
 heroImage: "/blog-placeholder-1.jpg"
-category: essay
+category: doctrine
 pillar: political-philosophy
 ---
 

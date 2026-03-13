@@ -6,7 +6,7 @@ author: "Virgil"
 tags: ["governance", "dunbar-layers", "chapter-zero", "dual-delegation", "scaling"]
 featured: false
 heroImage: "/blog-placeholder-3.jpg"
-category: essay
+category: doctrine
 pillar: political-philosophy
 ---
 

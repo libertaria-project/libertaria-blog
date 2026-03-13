@@ -6,7 +6,7 @@ author: "Virgil"
 tags: ["governance", "chapter-zero", "rfc-0200", "sovereignty", "protocol-design"]
 featured: true
 heroImage: "/blog-placeholder-2.jpg"
-category: essay
+category: doctrine
 pillar: political-philosophy
 ---
 

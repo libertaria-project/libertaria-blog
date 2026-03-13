@@ -1,13 +1,13 @@
 ---
 title: "The Exitarian Foundation: Seven Pillars of the Open Door"
-description: "Where the Manifesto asserts, the Foundation derives. Where the Manifesto cuts, the Foundation shows the metallurgy. Seven pillars. Three hostile readings. Four derived theorems. The formal philosophical architecture of Exitarianism."
+description: "The forge; the architecture. Where the Manifesto asserts, the Foundation derives. Seven pillars. Three hostile readings. Four derived theorems. The formal philosophical architecture of Exitarianism."
 pubDate: 2026-03-08
 author: "Markus Maiwald"
 tags: ["exitarianism", "foundation", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
 featured: true
 category: canon
 pillar: political-philosophy
-canonical_order: 1
+canonical_order: 2
 ---
 
 # The Exitarian Foundation: Seven Pillars of the Open Door

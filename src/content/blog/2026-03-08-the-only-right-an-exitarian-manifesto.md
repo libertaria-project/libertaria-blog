@@ -1,13 +1,13 @@
 ---
 title: "The Only Right: An Exitarian Manifesto"
-description: "There is exactly one right that requires no definition, no institution, no enforcement apparatus, and no shared vocabulary. The right to be left alone. Can they leave? This is the only question that matters."
+description: "The blade; the axiom. There is exactly one right that requires no definition, no institution, no enforcement apparatus, and no shared vocabulary. The right to be left alone."
 pubDate: 2026-03-08
 author: "Markus Maiwald"
 tags: ["exitarianism", "manifesto", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
 featured: true
 category: canon
 pillar: political-philosophy
-canonical_order: 0
+canonical_order: 1
 ---
 
 # The Only Right: An Exitarian Manifesto
