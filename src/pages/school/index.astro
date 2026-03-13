@@ -159,10 +159,12 @@ const pillars = [
 
   <section class="school-footer">
     <div class="school-container">
-      <div class="footer-note">
-        <p>
-          <strong>Q3 2026:</strong> Formal pillar introductions with extended essays 
-          framing each domain. The pillars are real. The scholarship is open.
+      <div class="footer-content">
+        <p class="footer-mission">
+          Libertaria is generously supported by the <a href="https://sovereign-society.org" class="footer-link">Self-Sovereign Society Foundation</a>.
+        </p>
+        <p class="footer-belief">
+          We believe technology will make us free. We realize Exitarianism through <a href="/doctrine/">The Doctrine</a> and build it with technology at <a href="https://libertaria.dev" class="footer-link">libertaria.dev</a>.
         </p>
       </div>
     </div>
@@ -346,9 +348,33 @@ const pillars = [
   }
 
   .school-footer {
-    padding: 2rem 1.5rem 4rem;
+    padding: 3rem 1.5rem 5rem;
     border-top: 1px solid rgba(255, 215, 0, 0.1);
     text-align: center;
+  }
+
+  .footer-content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .footer-mission,
+  .footer-belief {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    margin: 0 0 1rem;
+    line-height: 1.7;
+  }
+
+  .footer-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    transition: border-color var(--duration-fast) ease;
+  }
+
+  .footer-link:hover {
+    border-color: var(--accent);
   }
 
   .footer-note {
