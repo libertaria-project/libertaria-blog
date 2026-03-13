@@ -4,6 +4,51 @@ import Layout from '../../layouts/Layout.astro';
 const title = "The Exitarian School";
 const description = "Seven pillars of inquiry. Each pillar is a lens for reading both Canon and Doctrine.";
 
+const comingEssays = [
+  {
+    pillar: "Political Philosophy",
+    hook: "Exit is not the opposite of voice. It is the price signal that makes voice honest.",
+    subtitle: "The Hirschman inversion as formal argument.",
+    audience: "Political philosophers, governance designers"
+  },
+  {
+    pillar: "Anthropology", 
+    hook: "You are not a rational agent. You are a primate with a smartphone and 400 million years of firmware. Design accordingly.",
+    subtitle: "The Monkey's Math as standalone essay.",
+    audience: "Behavioral economists, systems thinkers"
+  },
+  {
+    pillar: "Ontology",
+    hook: "Carbon sells time. Silicon spends energy. Neither is reducible to the other. Both can be imprisoned.",
+    subtitle: "The substrate question — Phase 3 of the publication strategy.",
+    audience: "AI researchers, consciousness philosophers"
+  },
+  {
+    pillar: "Epistemology",
+    hook: "A claim you cannot walk away from is not knowledge. It is a hostage situation with footnotes.",
+    subtitle: "Adversarial Epistemology as its own manifesto-weight piece.",
+    audience: "Philosophers of science, cryptographers"
+  },
+  {
+    pillar: "Ethics",
+    hook: "No obligation survives the withdrawal of the ability to leave. Not love. Not duty. Not God.",
+    subtitle: "The Four Axioms — weaponized for a standalone audience.",
+    audience: "Ethicists, theologians, political theorists"
+  },
+  {
+    pillar: "Aesthetics",
+    hook: "Obscurity is a lock. Clarity is an ethical obligation. Write so the reader can find the exits.",
+    subtitle: "Kinetic Realism as design philosophy.",
+    audience: "Designers, writers, architects"
+  },
+  {
+    pillar: "Method",
+    hook: "The Manifesto tells you what to believe. The Framework tells you what to watch. This tells you what to build.",
+    subtitle: "The Role Map from the Convergence — operational doctrine with the RFC stack.",
+    audience: "Engineers, builders, operators"
+  }
+];
+
 const pillars = [
   {
     name: "Political Philosophy",
@@ -150,6 +195,37 @@ const pillars = [
                   <li>{q}</li>
                 ))}
               </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="coming-section">
+    <div class="school-container">
+      <div class="coming-header">
+        <span class="coming-badge">Coming Q3 2026</span>
+        <h2 class="coming-title">Seven Essays. Seven Provocations.</h2>
+        <p class="coming-intro">
+          Each pillar becomes a standalone doorway. The political philosopher enters through Pillar 1. 
+          The AI researcher enters through Pillar 3. The designer enters through Pillar 6. 
+          The coder enters through Pillar 7. Seven on-ramps into one School.
+        </p>
+      </div>
+
+      <div class="coming-grid">
+        {comingEssays.map((essay, index) => (
+          <article class="coming-card">
+            <div class="coming-card-header">
+              <span class="coming-number">0{index + 1}</span>
+              <span class="coming-pillar">{essay.pillar}</span>
+            </div>
+            <blockquote class="coming-hook">"{essay.hook}"</blockquote>
+            <p class="coming-subtitle">{essay.subtitle}</p>
+            <div class="coming-audience">
+              <span class="audience-label">For:</span>
+              <span class="audience-text">{essay.audience}</span>
             </div>
           </article>
         ))}
@@ -386,6 +462,129 @@ const pillars = [
     color: var(--accent);
   }
 
+  /* --- Coming Soon Section --- */
+
+  .coming-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(180deg, rgba(255,215,0,0.02) 0%, rgba(255,215,0,0.05) 50%, rgba(255,215,0,0.02) 100%);
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  }
+
+  .coming-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .coming-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .coming-title {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+
+  .coming-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .coming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .coming-card {
+    background: linear-gradient(145deg, rgba(255,215,0,0.04) 0%, rgba(255,215,0,0.01) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color var(--duration-base) ease, box-shadow var(--duration-base) ease, transform var(--duration-base) ease;
+  }
+
+  .coming-card:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .coming-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .coming-number {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.6;
+  }
+
+  .coming-pillar {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-gray);
+  }
+
+  .coming-hook {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0 0 1rem;
+    padding: 0;
+    border: none;
+  }
+
+  .coming-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin: 0 0 1.25rem;
+  }
+
+  .coming-audience {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .audience-label {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .audience-text {
+    color: var(--color-gray);
+    font-style: italic;
+  }
+
   /* --- Responsive --- */
 
   @media (max-width: 640px) {
@@ -412,6 +611,22 @@ const pillars = [
 
     .pillar-card {
       padding: 1.5rem;
+    }
+
+    .coming-section {
+      padding: 3rem 1rem;
+    }
+
+    .coming-title {
+      font-size: 1.6rem;
+    }
+
+    .coming-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .coming-hook {
+      font-size: 1.05rem;
     }
 
     .school-hero {
