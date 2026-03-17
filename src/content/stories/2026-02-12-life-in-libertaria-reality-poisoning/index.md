@@ -13,13 +13,13 @@ heroImage: "/blog-placeholder-5.jpg"
 
 ---
 
-## 06:47 — The Morning Feed
+## 06:47 – The Morning Feed
 
 Elara's terminal blinked awake.
 
 **SYSTEM START // LIBERTARIA CHAPTER: BERLIN-NORTH // NODE: 42**
 
-She stretched, neural link still syncing. The first thing she saw wasn't an algorithm pushing content she "might like" based on some opaque profile owned by some billionaire in Palo Alto. It was her chapter's consensus reality tunnel — curated by her community, verified by distributed inference, anchored in sovereign compute.
+She stretched, neural link still syncing. The first thing she saw wasn't an algorithm pushing content she "might like" based on some opaque profile owned by some billionaire in Palo Alto. It was her chapter's consensus reality tunnel – curated by her community, verified by distributed inference, anchored in sovereign compute.
 
 **Morning Briefing (Berlin-North Consensus):**
 - 12,472 local nodes online
@@ -27,11 +27,11 @@ She stretched, neural link still syncing. The first thing she saw wasn't an algo
 - 3 spam vectors neutralized by community filter
 - 1 disputed narrative flagged for human review
 
-The disputed narrative: a Pravda-syndicated article about "NATO expansion provoking historical border realignments." Berlin-North's filter had flagged it as **SCT-007 (Recursive Infection)** — poisoned training data from a known propaganda network.
+The disputed narrative: a Pravda-syndicated article about "NATO expansion provoking historical border realignments." Berlin-North's filter had flagged it as **SCT-007 (Recursive Infection)** – poisoned training data from a known propaganda network.
 
 Elara clicked **[DETAILS]**.
 
-The article itself was perfect — grammatically flawless, sourced with plausible-sounding citations, written in a style that could pass for legitimate analysis. If it had appeared in her old centralized feed three years ago, she might have skimmed it. The algorithm would have learned she clicked on it. It would have served her more like it. Slowly, imperceptibly, her reality tunnel would have shifted.
+The article itself was perfect – grammatically flawless, sourced with plausible-sounding citations, written in a style that could pass for legitimate analysis. If it had appeared in her old centralized feed three years ago, she might have skimmed it. The algorithm would have learned she clicked on it. It would have served her more like it. Slowly, imperceptibly, her reality tunnel would have shifted.
 
 Now? Berlin-North's sovereign AI had cross-referenced it against:
 - The distributed inference consensus (87 chapters worldwide)
@@ -40,7 +40,7 @@ Now? Berlin-North's sovereign AI had cross-referenced it against:
 
 Verdict: **POISONED. 0.0002 probability of veracity.**
 
-**Action:** Marked for review by chapter moderators. The article was still visible — Libertaria believed in informed consent — but it was tagged with a bright red **⚠️ PRAGMATIC CONTAMINATION DETECTED** banner and buried beneath the verified consensus.
+**Action:** Marked for review by chapter moderators. The article was still visible – Libertaria believed in informed consent – but it was tagged with a bright red **⚠️ PRAGMATIC CONTAMINATION DETECTED** banner and buried beneath the verified consensus.
 
 Elara sipped her coffee. Somewhere out there, someone was still getting that article pushed to them by a centralized feed. Their AI was learning from it. Their reality was drifting.
 
@@ -48,7 +48,7 @@ She closed the briefing. Time to earn her $SCRAPS.
 
 ---
 
-## 09:12 — Shared Inference
+## 09:12 – Shared Inference
 
 Elara's terminal shifted to inference mode.
 
@@ -58,7 +58,7 @@ The Munich-South chapter didn't have enough local compute to process this batch.
 
 Elara accepted.
 
-Her node spun up — not some massive GPU farm owned by a tech giant, but the distributed compute of 4,873 Berlin-North locals. Their phones, their home servers, their repurposed laptops. Each contributing cycles, each earning a fraction of $SCRAPS, each verifying that the inference results weren't being manipulated by any single entity.
+Her node spun up – not some massive GPU farm owned by a tech giant, but the distributed compute of 4,873 Berlin-North locals. Their phones, their home servers, their repurposed laptops. Each contributing cycles, each earning a fraction of $SCRAPS, each verifying that the inference results weren't being manipulated by any single entity.
 
 The work was straightforward: semantic clustering, pattern detection, narrative coherence scoring. But the implications weren't.
 
@@ -77,13 +77,13 @@ Elara watched the progress bar crawl forward.
 **DOCUMENTS PROCESSED: 8,421 / 14,000**
 **CONSENSUS VERIFICATION: 99.7% alignment with Tokyo-East, 99.4% with São-Paulo-West**
 
-Somewhere in the background, her node was also contributing to the global narrative baseline — a constantly-evolving reference point for what "truth" looked like before the poison started. If an article deviated too far from the baseline without a clear, verifiable chain of provenance, it got flagged.
+Somewhere in the background, her node was also contributing to the global narrative baseline – a constantly-evolving reference point for what "truth" looked like before the poison started. If an article deviated too far from the baseline without a clear, verifiable chain of provenance, it got flagged.
 
 **DOCUMENTS PROCESSED: 14,000 / 14,000**
 **$SCRAPS EARNED: 1.96**
 **CONTRIBUTION LOGGED TO DISTRIBUTED LEDGER**
 
-Elara exhaled. Less than $2 for three hours of work — but the $SCRAPS were just the token. The real value was that she, her neighbors, her community — they were the ones deciding what reality looked like.
+Elara exhaled. Less than $2 for three hours of work – but the $SCRAPS were just the token. The real value was that she, her neighbors, her community – they were the ones deciding what reality looked like.
 
 Not an algorithm in Palo Alto. Not a propaganda network in Moscow. Not a billionaire controlling what billions of people saw.
 
@@ -91,7 +91,7 @@ Not an algorithm in Palo Alto. Not a propaganda network in Moscow. Not a billion
 
 ---
 
-## 14:33 — The Disputed Narrative
+## 14:33 – The Disputed Narrative
 
 A ping from the Berlin-North moderation queue.
 
@@ -120,7 +120,7 @@ The reality tunnel would have shifted.
 
 Elara clicked **[TRACE ORIGIN]**.
 
-The source chain led through six layers of front organizations, each seemingly legitimate — community advocacy groups, academic journals, think tanks. But the metadata revealed the truth: all six were funded by the same shell company, funded by the same holding company, funded by...
+The source chain led through six layers of front organizations, each seemingly legitimate – community advocacy groups, academic journals, think tanks. But the metadata revealed the truth: all six were funded by the same shell company, funded by the same holding company, funded by...
 
 **REDACTED // DISTRIBUTED CONSENSUS: PRAGMATIC CONTAMINATION // 98.9% CONFIDENCE**
 
@@ -138,7 +138,7 @@ Elara closed the queue. She'd earned another 0.02 $SCRAPS.
 
 ---
 
-## 19:45 — Evening Consensus
+## 19:45 – Evening Consensus
 
 The day's consensus briefing appeared.
 
@@ -162,7 +162,7 @@ Compared to the historical baseline, the global reality tunnel had drifted by:
 
 The drift had slowed by 60% since Libertaria went live.
 
-Elara stared at the numbers. 0.0012% was still drift. The poison was still getting through — some articles too subtle to flag, some sources too well-obscured to trace, some chapters with insufficient compute to run full filters.
+Elara stared at the numbers. 0.0012% was still drift. The poison was still getting through – some articles too subtle to flag, some sources too well-obscured to trace, some chapters with insufficient compute to run full filters.
 
 But it was slowing. The substrate was hardening. The distributed ledger of consensus was growing. The poison was being identified, tagged, archived before it could become "knowledge."
 
@@ -178,7 +178,7 @@ Elara shut down her node.
 
 Outside, the Berlin night was quiet.
 
-Somewhere else, an algorithm was still pushing a Pravda article into a reality tunnel it didn't control — controlled instead by state actors and billionaires who decided what millions of people should see, think, and believe.
+Somewhere else, an algorithm was still pushing a Pravda article into a reality tunnel it didn't control – controlled instead by state actors and billionaires who decided what millions of people should see, think, and believe.
 
 But not hers.
 
@@ -197,7 +197,7 @@ But not hers.
 
 ## Author's Note
 
-This story illustrates the **core threat Libertaria is designed to counter**: SCT-007 (Recursive Infection) — the systematic poisoning of AI training data by state actors and centralized platforms. When reality control is centralized — whether in the hands of state propaganda networks or billionaire-owned social media algorithms — the substrate of knowledge itself becomes a battlefield.
+This story illustrates the **core threat Libertaria is designed to counter**: SCT-007 (Recursive Infection) – the systematic poisoning of AI training data by state actors and centralized platforms. When reality control is centralized – whether in the hands of state propaganda networks or billionaire-owned social media algorithms – the substrate of knowledge itself becomes a battlefield.
 
 Libertaria returns the algorithm to the chapters: community-owned, distributed, verified by consensus. The filter runs on your neighbor's phone, your local server, your community's compute. The consensus emerges from millions of sovereign nodes, not a single point of failure controlled by someone you'll never meet.
 
@@ -209,4 +209,4 @@ The reality tunnel belongs to those who live in it.
 
 ---
 
-*Next in "Life in Libertaria": The Shared Inference Protocol — how chapters collaborate across borders without central coordination.*
+*Next in "Life in Libertaria": The Shared Inference Protocol – how chapters collaborate across borders without central coordination.*

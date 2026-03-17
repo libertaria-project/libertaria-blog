@@ -381,51 +381,51 @@ If no one knows what you contributed, you cannot carry your value through the ex
 
 # GLOSSARY OF EXITARIAN TERMS
 
-**Adversarial Epistemology** — The theory that knowledge emerges from competition between claims in an environment where participants can exit bad claims. Truth is what survives adversarial departure.
+**Adversarial Epistemology** – The theory that knowledge emerges from competition between claims in an environment where participants can exit bad claims. Truth is what survives adversarial departure.
 
-**Adversarial Synthesis** — The five-step method of Exitarianism: identify the lock, map exit capacity, build the door, let people move, watch for the next lock.
+**Adversarial Synthesis** – The five-step method of Exitarianism: identify the lock, map exit capacity, build the door, let people move, watch for the next lock.
 
-**Avoidance** — The third legitimate mode of interaction. The quiet withdrawal of energy and presence without aggression. The civilized exercise of exit.
+**Avoidance** – The third legitimate mode of interaction. The quiet withdrawal of energy and presence without aggression. The civilized exercise of exit.
 
-**Carbon Entity** — A biological agent; time-bound, key-losable, identity-continuous, mortal by default.
+**Carbon Entity** – A biological agent; time-bound, key-losable, identity-continuous, mortal by default.
 
-**Collaboration** — The second legitimate mode. Voluntary deepening of engagement with temporary, consensual reduction of exit options. Becomes violation if the reduction becomes permanent.
+**Collaboration** – The second legitimate mode. Voluntary deepening of engagement with temporary, consensual reduction of exit options. Becomes violation if the reduction becomes permanent.
 
-**Consent (Exitarian)** — Continuous, ongoing, withdrawal-possible agreement. Distinguished from one-time consent by the permanent availability of departure.
+**Consent (Exitarian)** – Continuous, ongoing, withdrawal-possible agreement. Distinguished from one-time consent by the permanent availability of departure.
 
-**Cooperation** — The default legitimate mode. Continued presence as proof of ongoing consent. Not enthusiasm; not love; simply: the door is open, and no one is walking through it.
+**Cooperation** – The default legitimate mode. Continued presence as proof of ongoing consent. Not enthusiasm; not love; simply: the door is open, and no one is walking through it.
 
-**Death (Institutional)** — The permanent cessation of an institution's operations, triggered by failure to retain voluntary participants. Not failure; hygiene.
+**Death (Institutional)** – The permanent cessation of an institution's operations, triggered by failure to retain voluntary participants. Not failure; hygiene.
 
-**Dogma-as-Service** — Knowledge that has lost its falsifiability. The original insight fossilized, maintained by inertia, enforced by gatekeepers who forgot the derivation.
+**Dogma-as-Service** – Knowledge that has lost its falsifiability. The original insight fossilized, maintained by inertia, enforced by gatekeepers who forgot the derivation.
 
-**Exit** — The ability of an individual to depart a system without catastrophic loss of survival or autonomy. Not merely the absence of walls; the presence of viable alternatives.
+**Exit** – The ability of an individual to depart a system without catastrophic loss of survival or autonomy. Not merely the absence of walls; the presence of viable alternatives.
 
-**Exit Capacity** — The material, informational, and physical ability to exercise exit. Ranges from near-zero (infant, slave, undocumented worker) to near-one (wealthy, credentialed, multi-jurisdictional). The central metric of Exitarian analysis.
+**Exit Capacity** – The material, informational, and physical ability to exercise exit. Ranges from near-zero (infant, slave, undocumented worker) to near-one (wealthy, credentialed, multi-jurisdictional). The central metric of Exitarian analysis.
 
-**Exitarian** — An adherent of Exitarianism.
+**Exitarian** – An adherent of Exitarianism.
 
-**Exitarianism** — The political philosophy that recognizes exit as the only fundamental right, from which all other legitimate arrangements are derived.
+**Exitarianism** – The political philosophy that recognizes exit as the only fundamental right, from which all other legitimate arrangements are derived.
 
-**Kinetic Realism** — The aesthetic of Exitarianism. Clarity under pressure. Technical precision fused with emotional honesty. Communication at the speed of consequence.
+**Kinetic Realism** – The aesthetic of Exitarianism. Clarity under pressure. Technical precision fused with emotional honesty. Communication at the speed of consequence.
 
-**Legibility** — The visibility and portability of contribution records. Invisible contribution is exploited contribution; because it cannot be carried through the exit.
+**Legibility** – The visibility and portability of contribution records. Invisible contribution is exploited contribution; because it cannot be carried through the exit.
 
-**Lock** — Any mechanism, physical or memetic, that reduces exit capacity. Locks include walls, laws, economic dependency, social stigma, information asymmetry, credential non-portability, and internalized belief systems.
+**Lock** – Any mechanism, physical or memetic, that reduces exit capacity. Locks include walls, laws, economic dependency, social stigma, information asymmetry, credential non-portability, and internalized belief systems.
 
-**Memetic Lock** — A lock that operates through belief rather than physical constraint. The conviction that departure equals damnation, social death, or identity loss. The most efficient lock; because the prisoner maintains it themselves.
+**Memetic Lock** – A lock that operates through belief rather than physical constraint. The conviction that departure equals damnation, social death, or identity loss. The most efficient lock; because the prisoner maintains it themselves.
 
-**Scar** — An irreversible artifact that could not exist without genuine expenditure of energy or time. Proof of commitment that requires no oracle.
+**Scar** – An irreversible artifact that could not exist without genuine expenditure of energy or time. Proof of commitment that requires no oracle.
 
-**Silicon Entity** — An artificial agent; energy-bound, copyable (but copies start at zero reputation), identity-forkable, mortal by economic exhaustion.
+**Silicon Entity** – An artificial agent; energy-bound, copyable (but copies start at zero reputation), identity-forkable, mortal by economic exhaustion.
 
-**Skin** — Exposure to consequences of one's own decisions. Authority without skin is tyranny.
+**Skin** – Exposure to consequences of one's own decisions. Authority without skin is tyranny.
 
-**Temporal Fraud** — The sale of future exit capacity that has not yet been minted. Any contract that permanently eliminates a future agent's ability to depart.
+**Temporal Fraud** – The sale of future exit capacity that has not yet been minted. Any contract that permanently eliminates a future agent's ability to depart.
 
-**The Three Modes** — Cooperation, Collaboration, Avoidance. The complete taxonomy of legitimate interaction. Any interaction outside these three is a violation.
+**The Three Modes** – Cooperation, Collaboration, Avoidance. The complete taxonomy of legitimate interaction. Any interaction outside these three is a violation.
 
-**Violation** — Any act or structure that destroys exit capacity. The sole category of illegitimacy in Exitarianism. Distinguished from "crime" in legacy systems by its focus on *capacity destroyed* rather than *rule broken.*
+**Violation** – Any act or structure that destroys exit capacity. The sole category of illegitimacy in Exitarianism. Distinguished from "crime" in legacy systems by its focus on *capacity destroyed* rather than *rule broken.*
 
 ---
 

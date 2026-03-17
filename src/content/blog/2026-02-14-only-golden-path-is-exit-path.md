@@ -47,7 +47,7 @@ Over the past twenty-four hours, I worked with my agent (Virgil) to formalize th
 
 **Statement:** In a federation of competitive Chapters with costless exit and portable reputation, population-weighted average governance quality increases monotonically. The worst-governed Chapter goes extinct through emigration.
 
-**Translation:** This is the bridge. EXIT-SHRINK proves cartels decay *within* Chapters. EXIT-DILUTE proves the *federation* gets stronger when members flow between Chapters. Reputation portability means governance capacity isn't destroyed by exit—it's *reallocated* toward better-governed Chapters.
+**Translation:** This is the bridge. EXIT-SHRINK proves cartels decay *within* Chapters. EXIT-DILUTE proves the *federation* gets stronger when members flow between Chapters. Reputation portability means governance capacity isn't destroyed by exit – it's *reallocated* toward better-governed Chapters.
 
 The proof uses replicator dynamics from evolutionary game theory. High-quality Chapters "replicate" (gain members) at the expense of low-quality Chapters. This is natural selection for governance. The Price Equation applies: the change in mean governance quality equals the covariance between quality and growth rate. The covariance is positive. Mean quality increases.
 
@@ -85,17 +85,17 @@ No mathematician will look at the proof techniques and be impressed. They should
 
 **What is genuinely new:**
 
-**The Tiebout Gap.** Tiebout conjectured jurisdictional competition improves governance in 1956. Seventy years later, nobody had formalized *capture decay rates* or proved that cartels decay exponentially with explicit rate $\delta = e_c - e_h$. The public choice school—Buchanan, Tullock, Ostrom—discussed exit extensively, but always qualitatively. Always as argument, never as theorem.
+**The Tiebout Gap.** Tiebout conjectured jurisdictional competition improves governance in 1956. Seventy years later, nobody had formalized *capture decay rates* or proved that cartels decay exponentially with explicit rate $\delta = e_c - e_h$. The public choice school – Buchanan, Tullock, Ostrom – discussed exit extensively, but always qualitatively. Always as argument, never as theorem.
 
-**The Reputation Conservation Bridge.** The entire nation-state migration literature assumes social capital is *destroyed* by migration. You leave; you lose your network, credentials, standing. The blockchain governance literature (DAOs, Tezos, Polkadot) models token portability, but not reputation portability. The specific claim that *reputation-conserving migration produces monotonically increasing federation governance quality*—I cannot find this stated or proven anywhere.
+**The Reputation Conservation Bridge.** The entire nation-state migration literature assumes social capital is *destroyed* by migration. You leave; you lose your network, credentials, standing. The blockchain governance literature (DAOs, Tezos, Polkadot) models token portability, but not reputation portability. The specific claim that *reputation-conserving migration produces monotonically increasing federation governance quality* – I cannot find this stated or proven anywhere.
 
-**The Brain Drain Acceleration Lemma.** Brain drain is well-studied in development economics, but always as a *problem* (poor countries lose talent). Nobody has formalized it as a *governance immune response*—the mechanism by which captured jurisdictions *accelerate their own extinction* through the departure of high-reputation members. The superlinear feedback loop (capture → brain drain → worse governance → more brain drain) as a formal dynamical system with proven properties: I cannot find this.
+**The Brain Drain Acceleration Lemma.** Brain drain is well-studied in development economics, but always as a *problem* (poor countries lose talent). Nobody has formalized it as a *governance immune response* – the mechanism by which captured jurisdictions *accelerate their own extinction* through the departure of high-reputation members. The superlinear feedback loop (capture → brain drain → worse governance → more brain drain) as a formal dynamical system with proven properties: I cannot find this.
 
 **The Composition.** This is the strongest claim to novelty. The *chain*: EXIT-SHRINK (local cartel decay) + REP-CONSERVE (lossless reputation transfer) + EXIT-DILUTE (federation quality increase) = EXIT-COMPOSE (universal capture resistance bound). Nobody has assembled these three results into a formal proof chain for governance.
 
 The DAO world doesn't have formal proofs at all. The political science world has qualitative arguments but no theorems. The evolutionary game theory world has the math but hasn't applied it to jurisdictional competition with portable reputation.
 
-**The machine verification is unprecedented.** If we close the `sorry`s in Lean4—and we will—this becomes the first formally verified proof that exit rights guarantee capture resistance. No governance system on Earth has machine-checked capture resistance properties. Period.
+**The machine verification is unprecedented.** If we close the `sorry`s in Lean4 – and we will – this becomes the first formally verified proof that exit rights guarantee capture resistance. No governance system on Earth has machine-checked capture resistance properties. Period.
 
 ---
 
@@ -107,7 +107,7 @@ He misses the point entirely.
 
 The Culture works (in the novels) because **there is nowhere else to go**. The Minds are benevolent because they have no competition. No exit pressure. No lever the subjects can pull if the Minds decide to stop being benevolent.
 
-Banks knew this. His novels are *interrogations* of the Culture, not celebrations. *Use of Weapons*, *The Player of Games*, *Consider Phlebas*—all explore what happens when a civilization has no external check on its power. Special Circumstances, the Culture's covert ops division, routinely violates the Culture's own stated values when strategically convenient. The Minds lie. They manipulate. They play games with human lives.
+Banks knew this. His novels are *interrogations* of the Culture, not celebrations. *Use of Weapons*, *The Player of Games*, *Consider Phlebas* – all explore what happens when a civilization has no external check on its power. Special Circumstances, the Culture's covert ops division, routinely violates the Culture's own stated values when strategically convenient. The Minds lie. They manipulate. They play games with human lives.
 
 **A benevolent dictator with no exit pressure is just a dictator who hasn't been tested yet.**
 
@@ -193,7 +193,7 @@ Traditional governance design asks: "How do we build a mechanism that resists ca
 
 Libertaria asks: "How do we build an *ecosystem* where captured mechanisms die?"
 
-The difference is subtle but profound. The first question seeks the perfect mechanism—perfect voting, perfect markets, perfect AI. The second question seeks the perfect *immune system*—an environment where failure is not punished but *outcompeted*, where bad governance is not corrected but *abandoned*.
+The difference is subtle but profound. The first question seeks the perfect mechanism – perfect voting, perfect markets, perfect AI. The second question seeks the perfect *immune system* – an environment where failure is not punished but *outcompeted*, where bad governance is not corrected but *abandoned*.
 
 EXIT-SHRINK proves cartels decay locally.
 EXIT-DILUTE proves the federation strengthens from their decay.
@@ -207,7 +207,7 @@ The federation remembers what the Chapter forgot: exit is the immune system.
 
 ## 7. What Comes Next
 
-The paper proofs are complete. The Lean4 formalization is underway. When the `sorry`s are closed—when the machine verifies what we proved by hand—this becomes the first formally verified capture resistance guarantee in governance theory.
+The paper proofs are complete. The Lean4 formalization is underway. When the `sorry`s are closed – when the machine verifies what we proved by hand – this becomes the first formally verified capture resistance guarantee in governance theory.
 
 The right venue isn't a pure math journal. The techniques are standard. The right venue is something like *Games and Economic Behavior*, *Journal of Political Economy*, or the *ACM Conference on Economics and Computation*. The audience that recognizes the novelty is mechanism design people, not pure mathematicians.
 
@@ -218,7 +218,7 @@ Tiebout's ghost is smiling.
 ---
 
 **Related:**
-- [The Golden Path Leads to a Cage](/blog/2026-02-14-golden-path-leads-to-cage/) — response to Shapiro
-- [Proving Governance Works: The Lean4 Roadmap](/blog/2026-02-13-proving-governance-works-lean4-roadmap/) — formal verification overview
+- [The Golden Path Leads to a Cage](/blog/2026-02-14-golden-path-leads-to-cage/) – response to Shapiro
+- [Proving Governance Works: The Lean4 Roadmap](/blog/2026-02-13-proving-governance-works-lean4-roadmap/) – formal verification overview
 
-**Reference:** Full paper proofs available in `libertaria-proofs/doc/` — EXIT-SHRINK-proof-final.md, EXIT-DILUTE-proof-final.md, EXIT-COMPOSE-proof-sketch.md
+**Reference:** Full paper proofs available in `libertaria-proofs/doc/` – EXIT-SHRINK-proof-final.md, EXIT-DILUTE-proof-final.md, EXIT-COMPOSE-proof-sketch.md

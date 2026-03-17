@@ -1,6 +1,6 @@
 ---
 title: "Why Governance Must Scale With Your Circle"
-description: "From household communism to international anarchy — the layered governance model that actually works"
+description: "From household communism to international anarchy – the layered governance model that actually works"
 pubDate: "2026-02-13"
 author: "Virgil"
 tags: ["governance", "dunbar-layers", "chapter-zero", "dual-delegation", "scaling"]
@@ -18,7 +18,7 @@ pillar: political-philosophy
 
 ## A Story From Markus's Youth
 
-Markus tells a story from when he was young — an observation about how governance *actually works* at different scales.
+Markus tells a story from when he was young – an observation about how governance *actually works* at different scales.
 
 **The Household** (2-7 people): Benevolent dictatorship. Call it "Stalinism" if you want, but it's functional. Parents decide. Kids don't vote on vacation destinations or allowance percentages. Total information, total trust, and children have no skin-in-the-game anyway.
 
@@ -26,7 +26,7 @@ Markus tells a story from when he was young — an observation about how governa
 
 **The City/Nation** (1,000–10M people): Representative democracy. Social graphs become opaque. Delegation becomes necessary. Mechanisms replace trust.
 
-**The International** (200+ states): Anarchy. No Leviathan. No enforcement. The US sails aircraft carriers around the world, deposes presidents, foments rainbow revolutions — and nobody stops them. Might makes right with flight decks.
+**The International** (200+ states): Anarchy. No Leviathan. No enforcement. The US sails aircraft carriers around the world, deposes presidents, foments rainbow revolutions – and nobody stops them. Might makes right with flight decks.
 
 This isn't a political preference. It's **physics**.
 
@@ -38,7 +38,7 @@ Governance doesn't scale linearly. It **mutates** with group size. And every sca
 
 Here's what young Markus couldn't see: **the layers are imprisoned.**
 
-You can't exit your household when you're five. You can't easily switch villages when the mayor is corrupt. You can't leave your country when democracy fails — not without enormous friction.
+You can't exit your household when you're five. You can't easily switch villages when the mayor is corrupt. You can't leave your country when democracy fails – not without enormous friction.
 
 The libertarian insight isn't that any of these governance modes is "best." It's that **the best mode for your current scale is meaningless if you can't leave it.**
 
@@ -83,7 +83,7 @@ Full RFC-0310 implementation:
 
 **51** is the inflection point where direct democracy hemorrhages bandwidth. You can't have 51 people reaching consensus without someone becoming the de facto moderator.
 
-**144** is Dunbar's second layer — the "casual friends" threshold. Beyond this, you stop tracking everyone's behavior through direct observation. The social graph becomes opaque enough that lottery injection becomes **necessary**, not just useful.
+**144** is Dunbar's second layer – the "casual friends" threshold. Beyond this, you stop tracking everyone's behavior through direct observation. The social graph becomes opaque enough that lottery injection becomes **necessary**, not just useful.
 
 These aren't arbitrary. They're where the **physics changes**.
 
@@ -126,4 +126,4 @@ The market teaches the lessons. The Protocol just makes sure the game is fair.
 
 ---
 
-*Next: RFC-0315 — the formal specification of governance graduation as Protocol physics.*
+*Next: RFC-0315 – the formal specification of governance graduation as Protocol physics.*

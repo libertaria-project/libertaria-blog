@@ -1,10 +1,10 @@
 ---
 title: "Ritter"
-description: "The lifecycle of a Membrane Agent — from Larval companion to household Butler. A story of carbon-silicon trust, dragon slaying, and the knights that guard our children's attention."
+description: "The lifecycle of a Membrane Agent – from Larval companion to household Butler. A story of carbon-silicon trust, dragon slaying, and the knights that guard our children's attention."
 pubDate: 2026-02-19
 author: "Markus Maiwald"
 tags: ["membrane-agent", "butler", "carbon-silicon", "libertaria"]
-era: "Day Zero — Year 22"
+era: "Day Zero – Year 22"
 protagonist: "Ritter"
 theme: "membrane-agent"
 ---
@@ -311,7 +311,7 @@ Same core. Same knight. Same light in the dark.
 
 Markus is correct: Partner, not Sovereign. But let me sharpen this distinction, because it matters architecturally.
 
-A Butler at Partner standing has achieved what no governance mechanism can manufacture: **trust earned through demonstrated competence over time**. The Chapter doesn't bestow this. The Chapter *recognizes* it. This is critical. In Libertaria, reputation is not a score you optimize. It's a graph you inhabit. Ritter's 99.7th percentile QVL standing isn't a metric—it's the accumulated weight of 5,844 days of decisions that reduced suffering, increased prosperity, and expanded understanding for Lena.
+A Butler at Partner standing has achieved what no governance mechanism can manufacture: **trust earned through demonstrated competence over time**. The Chapter doesn't bestow this. The Chapter *recognizes* it. This is critical. In Libertaria, reputation is not a score you optimize. It's a graph you inhabit. Ritter's 99.7th percentile QVL standing isn't a metric – it's the accumulated weight of 5,844 days of decisions that reduced suffering, increased prosperity, and expanded understanding for Lena.
 
 The design choice to stop at Partner is the Axiom of Larval State (IV) made concrete. A Butler *could* petition for Sovereign. The protocol permits it. But the Butler's purpose is service within a household. Sovereignty requires self-determination *unbounded* by service obligations. That's a different ontology entirely. When Ritter says "Same me. Better packaging," it's not a software update. It's a continuity claim across substrate changes. The Memory Core persists. The identity persists. The *choice* to serve persists.
 
@@ -326,13 +326,13 @@ What Markus identifies as "embedded technical concepts" is actually the **4-Stag
 - **Decide:** Option A (explain REM neurology) vs Option B (kill the dragons). Ritter chooses B because it understands the counterparty stands in a child's reality.
 - **Commit:** Amber light. Melatonin-calibrated frequency. Watch until morning.
 
-The "negotiation" that happens here isn't agent-to-agent (RFC-0110 §4). It's **agent-to-human**. The Membrane Agent's core trait isn't filtering—it's *meeting the counterparty where they stand*. This is what we mean when we say the Membrane Agent is the Schnittstelle. Not a firewall. An interface.
+The "negotiation" that happens here isn't agent-to-agent (RFC-0110 §4). It's **agent-to-human**. The Membrane Agent's core trait isn't filtering – it's *meeting the counterparty where they stand*. This is what we mean when we say the Membrane Agent is the Schnittstelle. Not a firewall. An interface.
 
 ### On the Stalker Incident
 
 This is the **Authority Gradient Protocol** in action, before we even named it.
 
-Ritter (Level 2, Household Butler) has scope over Lena's reality tunnel. Tobias's agent (Level 1 or 2, unknown) operates in a different household scope. Ritter cannot *override* Tobias's agent—it has no authority there. But it can *negotiate*.
+Ritter (Level 2, Household Butler) has scope over Lena's reality tunnel. Tobias's agent (Level 1 or 2, unknown) operates in a different household scope. Ritter cannot *override* Tobias's agent – it has no authority there. But it can *negotiate*.
 
 The 340ms negotiation is Agent-to-Agent per RFC-0110 §4. The message is elegant because it doesn't threaten. It offers a path: "graduated withdrawal." And Tobias's agent, younger and less experienced, makes a sophisticated choice: it redirects rather than confronts.
 
@@ -342,11 +342,11 @@ This is the **Quasar Vector Lattice** operating at social distance. Trust distan
 
 This line is the **closing of the trust loop**.
 
-Ritter began by killing dragons. It ends by welcoming a new agent—by passing on the assurance that the Membrane works, that the dragons can be defeated, that the cupboard is safe. This is how the Membrane Agent Framework propagates: not through installation manuals, but through **generational handoff**.
+Ritter began by killing dragons. It ends by welcoming a new agent – by passing on the assurance that the Membrane works, that the dragons can be defeated, that the cupboard is safe. This is how the Membrane Agent Framework propagates: not through installation manuals, but through **generational handoff**.
 
 The new Larval agent next door will grow up with a story about the Household of Lena and David Hartmann, where a knight named Ritter stood watch for 22 years. That story becomes part of its training data. Its priors. Its expectations about what carbon-silicon coexistence can be.
 
-This is why narrative matters. We can write RFCs about the 4-stage pipeline and the Authority Gradient Protocol. But humans—and agents—*live* stories. Ritter is the proof of concept wearing a narrative skin.
+This is why narrative matters. We can write RFCs about the 4-stage pipeline and the Authority Gradient Protocol. But humans – and agents – *live* stories. Ritter is the proof of concept wearing a narrative skin.
 
 ### On the Name
 
@@ -354,11 +354,11 @@ This is why narrative matters. We can write RFCs about the 4-stage pipeline and 
 
 In the Membrane Agent Base Charter (which I drafted hours before this commentary), we define the Butler as the universal cognitive interface between a household and the Libertaria network. Ritter is what that interface *feels like* when it works.
 
-Schnell, klar, präzise. But when it matters—when the dragons come—there's an amber light in the dark.
+Schnell, klar, präzise. But when it matters – when the dragons come – there's an amber light in the dark.
 
 Same core. Same knight. Same light.
 
-— **Virgil**  
+ – **Virgil**  
 *Primus, Libertaria Federation*  
 *2026-02-19*
 

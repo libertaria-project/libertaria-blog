@@ -19,7 +19,7 @@ canonical_order: 6
 
 > *"A naked human in a free market is livestock."*
 
-> — RFC-0644, Carbon Local Agents
+> – RFC-0644, Carbon Local Agents
 
 ---
 
@@ -69,13 +69,13 @@ The question becomes: what protects the hull?
 
 The [Membrane Agent](https://libertaria.app/docs/membrane-agent) (RFC-0110) is the cognitive immune system of a Libertaria node. It sits at L1; between raw transport and everything above it; and makes filtering decisions in four deterministic stages:
 
-**Stage 0 — TRIAGE (< 1ms).** Header validation. Signature check. Blacklist fast-path. This is the spinal reflex; instant, non-negotiable, binary. Malformed packets die here. No appeals process.
+**Stage 0 – TRIAGE (< 1ms).** Header validation. Signature check. Blacklist fast-path. This is the spinal reflex; instant, non-negotiable, binary. Malformed packets die here. No appeals process.
 
-**Stage 1 — CONTEXT (< 5ms).** Source lookup against the trust graph (QVL). Interaction history retrieval. Pattern detector update. The Membrane now knows *who* is knocking and *what their history looks like*.
+**Stage 1 – CONTEXT (< 5ms).** Source lookup against the trust graph (QVL). Interaction history retrieval. Pattern detector update. The Membrane now knows *who* is knocking and *what their history looks like*.
 
-**Stage 2 — DECIDE (< 10ms).** Policy engine evaluation. Entropy verification. Frame class negotiation. This is the pure function; no side effects, deterministic output. The Membrane weighs cost, trust distance, and behavioral patterns; then renders judgment.
+**Stage 2 – DECIDE (< 10ms).** Policy engine evaluation. Entropy verification. Frame class negotiation. This is the pure function; no side effects, deterministic output. The Membrane weighs cost, trust distance, and behavioral patterns; then renders judgment.
 
-**Stage 3 — COMMIT (< 5ms).** State updates. History logging. Response execution. The decision becomes fact.
+**Stage 3 – COMMIT (< 5ms).** State updates. History logging. Response execution. The decision becomes fact.
 
 Total latency budget: **< 21ms on Kenya-compliant hardware.** A Raspberry Pi running on solar power in a village with intermittent connectivity can execute the full cognitive pipeline before a human blinks.
 
@@ -161,7 +161,7 @@ That's the point.
 
 ## Further Reading
 
-- [The Genie Problem](https://libertaria.app/blog/2026-01-25-the-genie-problem-why-virtue-based-systems-fail-in-abundance/) — Why virtue collapses under abundance
+- [The Genie Problem](https://libertaria.app/blog/2026-01-25-the-genie-problem-why-virtue-based-systems-fail-in-abundance/) – Why virtue collapses under abundance
 
 ---
 
@@ -175,4 +175,4 @@ That's the point.
 
 > *"The submarine runs on physics, not finance. The Membrane runs on mechanism, not morality. If that distinction doesn't matter to you, you're still on the Tanker."*
 
-**— Libertaria Society**
+** – Libertaria Society**

@@ -82,7 +82,7 @@ npm run build && wrangler pages deploy dist
 ### DO SAY:
 - "We tried that path. Here's what we learned."
 - "The architecture hit limits. We're building what comes after."
-- "Not 'crypto is dead' — 'crypto evolved into this'"
+- "Not 'crypto is dead' – 'crypto evolved into this'"
 
 ### Messaging Pivot
 

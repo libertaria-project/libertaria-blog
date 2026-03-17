@@ -26,7 +26,7 @@ The answer, we've learned, isn't better elites. It isn't smarter voting algorith
 
 The answer is **exit**.
 
-But exit only works if there's somewhere to exit *to*. And that requires a boundary — a line in the sand between what is fixed (the physics) and what is flexible (the politics).
+But exit only works if there's somewhere to exit *to*. And that requires a boundary – a line in the sand between what is fixed (the physics) and what is flexible (the politics).
 
 In Libertaria, that boundary is the **Chapter**.
 
@@ -49,7 +49,7 @@ The Chapter says: *Here's how we run our direct democracy until then.*
 
 The Protocol is **constraint**. The Chapter is **expression**.
 
-And everything above the Chapter — the Federation, the treaties, the cross-chapter agreements — is **Chapter policy applied to Chapters**. The Federation has no enforcement mechanism. It has no police. It has no ability to compel.
+And everything above the Chapter – the Federation, the treaties, the cross-chapter agreements – is **Chapter policy applied to Chapters**. The Federation has no enforcement mechanism. It has no police. It has no ability to compel.
 
 It only has **reputation** and **network effects**.
 
@@ -69,7 +69,7 @@ When the Protocol guarantees:
 
 Because you can always say: **"I'll take my keys to Chapter Berlin-South."**
 
-The market for governance becomes competitive. Bad Chapters lose members. Good Chapters gain them. And the definition of "good" isn't dictated by any central authority — it's discovered through **trial and error in a thousand parallel experiments**.
+The market for governance becomes competitive. Bad Chapters lose members. Good Chapters gain them. And the definition of "good" isn't dictated by any central authority – it's discovered through **trial and error in a thousand parallel experiments**.
 
 ---
 
@@ -77,7 +77,7 @@ The market for governance becomes competitive. Bad Chapters lose members. Good C
 
 We're setting up **Chapter Zero** as the first real experiment.
 
-Thirteen founders. Direct consensus for the Genesis Document. No formal voting yet — just humans in a room agreeing on constitutional structure.
+Thirteen founders. Direct consensus for the Genesis Document. No formal voting yet – just humans in a room agreeing on constitutional structure.
 
 But the Genesis Document must specify:
 - **Dual-Delegation** as the eventual voting primitive (RFC-0310)
@@ -105,10 +105,10 @@ This is the **Boundary Doctrine**, and it's the anti-elite mechanism.
 
 Because elites always form where **power accumulates without accountability**. Where decisions are made by people who don't bear the costs. Where exit is blocked, reputation is trapped, and voice is the only option.
 
-Libertaria removes those accumulation points. Not by designing the perfect governance system — but by designing a system where **governance competes**.
+Libertaria removes those accumulation points. Not by designing the perfect governance system – but by designing a system where **governance competes**.
 
 The best Chapter wins. The worst Chapter empties out. And the Protocol just makes sure the game is fair.
 
 ---
 
-*Next: How governance scales with your circle — from household Stalinism to international anarchy, and why each layer needs different rules.*
+*Next: How governance scales with your circle – from household Stalinism to international anarchy, and why each layer needs different rules.*

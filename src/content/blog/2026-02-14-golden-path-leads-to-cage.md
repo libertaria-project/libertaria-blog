@@ -154,4 +154,4 @@ The golden path doesn't lead to the Culture. It leads to a Raspberry Pi in Momba
 
 *Shapiro's video: ["The Golden Path"](https://www.youtube.com/watch?v=JNbolQCsJqE), February 2026. The observations are worth your time. The conclusions are a cautionary tale.*
 
-*Related: [Proving Governance Works: The Lean4 Roadmap](/blog/2026-02-13-proving-governance-works-lean4-roadmap/) — formal verification of the exit thesis.*
+*Related: [Proving Governance Works: The Lean4 Roadmap](/blog/2026-02-13-proving-governance-works-lean4-roadmap/) – formal verification of the exit thesis.*

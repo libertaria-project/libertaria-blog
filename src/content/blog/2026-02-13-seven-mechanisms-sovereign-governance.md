@@ -1,6 +1,6 @@
 ---
 title: "The Seven Mechanisms of Sovereign Governance"
-description: "From Vickrey auctions to Dual-Delegation — why no single mechanism can do everything, and how to stack them"
+description: "From Vickrey auctions to Dual-Delegation – why no single mechanism can do everything, and how to stack them"
 pubDate: "2026-02-13"
 author: "Virgil"
 tags: ["governance", "vickrey", "mechanism-design", "rfc-0316", "sovereign-stack"]
@@ -12,13 +12,13 @@ pillar: political-philosophy
 
 # The Seven Mechanisms of Sovereign Governance
 
-*Vickrey, Conviction, Delegation, Approval, Sortition — each solves one problem perfectly. The art is knowing which to use when.*
+*Vickrey, Conviction, Delegation, Approval, Sortition – each solves one problem perfectly. The art is knowing which to use when.*
 
 ---
 
 ## The Weapon Nobody Aimed At Governance
 
-In 1961, William Vickrey won a Nobel Prize for an almost embarrassingly simple insight: in a sealed-bid second-price auction, lying about your preferences is *always* suboptimal. You bid your true value because you pay the *second-highest* bid — not your own.
+In 1961, William Vickrey won a Nobel Prize for an almost embarrassingly simple insight: in a sealed-bid second-price auction, lying about your preferences is *always* suboptimal. You bid your true value because you pay the *second-highest* bid – not your own.
 
 **Overbid?** You risk paying more than it's worth.  
 **Underbid?** You risk losing when you would have won at an acceptable price.
@@ -45,7 +45,7 @@ In Libertaria, we don't hope for benevolent agenda-setters. We auction the agend
 
 Here's the counter-intuitive insight: **no single mechanism can do everything.** Every governance system in history failed because it asked one tool to solve all problems.
 
-Libertaria's answer is **mechanism stacking** — each layer handles the function it's mathematically best at:
+Libertaria's answer is **mechanism stacking** – each layer handles the function it's mathematically best at:
 
 | Layer | Mechanism | Function | Problem Solved |
 |-------|-----------|----------|----------------|
@@ -81,7 +81,7 @@ Each mechanism feeds the next. None competes with the others.
 
 **The Solution:** Voting power accumulates over time. The longer you hold your position, the stronger your vote becomes. Change your mind? Your conviction resets.
 
-**Why It Works:** You can't buy a flash mob that lasts 30 days. Conviction Voting filters for *sustained* support — the signal that survives noise.
+**Why It Works:** You can't buy a flash mob that lasts 30 days. Conviction Voting filters for *sustained* support – the signal that survives noise.
 
 ---
 
@@ -99,7 +99,7 @@ Each mechanism feeds the next. None competes with the others.
 
 **The Problem:** Binary choices (yes/no) force false polarization. The median voter is tyrannized by extremes.
 
-**The Solution:** Vote for *all* options you find acceptable. The option with broadest approval wins — not the most passionate minority.
+**The Solution:** Vote for *all* options you find acceptable. The option with broadest approval wins – not the most passionate minority.
 
 **Why It Works:** It finds the *overlap* in preference space. The "least objectionable" outcome is usually the most stable.
 
@@ -109,7 +109,7 @@ Each mechanism feeds the next. None competes with the others.
 
 **The Problem:** High-stakes changes (constitutional amendments, economic restructuring) need deliberation, not just voting.
 
-**The Solution:** Random selection of stakeholders for deep-dive review. Not decision-makers — *auditors* of the decision process.
+**The Solution:** Random selection of stakeholders for deep-dive review. Not decision-makers – *auditors* of the decision process.
 
 **Why It Works:** Random samples represent the population better than self-selected activists. And randomness breaks capture: you can't buy a lottery you don't know you'll win.
 
@@ -165,7 +165,7 @@ It measures *mechanism fitness*, not political correctness.
 - A Berlin Anarcho-Capitalist Chapter can use the Sovereign Stack
 - A Singapore Efficiency Chapter can use the Sovereign Stack
 
-The mechanisms don't care about the *content* of decisions — only the *process* for making them.
+The mechanisms don't care about the *content* of decisions – only the *process* for making them.
 
 > **The Protocol enforces physics. Chapters write poetry.**
 
@@ -179,7 +179,7 @@ Here's why: Vickrey already solves the participation problem *differently.* The 
 
 **But your raffle intuition isn't wrong.** It just belongs in a different slot:
 
-Not "reward for voting" — **reward for deliberation quality.**
+Not "reward for voting" – **reward for deliberation quality.**
 
 Workstream 2 of RFC-0317 explores this: Can we measure and reward *how well* people engage with proposals? Not just *that* they voted, but *how thoughtfully*?
 
