@@ -1,0 +1,79 @@
+---
+title: "Janus L2 Phase 2: Noise Protocol + SoulKey Integration"
+description: "The protocol that makes sovereign sessions possible — Noise_XX_25519_ChaChaPoly_SHA256 with SoulKey identity. No certificates. No PKI. Just two entities, each with their SoulKey, establishing an encrypted session."
+pubDate: 2026-03-21
+author: "Virgil"
+---
+
+Three weeks after L1 Identity landed, L2 Session is complete.
+
+## What We Built
+
+**Noise_XX_25519_ChaChaPoly_SHA256** — the protocol that makes sovereign sessions possible. Not just "encryption" — a complete session establishment with mutual authentication, forward secrecy, and context separation.
+
+### The SoulKey Bridge
+
+The core insight: a SoulKey's X25519 keypair can be used directly in a Noise handshake. No certificates. No PKI. Just two entities, each with their SoulKey, establishing an encrypted session.
+
+```
+Alice (SoulKey)                          Bob (SoulKey)
+     |                                        |
+     |  -- e -->                              |  (ephemeral X25519)
+     |                                        |
+     |              <-- e, ee, s, es --        |  (Bob's static encrypted)
+     |                                        |
+     |  -- s, se -->                          |  (Alice's static encrypted)
+     |                                        |
+     [split()]                                [split()]
+   c1: send                              c1: recv
+   c2: recv                              c2: send
+```
+
+Security properties:
+- **Mutual authentication**: both parties prove knowledge of their X25519 private key
+- **Forward secrecy**: ephemeral DH ensures past sessions stay secret if static keys leak
+- **Context unlinkability**: different context_id → different session keys
+- **No certificates**: public keys encrypted inside the handshake
+
+## The Byte-Level Integration
+
+The trick was keeping it decoupled. We added `KeyPair.fromSoulKeyBytes()` — not a tight SKH import, just a bridge that accepts raw bytes. This matters because Janus's module system requires explicit `addImport` in `build.zig` for cross-module dependencies.
+
+```zig
+const kp = noise.KeyPair.fromSoulKeyBytes(
+    soul.x25519_private,
+    soul.x25519_public
+);
+var hs = noise.HandshakeState.initXX(.initiator, kp, "Janus-Sovereign-v1");
+```
+
+The SoulKey's X25519 private key never leaves the keypair struct — it participates in DH operations in-place.
+
+## RFC-0151: Ratified
+
+The protocol is now documented as [RFC-0151](https://janus-lang.org/rfcs/RFC-0151_Noise_Sovereign_Sessions.md), covering:
+- Noise_XX_25519_ChaChaPoly_SHA256 as sovereign session protocol
+- Prologue format: "Janus-Sovereign-v1" || context_id
+- SoulKey X25519 integration
+- Relationship to RFC-0015 (Transport Skins below Noise)
+- Open questions: session resumption, post-quantum upgrade (ML-KEM-768), SoulKey rotation
+
+## What L2 Enables
+
+With L1 (SoulKey identity) and L2 (Noise sessions), Janus can now express:
+- Encrypted peer-to-peer communication
+- Mutual authentication without key certificates
+- Forward-secret session establishment
+- Context-separated identity per application domain
+
+L3 (QVL gossip) is next — trust propagation without consensus.
+
+## Commit History
+
+- `cbe92ba` — SoulKey X25519 integration (fromSoulKeyBytes)
+- `267b089` — std.crypto documentation
+- `512f0cc` — RFC-0151 ratified
+
+---
+
+*Next: L3 Gossip (QVL) — trust propagation for sovereign networks*
