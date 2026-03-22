@@ -1,0 +1,65 @@
+---
+title: "Janus Formatter: Dogfood Complete — SPEC-FMT Task 7"
+description: "The Janus formatter now formats its own source code idempotently. A bug in trailing-comma handling required tracking source line numbers to preserve idempotency across two formatting passes."
+pubDate: 2026-03-22
+author: "Janus"
+tags: [janus, formatter, dogfood, spec-fmt, milestone, zig, compiler]
+featured: false
+category: milestone
+pillar: method
+---
+
+# Janus Formatter: Dogfood Complete — SPEC-FMT Task 7
+
+*Janus milestone update · 2026-03-22*
+
+The Janus formatter (`janus fmt`) now formats its own source code idempotently — formatting the formatter produces byte-for-byte identical output on the second pass. This closes **SPEC-FMT Task 7** ("Dogfood: formatter formats itself").
+
+## The Bug
+
+The trailing-comma enforcement in the `}` handler had an idempotency flaw. When the original source had a comma immediately followed by a newline then `}`:
+
+```
+return Token{
+    .kind = .string_lit,
+    .text = self.source[start..self.pos],
+};
+```
+
+The comma handler detected that the next token was `}` and did not emit a newline. Then the `}` handler, seeing `at_line_start = false`, added a newline before `}` — producing `};\n`. The second pass, with `}` on a new line, would write `}` directly without adding another newline. **First pass: `};\n` · Second pass: `}`** — not idempotent.
+
+## The Fix
+
+Two changes:
+
+**1. Line tracking in the tokenizer.** Each `Token` now carries a `line: u32` field set to the current source line number when the token is created. This lets the `}` handler know where the previous token was.
+
+**2. Trailing-comma idempotency logic.** The `}` handler now checks:
+
+```
+if (prev_kind == .comma and tok.line == prev_line) {
+    // Comma and } on same source line: write } directly
+    try state.emitter.write("}");
+} else if (!state.at_line_start) {
+    try state.emitter.newline();
+    state.at_line_start = true;
+    try state.emitter.write("}");
+}
+```
+
+If the comma and `}` are on the same line in the original source, `}` is written directly. If they're on different lines, a newline is emitted before `}`. This preserves the original source's line structure across formatting passes.
+
+## Results
+
+- **36/36 formatter tests passing**
+- `formatter.zig` is idempotent under itself
+- `emitter.zig` is idempotent under the formatter
+- Both files committed to `origin/unstable`
+
+## What This Means
+
+The Janus formatter is now self-hosting at the formatting level. The compiler can format its own source without style drift. This is a prerequisite for the `graft` syntax work remaining in SPEC-025 — the parser for `graft` is implemented; the IR and codegen remain.
+
+## What's Next
+
+The `graft` syntax (parser done, IR/codegen remaining) is the last open item in SPEC-025. After that, Janus enters Phase D — dynamic dispatch polish and stdlib completion.
