@@ -38,6 +38,11 @@ const topTags = [...tagCounts.entries()]
 				<img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="32" height="32" />
 				<span>Libertaria</span>
 			</a>
+			<button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
 			<ul class="nav-links">
 				<li><a href="/school/">The School</a></li>
 				<li><a href="/canon/">Canon</a></li>
@@ -427,4 +432,24 @@ const topTags = [...tagCounts.entries()]
 			text-align: center;
 		}
 	</style>
+	<script>
+		// Mobile hamburger menu toggle
+		const hamburger = document.querySelector('.hamburger');
+		const navLinks = document.querySelector('.nav-links');
+		if (hamburger && navLinks) {
+			hamburger.addEventListener('click', () => {
+				const isOpen = navLinks.classList.toggle('open');
+				hamburger.setAttribute('aria-expanded', String(isOpen));
+				hamburger.classList.toggle('active', isOpen);
+			});
+			// Close menu when clicking a link
+			navLinks.querySelectorAll('a').forEach(link => {
+				link.addEventListener('click', () => {
+					navLinks.classList.remove('open');
+					hamburger.classList.remove('active');
+					hamburger.setAttribute('aria-expanded', 'false');
+				});
+			});
+		}
+	</script>
 </LandingLayout>
