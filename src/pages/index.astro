@@ -12,11 +12,6 @@ const latestEssays = essays.slice(0, 10);
 const featured = latestEssays[0];
 const regular = latestEssays.slice(1, 10);
 
-// Latest Developments — milestone/technical posts
-const milestonePosts = publishedPosts
-	.filter(p => p.data.category === 'milestone')
-	.slice(0, 5);
-
 // Build tag cloud from published posts, sorted by frequency
 const tagCounts = new Map();
 essays.forEach(p => {
@@ -171,40 +166,6 @@ const topTags = [...tagCounts.entries()]
 			</div>
 		</div>
 	</section>
-
-	<!-- Latest Developments — Technical Milestones -->
-	{milestonePosts.length > 0 && (
-		<section id="milestones" class="section" style="background: #0a0a34f5; border-top: 1px solid var(--color-gold); border-bottom: 1px solid var(--color-gold);">
-			<div style="max-width: 1100px; margin: 0 auto; padding: var(--space-8) var(--space-4);">
-				<h2 class="section-title reveal" style="color: var(--color-gold); margin-bottom: var(--space-6);">
-					<span style="opacity: 0.6;">⬡</span> Latest Developments
-				</h2>
-				<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-4);">
-					{milestonePosts.map(post => (
-						<article class="blog-card reveal" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212,175,55,0.2);">
-							<div class="blog-card-content">
-								<div class="blog-card-date" style="color: var(--color-gold); font-size: var(--text-xs);">
-									{post.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
-									<span style="background: var(--color-gold); color: #0a0a34; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-left: 8px; font-weight: 600;">MILESTONE</span>
-								</div>
-								<h3 class="blog-card-title" style="margin-top: var(--space-2);">
-									<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-								</h3>
-								<p class="blog-card-excerpt" style="color: rgba(255,255,255,0.7);">{post.data.description}</p>
-								{post.data.tags && (
-									<div class="blog-card-tags" style="margin-top: var(--space-2);">
-										{post.data.tags.slice(0, 4).map(tag => (
-											<span class="blog-card-tag" style="opacity: 0.6;">#{tag}</span>
-										))}
-									</div>
-								)}
-							</div>
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
-	)}
 
 	<!-- Start Here Section - Clean CTA -->
 	<section id="digest" class="section blog-section">
