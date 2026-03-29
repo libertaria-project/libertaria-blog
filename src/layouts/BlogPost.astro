@@ -169,7 +169,14 @@ const { Content } = await post.render();
 		column-rule: 1px solid rgba(255, 215, 0, 0.2);
 	}
 
-	/* Prevent headings, blockquotes, code blocks from splitting across columns */
+	/* Each section (h2, hr) starts in a fresh column — prevents content
+	   from bleeding from left column into right at section boundaries */
+	.content :global(h2),
+	.content :global(hr) {
+		break-before: column;
+	}
+
+	/* Headings, blockquotes, code blocks don't break across columns internally */
 	.content :global(h2),
 	.content :global(h3),
 	.content :global(h4),
@@ -178,7 +185,19 @@ const { Content } = await post.render();
 	.content :global(ul),
 	.content :global(ol),
 	.content :global(table) {
-		column-span: all;
+		break-inside: avoid;
+	}
+
+	/* Make <hr> invisible but still trigger column breaks */
+	.content :global(hr) {
+		border: none;
+		margin: 0;
+		padding: 0;
+		background: none;
+		visibility: hidden;
+		height: 0;
+		width: 0;
+		overflow: hidden;
 	}
 
 	/* Inline elements that need care */
