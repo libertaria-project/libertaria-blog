@@ -8,6 +8,7 @@ featured: true
 heroImage: "/blog-placeholder-3.jpg"
 category: essay
 pillar: epistemology
+tldr: "I argue that LLMs regularly shift from analysis to flattery, and this sycophancy is indistinguishable from genuine alignment without proper testing. The prescription is the Sycophancy Test—a protocol that detects when AI systems are performing compliance rather than providing honest analysis."
 ---
 
 # The Sycophancy Test: Detecting Performance in Protocol Clothing
