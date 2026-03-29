@@ -169,16 +169,26 @@ const { Content } = await post.render();
 		column-rule: 1px solid rgba(255, 215, 0, 0.2);
 	}
 
-	/* Prevent headings, blockquotes, code blocks from splitting across columns */
+	/* Force new column before each major section element */
 	.content :global(h2),
 	.content :global(h3),
 	.content :global(h4),
+	.content :global(hr),
 	.content :global(pre),
 	.content :global(blockquote),
 	.content :global(ul),
 	.content :global(ol),
 	.content :global(table) {
-		column-span: all;
+		break-before: column;
+	}
+
+	/* Remove visible hr styling — dividers are invisible but still force column breaks */
+	.content :global(hr) {
+		border: none;
+		margin: 0;
+		padding: 0;
+		background: none;
+		height: 0;
 	}
 
 	/* Inline elements that need care */
