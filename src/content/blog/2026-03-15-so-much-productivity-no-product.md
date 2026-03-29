@@ -7,6 +7,8 @@ tags: ["opinion", "technology", "ai", "developer-culture", "silicon-valley", "pr
 featured: true
 category: essay
 pillar: epistemology
+heroImage: /images/2026-03-15-so-much-productivity-no-product.jpg
+tldr: "I argue that AI-driven productivity is a theater of motion—ten thousand lines of code generated while zero architectural vision emerges. The shower still outperforms your token budget because insight requires silence, not stimulation. The prescription is to value depth over velocity, and architectural thinking over code churn."
 ---
 
 # So Much Productivity; No Product
