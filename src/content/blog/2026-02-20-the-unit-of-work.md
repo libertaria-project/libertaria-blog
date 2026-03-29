@@ -6,6 +6,8 @@ tags: ["ai", "token-economy", "sovereign-infrastructure", "carbon-silicon"]
 author: "Markus Maiwald"
 category: essay
 pillar: anthropology
+heroImage: /images/2026-02-20-the-unit-of-work.jpg
+tldr: "I argue that the developer's liturgy—translating human intent into machine instructions—is over. The unit of work is now the token, not the instruction. The prescription is to stop being a translation layer and start being an outcome specifier and intelligence budget manager."
 ---
 
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.
