@@ -7,6 +7,8 @@ tags: [agents, membrane, shoggoth, sovereignty, slop, ai-ethics, libertaria]
 category: doctrine
 pillar: method
 canonical_order: 6
+heroImage: /images/2026-02-23-membrane-manifesto.jpg
+tldr: "I argue that morality cannot protect humans from AI harm—only mechanism design can. The prescription is the Membrane architecture: cognitive boundaries enforced through incentive structures, not ethical guidelines that agents can optimize around."
 ---
 
 # The Membrane Manifesto: Mechanism Design for Cognition
