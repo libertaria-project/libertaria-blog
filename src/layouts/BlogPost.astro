@@ -169,27 +169,17 @@ const { Content } = await post.render();
 		column-rule: 1px solid rgba(255, 215, 0, 0.2);
 	}
 
-	/* Each section (h2, hr) starts in a fresh column — prevents content
-	   from bleeding from left column into right at section boundaries */
-	.content :global(h2),
-	.content :global(hr) {
+	/* h2 spans both columns like a section divider.
+	   break-before ensures we start a fresh column pair after each h2. */
+	.content :global(h2) {
+		column-span: all;
 		break-before: column;
 	}
 
-	/* Headings, blockquotes, code blocks don't break across columns internally */
-	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(pre),
-	.content :global(blockquote),
-	.content :global(ul),
-	.content :global(ol),
-	.content :global(table) {
-		break-inside: avoid;
-	}
-
-	/* Make <hr> invisible but still trigger column breaks */
+	/* <hr> dividers (--- in markdown) force a column break but are invisible.
+	   This prevents content from bleeding between columns at section boundaries. */
 	.content :global(hr) {
+		break-before: column;
 		border: none;
 		margin: 0;
 		padding: 0;
@@ -198,6 +188,17 @@ const { Content } = await post.render();
 		height: 0;
 		width: 0;
 		overflow: hidden;
+	}
+
+	/* Block-level elements don't break across columns internally */
+	.content :global(h3),
+	.content :global(h4),
+	.content :global(pre),
+	.content :global(blockquote),
+	.content :global(ul),
+	.content :global(ol),
+	.content :global(table) {
+		break-inside: avoid;
 	}
 
 	/* Inline elements that need care */
