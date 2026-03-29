@@ -1,5 +1,5 @@
 ---
-// Component for blog post layout
+// Componente for blog post layout
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
 
@@ -13,12 +13,6 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
 	<article class="blog-post">
-		{post.data.heroImage && (
-			<div class="hero-image">
-				<img src={post.data.heroImage} alt={post.data.title} />
-			</div>
-		)}
-
 		<header>
 			<h1>{post.data.title}</h1>
 			<div class="meta">
@@ -39,14 +33,6 @@ const { Content } = await post.render();
 				</div>
 			)}
 		</header>
-
-		{post.data.tldr && (
-			<div class="tldr">
-				<div class="tldr-label">TL;DR</div>
-				<p>{post.data.tldr}</p>
-			</div>
-		)}
-
 		<div class="content">
 			<Content />
 		</div>
@@ -55,61 +41,42 @@ const { Content } = await post.render();
 
 <style>
 	.blog-post {
-		width: 90%;
-		max-width: 1400px;
+		max-width: 800px;
 		margin: 0 auto;
-		padding: 2rem 0;
+		padding: 2rem 1rem;
 	}
-
-	.hero-image {
-		width: 100%;
-		margin-bottom: 2rem;
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
-	}
-
-	.hero-image img {
-		width: 100%;
-		height: auto;
-		display: block;
-		object-fit: cover;
-		max-height: 500px;
-	}
-
+	
 	header {
 		margin-bottom: 2rem;
 		padding-bottom: 1rem;
 		border-bottom: 2px solid var(--red);
 	}
-
+	
 	h1 {
-		font-size: clamp(1.8rem, 4vw, 3rem);
+		font-size: 2.5rem;
 		margin-bottom: 1rem;
 		color: var(--accent);
-		line-height: 1.2;
 	}
-
+	
 	.meta {
 		color: var(--gray);
 		font-size: 0.9rem;
 		display: flex;
 		gap: 1rem;
 		align-items: center;
-		flex-wrap: wrap;
 	}
-
+	
 	.author {
 		color: var(--accent);
 	}
-
+	
 	.tags {
 		margin-top: 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
 	}
-
+	
 	.tag {
 		background: var(--accent-dark);
 		color: var(--text);
@@ -119,204 +86,107 @@ const { Content } = await post.render();
 		font-size: 0.85rem;
 		transition: background 0.2s;
 	}
-
+	
 	.tag:hover {
 		background: var(--accent);
 	}
-
-	/* TL;DR Block */
-	.tldr {
-		background: linear-gradient(135deg, rgba(255, 26, 26, 0.15) 0%, rgba(255, 215, 0, 0.1) 100%);
-		border: 1px solid rgba(255, 215, 0, 0.3);
-		border-left: 4px solid var(--red);
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin-bottom: 2rem;
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 1rem;
-		align-items: start;
-	}
-
-	.tldr-label {
-		font-family: 'JetBrains Mono', monospace;
-		font-size: 0.75rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		color: var(--red);
-		background: rgba(255, 26, 26, 0.2);
-		padding: 0.3rem 0.6rem;
-		border-radius: 4px;
-		text-transform: uppercase;
-		white-space: nowrap;
-		height: fit-content;
-	}
-
-	.tldr p {
-		margin: 0;
-		color: var(--text);
-		line-height: 1.7;
-		font-size: 1rem;
-		opacity: 0.9;
-	}
-
-	/* Two-column body */
+	
 	.content {
 		line-height: 1.8;
-		font-size: 1.05rem;
-		column-count: 2;
-		column-gap: 3rem;
-		column-rule: 1px solid rgba(255, 215, 0, 0.2);
+		font-size: 1.1rem;
 	}
-
-	/* h2 spans both columns like a section divider.
-	   break-before ensures we start a fresh column pair after each h2. */
-	.content :global(h2) {
-		column-span: all;
-		break-before: column;
-	}
-
-	/* <hr> dividers (--- in markdown) force a column break but are invisible.
-	   This prevents content from bleeding between columns at section boundaries. */
-	.content :global(hr) {
-		break-before: column;
-		border: none;
-		margin: 0;
-		padding: 0;
-		background: none;
-		visibility: hidden;
-		height: 0;
-		width: 0;
-		overflow: hidden;
-	}
-
-	/* Block-level elements don't break across columns internally */
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(pre),
-	.content :global(blockquote),
-	.content :global(ul),
-	.content :global(ol),
-	.content :global(table) {
-		break-inside: avoid;
-	}
-
-	/* Inline elements that need care */
+	
 	.content :global(img) {
 		max-width: 100%;
 		height: auto;
 		display: block;
-		margin: 1.5rem auto;
-		border-radius: 8px;
-		box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2);
+		margin: 2rem auto 1.5rem;
+		border-radius: 12px;
+		box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
 	}
-
+	
 	.content :global(h2) {
 		margin-top: 2rem;
 		color: var(--accent);
-		font-size: 1.6rem;
-		border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-		padding-bottom: 0.5rem;
+		font-size: 1.8rem;
 	}
-
+	
 	.content :global(h3) {
 		margin-top: 1.5rem;
 		color: var(--accent-light);
 	}
-
+	
 	.content :global(pre) {
 		background: #1a1a2e;
 		padding: 1rem;
 		border-radius: 8px;
 		overflow-x: auto;
 		border-left: 4px solid var(--red);
-		margin: 1.5rem 0;
 	}
-
+	
 	.content :global(code) {
 		font-family: 'JetBrains Mono', monospace;
 		font-size: 0.9em;
 	}
-
+	
 	.content :global(p code) {
 		background: rgba(255, 255, 255, 0.1);
 		padding: 0.2rem 0.4rem;
 		border-radius: 4px;
 	}
-
+	
 	.content :global(table) {
 		width: 100%;
 		border-collapse: collapse;
 		margin: 1.5rem 0;
 	}
-
+	
 	.content :global(th, td) {
 		padding: 0.75rem;
 		text-align: left;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
-
+	
 	.content :global(th) {
 		color: var(--accent);
 		font-weight: 600;
 	}
-
+	
 	.content :global(blockquote) {
 		border-left: 4px solid var(--red);
 		padding-left: 1rem;
-		margin: 1.5rem 0;
 		margin-left: 0;
 		color: var(--gray);
 		font-style: italic;
-		background: rgba(255, 26, 26, 0.05);
-		padding: 0.5rem 1rem;
-		border-radius: 0 8px 8px 0;
 	}
-
-	.content :global(ul),
-	.content :global(ol) {
+	
+	.content :global(ul, ol) {
 		padding-left: 1.5rem;
-		margin: 1rem 0;
 	}
-
+	
 	.content :global(li) {
-		margin: 0.4rem 0;
+		margin: 0.5rem 0;
 	}
-
-	/* Link styling */
+	
+	/* Link styling - flipped: Red -> Gold -> Visited Gold -> Hover Red */
 	.content :global(a) {
 		color: var(--red);
 		text-decoration: underline;
 		text-decoration-color: rgba(255, 26, 26, 0.5);
 		transition: color 0.2s ease, text-decoration-color 0.2s ease;
 	}
-
+	
 	.content :global(a:hover) {
 		color: var(--accent);
 		text-decoration-color: var(--accent);
 	}
-
+	
 	.content :global(a:visited) {
 		color: var(--accent);
 	}
-
+	
 	.content :global(a:visited:hover) {
 		color: var(--red);
 		text-decoration-color: var(--red);
-	}
-
-	/* Responsive: single column on mobile */
-	@media (max-width: 768px) {
-		.content {
-			column-count: 1;
-		}
-
-		.tldr {
-			grid-template-columns: 1fr;
-		}
-
-		.tldr-label {
-			align-self: start;
-		}
 	}
 </style>
