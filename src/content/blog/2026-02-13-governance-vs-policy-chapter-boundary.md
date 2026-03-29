@@ -8,6 +8,7 @@ featured: true
 heroImage: "/blog-placeholder-2.jpg"
 category: doctrine
 pillar: political-philosophy
+tldr: "I argue that the Protocol enforces physics while Chapters write policy—and this boundary is the only thing preventing tyranny. The prescription is strict separation: protocol rules cannot be circumvented by chapter governance, preserving the immutability of the foundational layer."
 ---
 
 # Governance vs Policy: The Chapter Boundary
