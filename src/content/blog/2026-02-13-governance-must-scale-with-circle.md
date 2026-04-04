@@ -128,3 +128,5 @@ The market teaches the lessons. The Protocol just makes sure the game is fair.
 ---
 
 *Next: RFC-0315 – the formal specification of governance graduation as Protocol physics.*
+
+> **Amendment (2026-04-04):** RFC-0315 has been amended by *RFC-0315-AMEND-0001: Governance Altitude Doctrine*, adding vertical altitude separation (A0–A4) to the existing horizontal Boundary Doctrine. See §5.6 of RFC-0315.

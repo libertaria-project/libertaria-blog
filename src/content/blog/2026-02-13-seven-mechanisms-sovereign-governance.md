@@ -204,3 +204,5 @@ Each does what it's mathematically best at. Together, they solve what no single 
 ---
 
 *Related: RFC-0315 (Governance Graduation), RFC-0316 (Mechanism Scorecard), RFC-0317 (Deliberation Quality)*
+
+> **Amendment (2026-04-04):** RFC-0315 has been amended by *RFC-0315-AMEND-0001: Governance Altitude Doctrine*, adding vertical altitude separation (A0–A4: Sovereign → Bond → Chapter → Federation → Substrate) to the existing horizontal Boundary Doctrine. See §5.6 of RFC-0315.
