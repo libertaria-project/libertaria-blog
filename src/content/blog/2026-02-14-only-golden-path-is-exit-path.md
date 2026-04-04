@@ -6,7 +6,7 @@ description: "Tiebout conjectured it in 1956. Seventy years later, we proved it.
 tags: ["governance", "exit", "proof", "tiebout", "mechanism-design", "canon", "exitarianism"]
 category: canon
 pillar: ethics
-canonical_order: 5
+canonical_order: 7
 ---
 
 # The Only Golden Path is the Exit Path

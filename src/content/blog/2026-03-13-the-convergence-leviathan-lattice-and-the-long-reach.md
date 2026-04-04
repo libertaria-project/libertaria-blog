@@ -7,7 +7,7 @@ tags: ["exitarianism", "convergence", "leviathan", "lattice", "physics", "space"
 featured: true
 category: canon
 pillar: political-philosophy
-canonical_order: 4
+canonical_order: 5
 ---
 
 # The Convergence: Leviathan, Lattice, and the Long Reach

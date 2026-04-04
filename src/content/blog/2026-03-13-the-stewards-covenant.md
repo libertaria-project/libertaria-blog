@@ -7,7 +7,7 @@ tags: ["exitarianism", "ethics", "theology", "stewardship", "baptist", "guardian
 featured: true
 category: canon
 pillar: ethics
-canonical_order: 4
+canonical_order: 6
 ---
 
 # The Steward's Covenant: On Guardianship Without Ownership

@@ -7,7 +7,7 @@ tags: ["exitarianism", "framework", "sovereignty", "exit", "philosophy", "politi
 featured: true
 category: canon
 pillar: political-philosophy
-canonical_order: 3
+canonical_order: 4
 ---
 
 # The Exitarian Framework: Building Code for Open Doors
