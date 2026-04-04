@@ -1,6 +1,6 @@
 ---
 title: "The Exitarian Foundation: Seven Pillars of the Open Door"
-description: "The forge; the architecture. Where the Manifesto asserts, the Foundation derives. Seven pillars. Three hostile readings. Four derived theorems. The formal philosophical architecture of Exitarianism."
+description: "The forge; the architecture. Where the Manifesto asserts, the Foundation derives. Seven pillars. Three hostile readings. Seven derived theorems. The formal philosophical architecture of Exitarianism."
 pubDate: 2026-03-08
 author: "Markus Maiwald"
 tags: ["exitarianism", "foundation", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
@@ -376,6 +376,40 @@ A contract signed today by Agent-A-Present cannot eliminate the exit capacity of
 If no one knows what you contributed, you cannot carry your value through the exit. You leave empty-handed. Starting over is expensive. Therefore: exit capacity increases as contribution records become more portable, more verifiable, and more widely recognized.
 
 **Applications:** Professional credentials that are recognized across jurisdictions increase exit capacity. Reputation systems that are portable across communities increase exit capacity. Contribution records that are verifiable without relying on a single institution's endorsement increase exit capacity. Conversely: proprietary credential systems, non-transferable reputation, and institution-dependent records *decrease* exit capacity. They are locks disguised as infrastructure.
+
+---
+
+## Theorem Five: Vertical Exit
+
+*Exit is not only lateral. The most fundamental exit is vertical; from dependency to sovereignty.*
+
+The child does not exit *laterally*. The child exits *vertically*; from a state of total dependency to a state of sovereignty. **Vertical exit is the process of building exit capacity where none existed.** Without vertical exit, lateral exit is meaningless. A being with zero exit capacity cannot choose between doors; because they cannot reach any door.
+
+**The Vertical Exit Obligation:** Every adult in proximity to a child bears responsibility; not because of sentiment, not because of tradition, but because the axiom demands it. Any institution that extends dependency beyond what is necessary for protection is committing the violation it claims to prevent.
+
+**The Erleuchtung and the Leidensweg:** The Erleuchtung is vertical exit experienced as sudden illumination – the moment the door you could not see becomes visible. The Leidensweg is vertical exit experienced as geology – the door is not suddenly visible; it is *built*, brick by brick, often in the dark. Both are real. The Erleuchtung gets the poetry. The Leidensweg does the work.
+
+---
+
+## Theorem Six: Non-Exitable Commons
+
+*Some systems cannot be exited. They can only be stewarded. Stewardship is not governance; it is custodianship of what no one can leave.*
+
+You cannot exit the atmosphere. You cannot exit the biosphere. You cannot exit the watershed. **Governance** is authority over agents who can leave. **Stewardship** is custodianship of systems no agent can exit. The critical constraint: stewardship must never become governance. Exitarianism's answer is mechanism, not authority: sensor networks, impact bonds that trigger automatically, competition between Chapters, and exit from the steward (not the commons).
+
+---
+
+## Theorem Seven: Care as Exit Infrastructure
+
+*Care labor is the construction of exit capacity in beings that have none. It is the most fundamental form of infrastructure; and the most systematically invisible.*
+
+The mother who spends twelve years building a child's exit capacity has performed the most consequential infrastructure project the child's future sovereignty depends on. **Care labor is exit infrastructure.** Not metaphorically. Structurally. Care labor is invisible because it is mistaken for nature. The deepest lock: not a wall, not a law, a **perceptual lock** – the inability to see construction when it is performed by bodies expected to perform it for free.
+
+The caregiver who builds exit capacity in others while losing her own is living the axiom's contradiction. **Care labor is exit infrastructure. It must be legible, portable, and valued; not because caregivers deserve compassion, but because the axiom collapses without the agents that care labor produces.**
+
+---
+
+*Companion amendment: RFC-0300-AMEND-0001 (Three Derived Theorems: Vertical Exit, Non-Exitable Commons, Care as Exit Infrastructure, 2026-04-04). Also see RFC-0315-AMEND-0001 and RFC-0250-AMEND-0001.*
 
 ---
 
