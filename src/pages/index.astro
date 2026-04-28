@@ -79,11 +79,35 @@ const laneLatest = LANES.map(lane => {
 const featuredAuthor = featured?.data.author;
 const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
 ---
-<LandingLayout title="Libertaria — Leave Us Alone applied to the century" description="Leave Us Alone applied to the century. The publication of Chapter Zero — big tech anatomy, platform capture, chapter life, sci-fi worldbuilding, and the geopolitics of exit.">
+<LandingLayout title="Libertaria — Leave Us Alone applied to the century" description="Leave Us Alone applied to the century. The publication of Chapter Zero — big tech anatomy, platform capture, chapter life, sci-fi worldbuilding, and the geopolitics of exit." showHeader={false} showFooter={false}>
 
   <!-- Reading Progress Bar -->
   <div class="reading-progress"></div>
 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">
+        <img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="32" height="32" />
+        <span>Libertaria</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/dispatches/">Dispatches</a></li>
+        <li><a href="/geopolitics/">Geopolitics</a></li>
+        <li><a href="/stories/">Stories</a></li>
+        <li><a href="/civilization-faith/">Civilization</a></li>
+        <li><a href="/manifestos/">Manifestos</a></li>
+        <li><a href="/doctrine/">Doctrine</a></li>
+        <li><a href="/open-problems/">Open Problems</a></li>
+        <li><a href="/blog/search/">Search</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">

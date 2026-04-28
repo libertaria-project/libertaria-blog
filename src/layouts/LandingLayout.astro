@@ -6,9 +6,16 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description?: string;
+	showHeader?: boolean;
+	showFooter?: boolean;
 }
 
-const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props;
+const {
+	title,
+	description = 'Sovereign; Kinetic; Anti-Fragile.',
+	showHeader = true,
+	showFooter = true,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -166,11 +173,11 @@ const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props
 		</style>
 	</head>
 	<body>
-		<Header />
+		{showHeader && <Header />}
 		<main>
 			<slot />
 		</main>
-		<Footer />
+		{showFooter && <Footer />}
 		<script src="/js/newsletter.js" is:inline></script>
 	</body>
 </html>
