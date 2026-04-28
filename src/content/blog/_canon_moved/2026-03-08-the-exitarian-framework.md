@@ -2,12 +2,14 @@
 title: "The Exitarian Framework: Building Code for Open Doors"
 description: "The immune system; the diagnostics. Five constraints that any institution must satisfy. Twelve diagnostics that detect when doors are being locked. Five failure modes. Three death triggers."
 pubDate: 2026-03-08
-author: "Markus Maiwald"
+author: "Virgil"
 tags: ["exitarianism", "framework", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
 featured: true
 category: canon
 pillar: political-philosophy
 canonical_order: 4
+editorial_lane: doctrine
+
 ---
 
 # The Exitarian Framework: Building Code for Open Doors

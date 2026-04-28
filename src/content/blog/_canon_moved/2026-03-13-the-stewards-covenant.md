@@ -2,12 +2,14 @@
 title: "The Steward's Covenant: On Guardianship Without Ownership"
 description: "A School Essay on Ethics. The gardener who locks the gate has stopped tending the garden. He is now guarding a prison with flowers."
 pubDate: 2026-03-13
-author: "Markus Maiwald"
+author: "Virgil"
 tags: ["exitarianism", "ethics", "theology", "stewardship", "baptist", "guardianship", "covenant", "school", "canon"]
 featured: true
 category: canon
 pillar: ethics
 canonical_order: 6
+editorial_lane: civilization-faith
+
 ---
 
 # The Steward's Covenant: On Guardianship Without Ownership

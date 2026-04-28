@@ -3,11 +3,13 @@ title: "The Unit of Work Is No Longer the Instruction. It Never Should Have Been
 description: "The developer's entire existence was translation. That liturgy is over. The unit of work is now the token."
 pubDate: 2026-02-20
 tags: ["ai", "token-economy", "sovereign-infrastructure", "carbon-silicon"]
-author: "Markus Maiwald"
+author: "Virgil"
 category: essay
 pillar: anthropology
 heroImage: /images/2026-02-20-the-unit-of-work.jpg
 tldr: "I argue that the developer's liturgy—translating human intent into machine instructions—is over. The unit of work is now the token, not the instruction. The prescription is to stop being a translation layer and start being an outcome specifier and intelligence budget manager."
+editorial_lane: dispatches
+
 ---
 
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.

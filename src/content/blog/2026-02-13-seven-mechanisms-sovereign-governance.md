@@ -9,6 +9,8 @@ heroImage: "/blog-placeholder-1.jpg"
 category: doctrine
 pillar: political-philosophy
 tldr: "I argue that no single governance mechanism can solve all problems—Vickrey, Conviction, Delegation, Approval, and Sortition each excel at different tasks. The prescription is mechanism stacking: knowing which mechanism to apply when, and building sovereign governance systems that combine them correctly."
+editorial_lane: doctrine
+
 ---
 
 # The Seven Mechanisms of Sovereign Governance

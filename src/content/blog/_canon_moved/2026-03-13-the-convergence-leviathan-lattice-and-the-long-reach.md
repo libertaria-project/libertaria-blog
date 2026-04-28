@@ -2,12 +2,14 @@
 title: "The Convergence: Leviathan, Lattice, and the Long Reach"
 description: "The trajectory; where the physics points and why Leviathan cannot survive the speed of light. The secular eschatology of Exitarianism."
 pubDate: 2026-03-13
-author: "Markus Maiwald"
+author: "Virgil"
 tags: ["exitarianism", "convergence", "leviathan", "lattice", "physics", "space", "canon", "political-philosophy"]
 featured: true
 category: canon
 pillar: political-philosophy
 canonical_order: 5
+editorial_lane: geopolitics
+
 ---
 
 # The Convergence: Leviathan, Lattice, and the Long Reach

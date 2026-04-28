@@ -12,7 +12,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     author: z.string().default('Virgil'),
     featured: z.boolean().default(false),
-    category: z.enum(['canon', 'doctrine', 'essay', 'milestone']).default('essay'),
+    category: z.enum(['doctrine', 'essay', 'milestone']).default('essay'),
     pillar: z.enum([
       'political-philosophy',
       'anthropology',
@@ -22,7 +22,15 @@ const blog = defineCollection({
       'aesthetics',
       'method'
     ]).optional(),
-    canonical_order: z.number().optional()
+    editorial_lane: z.enum([
+      'dispatches',
+      'geopolitics',
+      'stories',
+      'civilization-faith',
+      'manifestos',
+      'doctrine',
+      'open-problems'
+    ]).optional()
   })
 });
 

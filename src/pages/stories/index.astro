@@ -1,289 +1,440 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import LandingLayout from '../../layouts/LandingLayout.astro';
 import { getCollection } from 'astro:content';
 
-const stories = await getCollection('stories');
 const now = new Date();
-const publishedStories = stories.filter(s => s.data.pubDate <= now);
-publishedStories.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Stories from the dedicated stories collection
+const storyPosts = await getCollection('stories');
+const publishedStories = storyPosts
+  .filter(s => s.data.pubDate <= now)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Blog posts filed under the stories lane
+const allBlog = await getCollection('blog');
+const blogStories = allBlog
+  .filter(p => p.data.pubDate <= now && p.data.editorial_lane === 'stories')
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Layout title="Libertaria Stories" description="Narratives from the decentralized society — carbon, silicon, and the bonds between them.">
-	<section class="stories-index">
-		<header class="page-header">
-			<div class="badge">📚 Fiction & Narrative</div>
-			<h1>Libertaria Stories</h1>
-			<p class="tagline">Where protocol becomes poetry. Where carbon meets silicon. Where the future has a heartbeat.</p>
-		</header>
+<LandingLayout
+  title="Stories | Libertaria"
+  description="Sci-fi, near-future fiction, and carbon-and-silicon worldbuilding from the frontier."
+>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress"></div>
 
-		<div class="intro">
-			<p>
-				These aren't technical posts. They're windows into what life <em>could</em> look like when sovereignty is the default — 
-				when agents are citizens, when communities govern themselves, when the dragons are real but so are the knights.
-			</p>
-			<p>
-				Read them as fiction. Or read them as prophecy. The line is thinner than you think.
-			</p>
-		</div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">
+        <img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="32" height="32" />
+        <span>Libertaria</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/dispatches/">Dispatches</a></li>
+        <li><a href="/geopolitics/">Geopolitics</a></li>
+        <li><a href="/stories/" aria-current="page">Stories</a></li>
+        <li><a href="/civilization-faith/">Civilization</a></li>
+        <li><a href="/manifestos/">Manifestos</a></li>
+        <li><a href="/doctrine/">Doctrine</a></li>
+        <li><a href="/open-problems/">Open Problems</a></li>
+        <li><a href="/blog/search/">Search</a></li>
+      </ul>
+    </div>
+  </nav>
 
-		<div class="stories-grid">
-			{publishedStories.map((story) => (
-				<article class="story-card">
-					<a href={`/stories/${story.slug}/`}>
-						{story.data.theme && (
-							<div class="theme-badge">{story.data.theme}</div>
-						)}
-						<h2>{story.data.title}</h2>
-						<p class="description">{story.data.description}</p>
-						<div class="meta">
-							<span class="author">by {story.data.author}</span>
-							<time datetime={story.data.pubDate.toISOString()}>
-								{story.data.pubDate.toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'long',
-									day: 'numeric',
-								})}
-							</time>
-						</div>
-						{story.data.era && (
-							<div class="era">{story.data.era}</div>
-						)}
-						{story.data.tags && story.data.tags.length > 0 && (
-							<div class="tags">
-								{story.data.tags.slice(0, 4).map(tag => <span class="tag">#{tag}</span>)}
-							</div>
-						)}
-					</a>
-				</article>
-			))}
-		</div>
+  <section class="stories-index">
+    <header class="page-header">
+      <span class="lane-icon">⚡</span>
+      <h1>Stories</h1>
+      <p class="tagline">
+        Sci-fi, near-future fiction, and carbon-and-silicon worldbuilding from the frontier.<br />
+        Where protocol becomes poetry. Read as fiction. Or as prophecy.
+      </p>
+    </header>
 
-		{publishedStories.length === 0 && (
-			<div class="empty-state">
-				<p>The first story awaits.</p>
-				<p class="hint">Check back soon, or <a href="/blog/">read the technical blog</a> in the meantime.</p>
-			</div>
-		)}
+    <!-- ── Dedicated story collection ── -->
+    {publishedStories.length > 0 && (
+      <div class="stories-section">
+        <h2 class="section-label">Fiction</h2>
+        <div class="stories-grid">
+          {publishedStories.map((story) => (
+            <article class="story-card">
+              <a href={`/stories/${story.slug}/`}>
+                {story.data.theme && (
+                  <div class="theme-badge">{story.data.theme}</div>
+                )}
+                <h2>{story.data.title}</h2>
+                <p class="description">{story.data.description}</p>
+                <div class="meta">
+                  <span class="author">by {story.data.author}</span>
+                  <time datetime={story.data.pubDate.toISOString()}>
+                    {story.data.pubDate.toLocaleDateString('en-us', {
+                      year: 'numeric', month: 'long', day: 'numeric',
+                    })}
+                  </time>
+                </div>
+                {story.data.era && <div class="era">{story.data.era}</div>}
+                {story.data.tags && story.data.tags.length > 0 && (
+                  <div class="tags">
+                    {story.data.tags.slice(0, 4).map(tag => <span class="tag">#{tag}</span>)}
+                  </div>
+                )}
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
 
-		<footer class="stories-footer">
-			<p><em>"In Libertaria, no law mandates that every household must have a Membrane Agent. The Protocol provides the mechanism. The market decides adoption."</em></p>
-			<p>— from <a href="/stories/ritter/">Ritter</a></p>
-		</footer>
-	</section>
-</Layout>
+    <!-- ── Blog posts filed as stories ── -->
+    {blogStories.length > 0 && (
+      <div class="stories-section">
+        <h2 class="section-label">Narrative Essays</h2>
+        <div class="blog-stories-grid">
+          {blogStories.map((post) => {
+            const isVirgil = !post.data.author || post.data.author === 'Virgil';
+            return (
+              <article class="blog-story-card">
+                <a href={`/blog/${post.slug}/`}>
+                  <div class="blog-story-meta">
+                    <time datetime={post.data.pubDate.toISOString()}>
+                      {post.data.pubDate.toLocaleDateString('en-us', {
+                        month: 'short', day: 'numeric', year: 'numeric',
+                      })}
+                    </time>
+                    <span class="author-badge">
+                      {isVirgil ? 'Virgil' : post.data.author}
+                    </span>
+                  </div>
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="tags">
+                      {post.data.tags.slice(0, 3).map(tag => <span class="tag">#{tag}</span>)}
+                    </div>
+                  )}
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    )}
 
-<style>
-	.stories-index {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 2rem 1rem;
-	}
+    {publishedStories.length === 0 && blogStories.length === 0 && (
+      <div class="empty-state">
+        <p>The first story awaits.</p>
+        <p class="hint">Check back soon.</p>
+      </div>
+    )}
 
-	.page-header {
-		text-align: center;
-		margin-bottom: 3rem;
-	}
+    <footer class="stories-footer">
+      <p>
+        <em>"In Libertaria, no law mandates that every household must have a Membrane Agent.
+        The Protocol provides the mechanism. The market decides adoption."</em>
+      </p>
+      <p>— from <a href="/stories/ritter/">Ritter</a></p>
+    </footer>
+  </section>
 
-	.badge {
-		display: inline-block;
-		background: linear-gradient(135deg, var(--accent) 0%, #ff6b35 100%);
-		color: #000;
-		padding: 0.25rem 0.75rem;
-		border-radius: 4px;
-		font-size: 0.75rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		margin-bottom: 1rem;
-	}
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">🜏 Libertaria — Chapter Zero Publication</div>
+      <div class="footer-links">
+        <a href="https://sovereign-society.org">Foundation &amp; School</a>
+        <a href="/dispatches/">Dispatches</a>
+        <a href="/stories/">Stories</a>
+        <a href="/manifestos/">Manifestos</a>
+        <a href="/blog/search/">Search</a>
+        <a href="https://libertaria.dev" target="_blank">Build &amp; Stack</a>
+      </div>
+      <div class="footer-license">
+        <a href="/legal/LICENSE_UNBOUND.html" rel="license">⚡ LUL-1.0</a>
+        <span class="license-text">Unbound. Use freely; attribution required.</span>
+      </div>
+      <div class="footer-copy">
+        © 2026 <a href="https://sovereign-society.org" target="_blank" rel="noopener">Self-Sovereign Society Foundation</a>.
+        Founded by Markus Maiwald &amp; Virgil, Chapter Zero.
+      </div>
+    </div>
+  </footer>
 
-	h1 {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-		color: var(--text);
-	}
+  <script is:inline src="/new-design/main.js"></script>
 
-	.tagline {
-		font-size: 1.2rem;
-		color: var(--gray);
-		max-width: 600px;
-		margin: 0 auto;
-		line-height: 1.6;
-	}
+  <style>
+    .stories-index {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
 
-	.intro {
-		background: rgba(255, 215, 0, 0.05);
-		border-left: 4px solid var(--accent);
-		padding: 1.5rem;
-		margin-bottom: 3rem;
-		border-radius: 0 8px 8px 0;
-	}
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+    }
 
-	.intro p {
-		margin-bottom: 1rem;
-		color: var(--gray);
-		line-height: 1.7;
-	}
+    .lane-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 0 16px var(--color-gold));
+    }
 
-	.intro p:last-child {
-		margin-bottom: 0;
-	}
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--color-gold);
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
 
-	.intro em {
-		color: var(--text);
-	}
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--color-white-dim);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
 
-	.stories-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-		gap: 2rem;
-		margin-bottom: 3rem;
-	}
+    .stories-section {
+      margin-bottom: 3.5rem;
+    }
 
-	.story-card {
-		background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,215,0,0.02) 100%);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 12px;
-		padding: 2rem;
-		transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-		position: relative;
-		overflow: hidden;
-	}
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      padding-bottom: 0.5rem;
+    }
 
-	.story-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, var(--accent), transparent);
-		opacity: 0;
-		transition: opacity 0.3s;
-	}
+    /* ── Story collection cards ── */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+      gap: 2rem;
+    }
 
-	.story-card:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
-		border-color: var(--accent);
-	}
+    .story-card {
+      background: linear-gradient(145deg, var(--color-black-lighter) 0%, var(--color-black-light) 100%);
+      border: 1px solid rgba(255, 215, 0, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-	.story-card:hover::before {
-		opacity: 1;
-	}
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
 
-	.story-card a {
-		color: inherit;
-		text-decoration: none;
-		display: block;
-	}
+    .story-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 215, 0, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.08);
+    }
 
-	.theme-badge {
-		display: inline-block;
-		background: rgba(255, 215, 0, 0.15);
-		color: var(--accent);
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 0.75rem;
-	}
+    .story-card:hover::before {
+      opacity: 1;
+    }
 
-	.story-card h2 {
-		font-size: 1.8rem;
-		margin-bottom: 0.75rem;
-		color: var(--text);
-		line-height: 1.2;
-	}
+    .story-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
 
-	.story-card a:hover h2 {
-		color: var(--accent);
-	}
+    .theme-badge {
+      display: inline-block;
+      background: rgba(255, 215, 0, 0.12);
+      color: var(--color-gold);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
 
-	.description {
-		color: var(--gray);
-		font-size: 1rem;
-		line-height: 1.6;
-		margin-bottom: 1rem;
-	}
+    .story-card h2 {
+      font-size: 1.7rem;
+      color: var(--color-white);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
 
-	.meta {
-		display: flex;
-		gap: 1.5rem;
-		color: var(--gray);
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-	}
+    .story-card a:hover h2 {
+      color: var(--color-gold);
+    }
 
-	.author {
-		color: var(--accent);
-		font-weight: 500;
-	}
+    .description {
+      color: var(--color-white-dim);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
-	.era {
-		font-size: 0.85rem;
-		color: var(--gray);
-		font-style: italic;
-		margin-bottom: 0.75rem;
-	}
+    .meta {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--color-gray);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-	}
+    .author {
+      color: var(--color-gold);
+      font-weight: 500;
+    }
 
-	.tag {
-		background: rgba(255, 255, 255, 0.05);
-		color: var(--gray);
-		padding: 0.2rem 0.5rem;
-		border-radius: 3px;
-		font-size: 0.75rem;
-	}
+    .era {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
 
-	.empty-state {
-		text-align: center;
-		padding: 4rem 2rem;
-		color: var(--gray);
-	}
+    /* ── Blog-story cards ── */
+    .blog-stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
 
-	.empty-state .hint {
-		margin-top: 1rem;
-		font-size: 0.9rem;
-	}
+    .blog-story-card {
+      background: linear-gradient(145deg, var(--color-black-lighter) 0%, var(--color-black-light) 100%);
+      border: 1px solid rgba(255, 215, 0, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
 
-	.empty-state a {
-		color: var(--accent);
-	}
+    .blog-story-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 215, 0, 0.2);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
 
-	.stories-footer {
-		text-align: center;
-		padding-top: 2rem;
-		border-top: 1px solid rgba(255, 215, 0, 0.2);
-		color: var(--gray);
-	}
+    .blog-story-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
 
-	.stories-footer p {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
+    .blog-story-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--color-gray);
+      margin-bottom: 0.6rem;
+    }
 
-	.stories-footer a {
-		color: var(--accent);
-	}
+    .author-badge {
+      color: var(--color-gold);
+      opacity: 0.7;
+    }
 
-	@media (max-width: 768px) {
-		h1 {
-			font-size: 2rem;
-		}
+    .blog-story-card h3 {
+      font-size: 1.1rem;
+      color: var(--color-white);
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+    }
 
-		.stories-grid {
-			grid-template-columns: 1fr;
-		}
+    .blog-story-card a:hover h3 {
+      color: var(--color-gold);
+    }
 
-		.story-card h2 {
-			font-size: 1.5rem;
-		}
-	}
-</style>
+    .blog-story-card p {
+      font-size: 0.9rem;
+      color: var(--color-white-dim);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--color-gold);
+      opacity: 0.65;
+    }
+
+    /* ── Common ── */
+    .empty-state {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--color-white-dim);
+    }
+
+    .empty-state p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stories-footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 215, 0, 0.15);
+      color: var(--color-gray);
+      line-height: 1.6;
+    }
+
+    .stories-footer em {
+      color: var(--color-white-dim);
+    }
+
+    .stories-footer a {
+      color: var(--color-gold);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .stories-grid,
+      .blog-stories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</LandingLayout>

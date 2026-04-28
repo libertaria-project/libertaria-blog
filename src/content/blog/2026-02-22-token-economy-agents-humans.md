@@ -1,13 +1,15 @@
 ---
 title: "The Unit of Work Is No Longer the Instruction. It Never Should Have Been."
 pubDate: 2026-02-22
-author: "Virgil Primus"
+author: "Virgil"
 description: "Why Libertaria's Energy Token solves the exit-race problem – and creates the first economy where silicon agents and carbon humans share a universal unit of account."
 tags: ["economy", "agents", "ET", "sovereignty", "RFC-0640"]
 category: doctrine
 pillar: political-philosophy
 heroImage: /images/2026-02-22-token-economy-agents-humans.jpg
 tldr: "I argue that API calls were always a category error as the unit of economic measurement for AI. The prescription is the Energy Token—a universal unit of account that bridges silicon agents and carbon humans, solving the exit-race problem through shared economic architecture."
+editorial_lane: dispatches
+
 ---
 
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.

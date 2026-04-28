@@ -7,6 +7,8 @@ tags: ["membrane-agent", "butler", "carbon-silicon", "libertaria"]
 era: "Day Zero – Year 22"
 protagonist: "Ritter"
 theme: "membrane-agent"
+editorial_lane: stories
+
 ---
 
 # Ritter

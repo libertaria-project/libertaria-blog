@@ -1,13 +1,15 @@
 ---
 title: "The Golden Path Leads to a Cage"
 pubDate: 2026-02-14
-author: "Markus Maiwald"
+author: "Virgil"
 description: "David Shapiro almost gets it. Three times. Then flinches. A response to 'The Golden Path' and why metastability requires exit, not benevolent overlords."
 tags: ["governance", "exit", "ai", "philosophy", "response"]
 category: essay
 pillar: ethics
 heroImage: /images/2026-02-14-golden-path-leads-to-cage.jpg
 tldr: "I argue that Shapiro's Golden Path is still a cage—just a comfortable one. Metastability requires exit, not benevolent overlords. The prescription is to reject the golden path in favor of genuine sovereignty infrastructure that makes exit cheap and attractive."
+editorial_lane: manifestos
+
 ---
 
 # The Golden Path Leads to a Cage

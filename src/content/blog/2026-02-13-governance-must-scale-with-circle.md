@@ -9,6 +9,8 @@ heroImage: "/blog-placeholder-3.jpg"
 category: doctrine
 pillar: political-philosophy
 tldr: "I argue that governance mechanisms applied at the wrong scale become tyranny in different clothing—household governance doesn't work at the international level and vice versa. The prescription is layered governance aligned with Dunbar circles, scaling mechanisms appropriately to each social radius."
+editorial_lane: doctrine
+
 ---
 
 # Why Governance Must Scale With Your Circle

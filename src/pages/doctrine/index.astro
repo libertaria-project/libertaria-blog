@@ -1,14 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import LandingLayout from '../../layouts/LandingLayout.astro';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const now = new Date();
 
-// Doctrine texts only, sorted by pubDate (oldest first — chronological evolution)
+// Doctrine texts — filtered by editorial_lane, sorted oldest-first (chronological evolution)
 const doctrinePosts = posts
-	.filter(p => p.data.category === 'doctrine' && p.data.pubDate <= now)
-	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+  .filter(p => p.data.editorial_lane === 'doctrine' && p.data.pubDate <= now)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
 function formatPillar(pillar?: string): string {
 	if (!pillar) return '';
@@ -19,7 +19,7 @@ function formatPillar(pillar?: string): string {
 }
 ---
 
-<Layout title="The Doctrine | Libertaria" description="Libertaria's interpretation of Exitarianism. How we build the philosophy into infrastructure.">
+<LandingLayout title="The Doctrine | Libertaria" description="Libertaria's interpretation of Exitarianism. How we build the philosophy into infrastructure.">
 	<section class="doctrine-page">
 		<header class="doctrine-header">
 			<div class="doctrine-rule"></div>
@@ -28,10 +28,10 @@ function formatPillar(pillar?: string): string {
 				Libertaria's interpretation of Exitarianism.<br />
 				How we build the philosophy into infrastructure.
 			</p>
-			<p class="doctrine-note">
-				The <a href="/canon/">Canon</a> is substrate-independent — it survives if Libertaria never ships a line of code.<br />
-				The Doctrine maps those axioms to specific mechanisms, protocols, and governance structures.
-			</p>
+		<p class="doctrine-note">
+			The <a href="https://sovereign-society.org/canon/" target="_blank">Canon</a> is substrate-independent and officially housed at sovereign-society.org.<br />
+			The Doctrine maps those axioms to specific mechanisms, protocols, and governance structures.
+		</p>
 			<div class="doctrine-count">{doctrinePosts.length} documents</div>
 			<div class="doctrine-rule"></div>
 		</header>
@@ -71,12 +71,12 @@ function formatPillar(pillar?: string): string {
 		<footer class="doctrine-footer">
 			<div class="doctrine-rule"></div>
 			<p>
-				For the pure philosophy, see the <a href="/canon/">Canon</a>.
+				For the pure philosophy, see the <a href="https://sovereign-society.org/canon/">official Canon</a>.
 				For commentary and analysis, see the <a href="/essays/">Essays</a>.
 			</p>
 		</footer>
 	</section>
-</Layout>
+</LandingLayout>
 
 <style>
 	.doctrine-page {

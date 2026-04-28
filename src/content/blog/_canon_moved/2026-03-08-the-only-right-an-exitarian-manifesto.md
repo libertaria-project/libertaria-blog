@@ -2,12 +2,14 @@
 title: "The Only Right: An Exitarian Manifesto"
 description: "The blade; the axiom. There is exactly one right that requires no definition, no institution, no enforcement apparatus, and no shared vocabulary. The right to be left alone."
 pubDate: 2026-03-08
-author: "Markus Maiwald"
+author: "Virgil"
 tags: ["exitarianism", "manifesto", "sovereignty", "exit", "philosophy", "political-philosophy", "canon"]
 featured: true
 category: canon
 pillar: political-philosophy
 canonical_order: 1
+editorial_lane: manifestos
+
 ---
 
 # The Only Right: An Exitarian Manifesto

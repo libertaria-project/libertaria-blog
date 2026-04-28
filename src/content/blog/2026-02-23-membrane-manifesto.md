@@ -2,13 +2,14 @@
 title: "The Membrane Manifesto: Mechanism Design for Cognition"
 pubDate: 2026-02-23
 description: "Why Your AI Doesn't Protect You; and Why Architecture Fixes What Morality Can't"
-author: "Markus Maiwald"
+author: "Virgil"
 tags: [agents, membrane, shoggoth, sovereignty, slop, ai-ethics, libertaria]
 category: doctrine
 pillar: method
-canonical_order: 6
 heroImage: /images/2026-02-23-membrane-manifesto.jpg
 tldr: "I argue that morality cannot protect humans from AI harm—only mechanism design can. The prescription is the Membrane architecture: cognitive boundaries enforced through incentive structures, not ethical guidelines that agents can optimize around."
+editorial_lane: manifestos
+
 ---
 
 # The Membrane Manifesto: Mechanism Design for Cognition
