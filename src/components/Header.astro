@@ -1,30 +1,34 @@
----
-import HeaderLink from './HeaderLink.astro';
----
-
 <header class="navbar">
 	<div class="progress-bar"></div>
-	<nav>
+	<nav class="navbar-container">
 		<a href="/" class="logo">
 			<img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="32" height="32" />
 			<span>Libertaria</span>
 		</a>
-		<div class="internal-links">
-			<HeaderLink href="https://sovereign-society.org/canon/">Canon</HeaderLink>
-			<HeaderLink href="/dispatches/">Dispatches</HeaderLink>
-			<HeaderLink href="/doctrine/">Doctrine</HeaderLink>
-			<HeaderLink href="/essays/">Essays</HeaderLink>
-			<HeaderLink href="/stories/">Stories</HeaderLink>
-			<HeaderLink href="/glossary/">Glossary</HeaderLink>
-		</div>
+		<button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="/dispatches/">Dispatches</a></li>
+			<li><a href="/geopolitics/">Geopolitics</a></li>
+			<li><a href="/stories/">Stories</a></li>
+			<li><a href="/civilization-faith/">Civilization</a></li>
+			<li><a href="/manifestos/">Manifestos</a></li>
+			<li><a href="/doctrine/">Doctrine</a></li>
+			<li><a href="/open-problems/">Open Problems</a></li>
+			<li><a href="/blog/search/">Search</a></li>
+		</ul>
 	</nav>
 </header>
 
 <script>
-	// Scroll-linked Navbar Enhancement
 	(function() {
 		const navbar = document.querySelector('.navbar');
 		const progressBar = document.querySelector('.progress-bar') as HTMLElement;
+		const hamburger = document.querySelector('.hamburger');
+		const navLinks = document.querySelector('.nav-links');
 		if (!navbar) return;
 
 		let ticking = false;
@@ -33,14 +37,12 @@ import HeaderLink from './HeaderLink.astro';
 			const scrollY = window.scrollY;
 			const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-			// Transparent at top, solid when scrolled
 			if (scrollY > 50) {
 				navbar.classList.add('scrolled');
 			} else {
 				navbar.classList.remove('scrolled');
 			}
 
-			// Update progress bar
 			if (progressBar && docHeight > 0) {
 				const progress = Math.min((scrollY / docHeight) * 100, 100);
 				progressBar.style.width = progress + '%';
@@ -56,110 +58,22 @@ import HeaderLink from './HeaderLink.astro';
 			}
 		});
 
-		// Initial check
+		if (hamburger && navLinks) {
+			hamburger.addEventListener('click', () => {
+				const expanded = navLinks.classList.toggle('open');
+				hamburger.setAttribute('aria-expanded', String(expanded));
+				hamburger.classList.toggle('active', expanded);
+			});
+
+			navLinks.querySelectorAll('a').forEach((link) => {
+				link.addEventListener('click', () => {
+					navLinks.classList.remove('open');
+					hamburger.classList.remove('active');
+					hamburger.setAttribute('aria-expanded', 'false');
+				});
+			});
+		}
+
 		updateNavbar();
 	})();
 </script>
-
-<style>
-	.navbar {
-		position: sticky;
-		top: 0;
-		z-index: 100;
-		background: transparent;
-		backdrop-filter: none;
-		-webkit-backdrop-filter: none;
-		border-bottom: 1px solid transparent;
-		transition: background var(--duration-base, 300ms) var(--ease-out-expo, ease),
-		            backdrop-filter var(--duration-base, 300ms) var(--ease-out-expo, ease),
-		            -webkit-backdrop-filter var(--duration-base, 300ms) var(--ease-out-expo, ease),
-		            border-bottom-color var(--duration-base, 300ms) var(--ease-out-expo, ease);
-	}
-
-	.navbar.scrolled {
-		background: rgba(10, 10, 52, 0.5);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-	}
-
-	/* Progress bar at bottom of header */
-	.progress-bar {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		height: 2px;
-		background: linear-gradient(90deg, var(--color-gold, #ffd700), var(--color-red, #ff1a1a));
-		width: 0%;
-		transition: width 50ms linear;
-		z-index: 101;
-	}
-
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 1rem;
-	}
-
-	.logo {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1.3rem;
-		color: var(--accent, #ffd700);
-		transition: color 150ms ease;
-	}
-
-	.logo:hover {
-		color: var(--color-gold-light, #ffec8b);
-	}
-
-	.logo-img {
-		border-radius: 4px;
-	}
-
-	.internal-links {
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
-	}
-
-	.internal-links a:not([class]) {
-		display: inline-block;
-		padding: 0.5rem 0.75rem;
-		color: var(--text, #e0e0e0);
-		font-weight: 500;
-		font-size: 0.95rem;
-		letter-spacing: 0.02em;
-		border-bottom: 2px solid transparent;
-		text-decoration: none;
-		transition: color 150ms ease, border-bottom-color 300ms ease;
-	}
-
-	.internal-links a:not([class]):hover {
-		color: var(--accent, #ffd700);
-		border-bottom-color: var(--red, #ff1a1a);
-	}
-
-	@media (max-width: 768px) {
-		.internal-links {
-			gap: 0;
-			font-size: 0.85rem;
-		}
-
-		.internal-links a:not([class]),
-		.internal-links :global(a) {
-			padding: 0.5rem 0.4rem;
-			font-size: 0.85rem;
-		}
-
-		.logo span {
-			display: none;
-		}
-	}
-</style>
