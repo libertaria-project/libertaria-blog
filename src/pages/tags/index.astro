@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { CANONICAL_TAGS, CANONICAL_TAG_IDS } from '../../consts';
+
+const allPosts = await getCollection('blog');
+const now = new Date();
+
+// Count posts per canonical tag
+const tagCounts = new Map<string, number>();
+for (const post of allPosts) {
+  if (post.data.pubDate > now) continue;
+  for (const tag of post.data.tags || []) {
+    if (CANONICAL_TAG_IDS.has(tag)) {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    }
+  }
+}
+
+const tagsWithCounts = CANONICAL_TAGS.map(t => ({
+  ...t,
+  count: tagCounts.get(t.id) || 0,
+})).sort((a, b) => b.count - a.count);
+
+// Also count "other" (non-canonical) tags total
+const otherTags = [
+  ...new Set(
+    allPosts.flatMap(p => p.data.tags || []).filter(t => !CANONICAL_TAG_IDS.has(t))
+  )
+];
+---
+<Layout
+  title="Tags — Libertaria Dispatch"
+  description="Browse all topics covered in Libertaria Dispatch."
+>
+  <section class="tags-page">
+    <header class="tags-header">
+      <h1>Topics</h1>
+      <p class="tags-subtitle">
+        20 curated topics. {allPosts.filter(p => p.data.pubDate <= now).length} articles total.
+        For everything else, use <a href="/blog/search/">search</a>.
+      </p>
+    </header>
+
+    <div class="tags-grid">
+      {tagsWithCounts.map(tag => (
+        <a href={`/tags/${tag.id}/`} class="tag-card">
+          <div class="tag-card-top">
+            <span class="tag-name">#{tag.id}</span>
+            <span class="tag-count">{tag.count}</span>
+          </div>
+          <p class="tag-card-desc">{tag.desc}</p>
+        </a>
+      ))}
+    </div>
+
+    {otherTags.length > 0 && (
+      <div class="other-tags-section">
+        <h2 class="other-tags-title">
+          Also tagged
+          <span class="other-count">{otherTags.length} terms — see <a href="/blog/search/">search</a></span>
+        </h2>
+        <div class="other-tags-cloud">
+          {otherTags.map(t => (
+            <a href={`/blog/search/?q=${encodeURIComponent(t)}`} class="other-tag-chip">
+              #{t}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+</Layout>
+
+<style>
+  .tags-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .tags-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .tags-header h1 {
+    font-size: 2.5rem;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .tags-subtitle {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin: 0;
+  }
+
+  .tags-subtitle a {
+    color: var(--color-gold);
+  }
+
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .tag-card {
+    display: block;
+    background: var(--color-black-lighter);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .tag-card:hover {
+    border-color: rgba(255, 215, 0, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 16px rgba(255, 215, 0, 0.04);
+    transform: translateY(-2px);
+  }
+
+  .tag-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+
+  .tag-name {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  .tag-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-gray);
+    background: rgba(255, 215, 0, 0.08);
+    padding: 0.1rem 0.45rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.12);
+  }
+
+  .tag-card-desc {
+    font-size: 0.85rem;
+    color: var(--color-white-dim);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .other-tags-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 2rem;
+  }
+
+  .other-tags-title {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .other-count {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-left: 0.5rem;
+  }
+
+  .other-count a {
+    color: var(--color-gold);
+  }
+
+  .other-tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .other-tag-chip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--color-gray);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .other-tag-chip:hover {
+    background: rgba(255, 215, 0, 0.08);
+    color: var(--color-gold);
+    border-color: rgba(255, 215, 0, 0.2);
+  }
+</style>

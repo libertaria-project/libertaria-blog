@@ -2,6 +2,7 @@
 // Blog post layout component
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
+import { CANONICAL_TAG_IDS } from '../consts';
 
 interface Props {
 	post: CollectionEntry<'blog'>;
@@ -9,6 +10,12 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+function tagHref(tag: string): string {
+  return CANONICAL_TAG_IDS.has(tag)
+    ? `/tags/${tag}/`
+    : `/blog/search/?q=${encodeURIComponent(tag)}`;
+}
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
@@ -35,7 +42,7 @@ const { Content } = await post.render();
 			{post.data.tags && post.data.tags.length > 0 && (
 				<div class="tags">
 					{post.data.tags.map((tag) => (
-						<a href={`/tags/${tag}`} class="tag">#{tag}</a>
+						<a href={tagHref(tag)} class="tag">#{tag}</a>
 					))}
 				</div>
 			)}

@@ -1,95 +1,41 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
 import { getCollection } from 'astro:content';
+import { CANONICAL_TAGS, CANONICAL_TAG_IDS, LANES } from '../consts';
 
 const posts = await getCollection('blog');
 const now = new Date();
 const publishedPosts = posts.filter(p => p.data.pubDate <= now);
 publishedPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const latestEssays = publishedPosts.slice(0, 10);
-const featured = latestEssays[0];
 
-// ── Lane definitions ──────────────────────────────────────────────
-const LANES = [
-  {
-    id: 'dispatches',
-    label: 'Dispatches',
-    desc: 'Trench reports from the parallel. Big tech enclosure, platform capture, chapter operations, and how Libertaria fights back.',
-    icon: '📡',
-    color: '#ffd700',
-    href: '/dispatches/',
-  },
-  {
-    id: 'geopolitics',
-    label: 'Geopolitics',
-    desc: 'Empire, fragmentation, Goliaths, and the exit lens applied to power, energy, currency, and predictive history.',
-    icon: '🌐',
-    color: '#ff1a1a',
-    href: '/geopolitics/',
-  },
-  {
-    id: 'stories',
-    label: 'Stories',
-    desc: 'Sci-fi, near-future fiction, and carbon-and-silicon worldbuilding from the frontier.',
-    icon: '⚡',
-    color: '#ffd700',
-    href: '/stories/',
-  },
-  {
-    id: 'civilization-faith',
-    label: 'Civilization & Faith',
-    desc: 'Ritual, stewardship, religion, and moral architecture through the Leave Us Alone lens.',
-    icon: '🜏',
-    color: '#ff1a1a',
-    href: '/civilization-faith/',
-  },
-  {
-    id: 'manifestos',
-    label: 'Manifestos',
-    desc: 'Blade texts. High-voltage polemics. The rattling manifests that draw the line.',
-    icon: '⚔',
-    color: '#ffd700',
-    href: '/manifestos/',
-  },
-  {
-    id: 'doctrine',
-    label: 'Doctrine',
-    desc: 'Applied Exitarianism in motion. Philosophy operationalized. The greyzone between lens and action.',
-    icon: '⚖',
-    color: '#ff1a1a',
-    href: '/doctrine/',
-  },
-  {
-    id: 'open-problems',
-    label: 'Open Problems',
-    desc: 'Unsolved questions worth building around. The edge of what we know and what we still must figure out.',
-    icon: '◇',
-    color: '#ffd700',
-    href: '/open-problems/',
-  },
-];
+// ── Cover story: most recent post gets hero treatment ─────────────────
+const cover = publishedPosts[0];
 
-// ── Per-lane latest article ────────────────────────────────────────
+// ── "From All Lanes": 8 posts across lanes (excluding cover) ───────────
+const latestMixed = publishedPosts.slice(1, 9);
+
+// ── Per-lane latest ──────────────────────────────────────────────────
 const laneLatest = LANES.map(lane => {
   const match = publishedPosts.find(p => p.data.editorial_lane === lane.id);
   return { ...lane, latest: match };
 });
-
-// ── Featured post author badge ─────────────────────────────────────
-const featuredAuthor = featured?.data.author;
-const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
 ---
-<LandingLayout title="Libertaria — Leave Us Alone applied to the century" description="Leave Us Alone applied to the century. The publication of Chapter Zero — big tech anatomy, platform capture, chapter life, sci-fi worldbuilding, and the geopolitics of exit." showHeader={false} showFooter={false}>
+<LandingLayout
+  title="Libertaria Dispatch — Musings on Politics & Tech through the Exitarianism Lens"
+  description="Musings about Politics & Tech in the Libertaria Federation through the lens of Exitarianism."
+  showHeader={false}
+  showFooter={false}
+>
 
   <!-- Reading Progress Bar -->
   <div class="reading-progress"></div>
 
-  <!-- Navigation -->
+  <!-- ── Navigation ──────────────────────────────────────────────── -->
   <nav class="navbar">
     <div class="navbar-container">
       <a href="/" class="logo">
-        <img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="32" height="32" />
-        <span>Libertaria</span>
+        <img src="/libertaria-logo.png" alt="🜏" class="logo-img" width="28" height="28" />
+        <span class="logo-text">Libertaria <span class="logo-accent">Dispatch</span></span>
       </a>
       <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-line"></span>
@@ -104,39 +50,127 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
         <li><a href="/manifestos/">Manifestos</a></li>
         <li><a href="/doctrine/">Doctrine</a></li>
         <li><a href="/open-problems/">Open Problems</a></li>
+        <li><a href="/tags/" class="nav-tags-link">Topics</a></li>
         <li><a href="/blog/search/">Search</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <canvas id="particles-canvas"></canvas>
-    <div class="hero-content">
-      <h1 class="hero-title">Leave Us Alone applied to the century.</h1>
-      <p class="hero-subtitle">Chapter Zero. Frankfurt & Budapest.</p>
-      <p class="hero-description">
-        The publication of Markus Maiwald and Virgil. Not a school. Not a manual.
-        A magazine from the frontier — big tech anatomy, platform capture,
-        chapter life, sci-fi worldbuilding, and the Leave Us Alone lens applied
-        to a century that forgot what doors are for.
+  <!-- ── Masthead ───────────────────────────────────────────────── -->
+  <section class="masthead">
+    <div class="masthead-inner">
+      <p class="masthead-kicker">Chapter Zero — Frankfurt & Budapest</p>
+      <h1 class="masthead-title">Libertaria Dispatch</h1>
+      <p class="masthead-tagline">
+        Musings about Politics &amp; Tech in the Libertaria Federation
+        through the lens of Exitarianism.
       </p>
-      <div class="hero-cta">
-        <a href="#lanes" class="btn btn-primary">Enter the Magazine</a>
-        <a href="/manifestos/" class="btn btn-secondary">Read the Manifestos</a>
+    </div>
+  </section>
+
+  <!-- ── Cover Story ─────────────────────────────────────────────── -->
+  {cover && (
+    <section class="cover-story">
+      <div class="cover-story-inner">
+        <div class="cover-meta">
+          <span class="cover-kicker">Cover Story</span>
+          {cover.data.editorial_lane && (
+            <a href={`/${cover.data.editorial_lane}/`} class="cover-lane">
+              {cover.data.editorial_lane.replace('-', '\u202f')}
+            </a>
+          )}
+          <span class="cover-date">
+            {cover.data.pubDate.toLocaleDateString('en-us', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+        </div>
+        <h2 class="cover-title">
+          <a href={`/blog/${cover.slug}/`}>{cover.data.title}</a>
+        </h2>
+        <p class="cover-desc">{cover.data.description}</p>
+        {cover.data.tags && cover.data.tags.length > 0 && (
+          <div class="cover-tags">
+            {cover.data.tags.slice(0, 5).map(tag => (
+              <a
+                href={CANONICAL_TAG_IDS.has(tag) ? `/tags/${tag}/` : `/blog/search/?q=${encodeURIComponent(tag)}`}
+                class="cover-tag"
+              >#{tag}</a>
+            ))}
+          </div>
+        )}
+        <a href={`/blog/${cover.slug}/`} class="btn btn-primary cover-cta">Read Article →</a>
+      </div>
+      <div class="cover-visual">
+        <div class="cover-symbol">◈</div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── From All Lanes ───────────────────────────────────────────── -->
+  <section class="section from-all-lanes">
+    <div class="blog-container">
+      <h2 class="section-title">From All Lanes</h2>
+      <div class="latest-grid">
+        {latestMixed.map((post) => (
+          <article class="blog-card reveal">
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <time>
+                  {post.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </time>
+                {post.data.editorial_lane && (
+                  <a href={`/${post.data.editorial_lane}/`} class="lane-pill">
+                    {post.data.editorial_lane.replace('-', ' ')}
+                  </a>
+                )}
+              </div>
+              <h3 class="blog-card-title">
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h3>
+              <p class="blog-card-excerpt">{post.data.description}</p>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="blog-card-tags">
+                  {post.data.tags.slice(0, 3).map(tag => (
+                    <a
+                      href={CANONICAL_TAG_IDS.has(tag) ? `/tags/${tag}/` : `/blog/search/?q=${encodeURIComponent(tag)}`}
+                      class="blog-card-tag"
+                    >#{tag}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ── Magazine Lane Cards ──────────────────────────────────────── -->
-  <section id="lanes" class="section" style="padding-top: 4rem;">
+  <!-- ── Topics Strip ─────────────────────────────────────────────── -->
+  <section class="topics-section">
+    <div class="topics-container">
+      <h2 class="topics-title">Topics</h2>
+      <div class="topics-scroll">
+        {CANONICAL_TAGS.map(tag => (
+          <a href={`/tags/${tag.id}/`} class="topic-chip">
+            #{tag.id}
+          </a>
+        ))}
+      </div>
+      <div class="topics-more">
+        <a href="/tags/" class="btn btn-secondary">All Topics →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Magazine Lanes ───────────────────────────────────────────── -->
+  <section class="section lanes-section">
     <div class="blog-container">
+      <h2 class="section-title">The Lanes</h2>
       <div class="lanes-grid">
         {laneLatest.map((lane) => (
           <a href={lane.href} class="lane-card" style={`--lane-color: ${lane.color};`}>
             <div class="lane-card-header">
               <span class="lane-icon">{lane.icon}</span>
-              <h2 class="lane-title">{lane.label}</h2>
+              <h3 class="lane-title">{lane.label}</h3>
             </div>
             <p class="lane-desc">{lane.desc}</p>
             {lane.latest ? (
@@ -145,9 +179,7 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
                 <span class="lane-latest-title">{lane.latest.data.title}</span>
                 <span class="lane-latest-date">
                   {lane.latest.data.pubDate.toLocaleDateString('en-us', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
+                    month: 'short', day: 'numeric', year: 'numeric',
                   })}
                 </span>
               </div>
@@ -163,106 +195,20 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
     </div>
   </section>
 
-  <!-- ── Featured Article ─────────────────────────────────────────── -->
-  {featured && (
-    <section class="section" style="padding-top: 2rem;">
-      <div class="blog-container">
-        <article class="blog-card featured reveal">
-          <div class="blog-card-image" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);">
-            <div class="featured-badge">FEATURED</div>
-            <span style="font-size: 5rem; opacity: 0.4;">{isVirgil ? '⚡' : '◈'}</span>
-          </div>
-          <div class="blog-card-content">
-            <div class="blog-card-date">
-              {featured.data.pubDate.toLocaleDateString('en-us', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-              })}
-              <span class="author-badge" style="margin-left: 0.75rem; opacity: 0.6; font-size: 0.85rem;">
-                {isVirgil ? 'Virgil' : featured.data.author}
-              </span>
-            </div>
-            <h3 class="blog-card-title">
-              <a href={`/blog/${featured.slug}/`}>{featured.data.title}</a>
-            </h3>
-            <p class="blog-card-excerpt">{featured.data.description}</p>
-            {featured.data.tags && (
-              <div class="blog-card-tags">
-                {featured.data.tags.slice(0, 5).map(tag => (
-                  <span class="blog-card-tag">#{tag}</span>
-                ))}
-              </div>
-            )}
-            <div style="margin-top: 1.5rem;">
-              <a href={`/blog/${featured.slug}/`} class="btn btn-primary">Read Article</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  )}
-
-  <!-- ── Latest Articles Strip ─────────────────────────────────────── -->
-  <section class="section" style="padding-top: 1rem;">
-    <div class="blog-container">
-      <h2 class="section-title reveal" style="margin-bottom: 2rem;">Latest</h2>
-      <div class="blog-grid">
-        {latestEssays.slice(1, 7).map((post) => {
-          const postAuthor = post.data.author;
-          const postVirgil = !postAuthor || postAuthor === 'Virgil';
-          return (
-            <article class="blog-card reveal">
-              <div class="blog-card-content">
-                <div class="blog-card-date">
-                  {post.data.pubDate.toLocaleDateString('en-us', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
-                  {post.data.editorial_lane && (
-                    <span class="lane-pill" style="margin-left: 0.5rem;">
-                      {post.data.editorial_lane.replace('-', ' ')}
-                    </span>
-                  )}
-                </div>
-                <h3 class="blog-card-title">
-                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-                </h3>
-                <p class="blog-card-excerpt">{post.data.description}</p>
-                {post.data.tags && (
-                  <div class="blog-card-tags">
-                    {post.data.tags.slice(0, 3).map(tag => (
-                      <span class="blog-card-tag">#{tag}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </article>
-          );
-        })}
-      </div>
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="/dispatches/" class="btn btn-secondary">All Dispatches →</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ── Newsletter ───────────────────────────────────────────────── -->
   <section class="section newsletter-section">
     <div class="newsletter-container reveal">
-      <h2 class="newsletter-title">Join the Resistance</h2>
+      <h2 class="newsletter-title">Join the Dispatch</h2>
       <p class="newsletter-description">
-        Weekly dispatches from the parallel. Platform analysis, chapter reports,
-        manifesto drops, and the Leave Us Alone lens applied to the week's cage news.
-        No noise. No tokens. Just signal.
+        Trench reports, manifesto drops, and the Exitarianism lens applied to the week's cage news.
+        Published every 3\u20135 days. No noise. No tokens. Just signal.
       </p>
       <form id="newsletter-form" class="newsletter-form">
         <input type="email" class="newsletter-input" placeholder="your@email.tld" required>
         <button type="submit" class="btn btn-red">Subscribe</button>
       </form>
-      <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-gray);">
-        For Chapter members in Frankfurt and Budapest — and everyone who wants to be.
+      <p class="newsletter-footnote">
+        Chapter Zero — Frankfurt &amp; Budapest. For everyone who believes in exit.
       </p>
     </div>
   </section>
@@ -270,20 +216,19 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
   <!-- ── Footer ───────────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-logo">🜏 Libertaria — Chapter Zero Publication</div>
+      <div class="footer-logo">🜏 Libertaria Dispatch — Chapter Zero</div>
       <div class="footer-links">
-        <a href="https://sovereign-society.org">Foundation &amp; School</a>
+        <a href="https://sovereign-society.org/school/">Foundation &amp; School</a>
         <a href="/dispatches/">Dispatches</a>
         <a href="/stories/">Stories</a>
         <a href="/manifestos/">Manifestos</a>
+        <a href="/tags/">Topics</a>
         <a href="/blog/search/">Search</a>
         <a href="https://libertaria.dev" target="_blank">Build &amp; Stack</a>
         <a href="https://git.libertaria.dev" target="_blank">Git</a>
       </div>
       <div class="footer-license">
-        <a href="/legal/LICENSE_UNBOUND.html" rel="license">
-          ⚡ LUL-1.0
-        </a>
+        <a href="/legal/LICENSE_UNBOUND.html" rel="license">⚡ LUL-1.0</a>
         <span class="license-text">Unbound. Use freely; attribution required.</span>
       </div>
       <div class="footer-copy">
@@ -296,22 +241,359 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
   <script is:inline src="/new-design/main.js"></script>
 
   <style>
-    /* ── Lane Cards ─────────────────────────────────────────────── */
-    .lanes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+    /* ── Masthead ─────────────────────────────────────────────── */
+    .masthead {
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.12);
     }
 
+    .masthead-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .masthead-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      opacity: 0.6;
+      margin: 0 0 0.75rem;
+    }
+
+    .masthead-title {
+      font-family: var(--font-mono);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-white);
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+
+    .logo-accent {
+      color: var(--color-gold);
+    }
+
+    .masthead-tagline {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      line-height: 1.65;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Cover Story ───────────────────────────────────────────── */
+    .cover-story {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cover-story-inner {
+      flex: 1;
+    }
+
+    .cover-visual {
+      flex-shrink: 0;
+      width: 120px;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .cover-visual { display: flex; align-items: center; justify-content: center; }
+    }
+
+    .cover-symbol {
+      font-size: 6rem;
+      opacity: 0.08;
+      color: var(--color-gold);
+      line-height: 1;
+    }
+
+    .cover-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cover-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--color-red);
+      color: var(--color-white);
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+    }
+
+    .cover-lane {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: capitalize;
+      color: var(--color-gold);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .cover-lane:hover { opacity: 1; }
+
+    .cover-date {
+      font-size: 0.8rem;
+      color: var(--color-gray);
+    }
+
+    .cover-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--color-white);
+      margin: 0 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    .cover-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cover-title a:hover {
+      color: var(--color-gold);
+    }
+
+    .cover-desc {
+      font-size: 0.95rem;
+      color: var(--color-white-dim);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+
+    .cover-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .cover-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(255, 215, 0, 0.08);
+      color: rgba(255, 215, 0, 0.7);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cover-tag:hover {
+      background: rgba(255, 215, 0, 0.15);
+    }
+
+    .cover-cta {
+      display: inline-block;
+    }
+
+    /* ── Section titles ─────────────────────────────────────────── */
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.12);
+    }
+
+    /* ── Latest grid ────────────────────────────────────────────── */
+    .from-all-lanes {
+      padding-top: 1rem;
+    }
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── Blog card ──────────────────────────────────────────────── */
+    .blog-card {
+      background: var(--color-black-lighter);
+      border: 1px solid rgba(255, 215, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      border-color: rgba(255, 215, 0, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(255, 215, 0, 0.04);
+      transform: translateY(-3px);
+    }
+
+    .blog-card-content {
+      padding: 1.25rem;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--color-gray);
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-card-title {
+      font-size: 1.05rem;
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+
+    .blog-card-title a {
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    .blog-card:hover .blog-card-title a {
+      color: var(--color-gold);
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.85rem;
+      color: var(--color-white-dim);
+      line-height: 1.55;
+      margin: 0 0 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card-tags {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: rgba(255, 215, 0, 0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .blog-card-tag:hover {
+      color: var(--color-gold);
+    }
+
+    /* ── Lane pill ─────────────────────────────────────────────── */
+    .lane-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      color: var(--color-gold);
+      text-transform: capitalize;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .lane-pill:hover {
+      background: rgba(255, 215, 0, 0.18);
+    }
+
+    /* ── Topics strip ──────────────────────────────────────────── */
+    .topics-section {
+      padding: 2.5rem 1rem;
+      border-top: 1px solid rgba(255, 215, 0, 0.08);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+      background: rgba(255, 215, 0, 0.02);
+    }
+
+    .topics-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .topics-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      opacity: 0.6;
+      margin: 0 0 1rem;
+    }
+
+    .topics-scroll {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .topic-chip {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      background: rgba(255, 215, 0, 0.06);
+      border: 1px solid rgba(255, 215, 0, 0.14);
+      color: rgba(255, 215, 0, 0.8);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .topic-chip:hover {
+      background: rgba(255, 215, 0, 0.12);
+      border-color: rgba(255, 215, 0, 0.3);
+      color: var(--color-gold);
+    }
+
+    .topics-more {
+      text-align: right;
+    }
+
+    /* ── Lanes grid ─────────────────────────────────────────────── */
+    .lanes-section {
+      padding-top: 2rem;
+    }
+
+    .lanes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── Lane cards ────────────────────────────────────────────── */
     .lane-card {
       display: block;
       background: linear-gradient(145deg, var(--color-black-lighter) 0%, var(--color-black-light) 100%);
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.08);
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1.25rem;
       text-decoration: none;
       color: var(--color-white);
-      transition: all 0.35s ease;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
@@ -319,154 +601,108 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
     .lane-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
       background: var(--lane-color, var(--color-gold));
       box-shadow: 0 0 12px var(--lane-color, var(--color-gold));
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
+      opacity: 0.6;
+      transition: opacity 0.3s;
     }
 
     .lane-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 215, 0, 0.3);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.15);
+      transform: translateY(-4px);
+      border-color: rgba(255, 215, 0, 0.25);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 18px rgba(255, 215, 0, 0.08);
     }
 
-    .lane-card:hover::before {
-      opacity: 1;
-    }
+    .lane-card:hover::before { opacity: 1; }
 
     .lane-card-header {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      gap: 0.65rem;
+      margin-bottom: 0.6rem;
     }
 
-    .lane-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-    }
+    .lane-icon { font-size: 1.3rem; }
 
     .lane-title {
       font-family: var(--font-mono);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--lane-color, var(--color-gold));
       margin: 0;
     }
 
     .lane-desc {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--color-white-dim);
-      line-height: 1.55;
-      margin: 0 0 1rem 0;
+      line-height: 1.5;
+      margin: 0 0 0.85rem;
     }
 
     .lane-latest {
-      border-top: 1px solid rgba(255, 215, 0, 0.1);
-      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 215, 0, 0.08);
+      padding-top: 0.65rem;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .lane-latest-empty .lane-latest-title {
-      opacity: 0.4;
-      font-style: italic;
+      gap: 0.15rem;
     }
 
     .lane-latest-label {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--lane-color, var(--color-gold));
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      opacity: 0.7;
+      opacity: 0.65;
     }
 
     .lane-latest-title {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--color-white);
       line-height: 1.3;
     }
 
     .lane-latest-date {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--color-gray);
     }
 
-    /* ── Featured badge ──────────────────────────────────────────── */
-    .featured-badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
+    .lane-latest-empty .lane-latest-title {
+      opacity: 0.35;
+      font-style: italic;
+    }
+
+    /* ── Newsletter ─────────────────────────────────────────────── */
+    .newsletter-title {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
       color: var(--color-white);
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      box-shadow: var(--glow-red);
-      z-index: 2;
+      margin-bottom: 0.75rem;
     }
 
-    /* ── Author badge ────────────────────────────────────────────── */
-    .author-badge {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+    .newsletter-description {
+      color: var(--color-white-dim);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
     }
 
-    /* ── Lane pill ───────────────────────────────────────────────── */
-    .lane-pill {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 20px;
-      background: rgba(255, 215, 0, 0.1);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      color: var(--color-gold);
-      text-transform: capitalize;
-    }
-
-    /* ── Footer ──────────────────────────────────────────────────── */
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.5rem;
-      justify-content: center;
-      margin: 1rem 0;
-    }
-
-    .footer-links a {
+    .newsletter-footnote {
+      font-size: 0.82rem;
       color: var(--color-gray);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
+      margin: 1rem 0 0;
     }
 
-    .footer-links a:hover {
-      color: var(--color-gold);
+    /* ── Nav tags link ──────────────────────────────────────────── */
+    .nav-tags-link {
+      color: var(--color-gold) !important;
+      opacity: 0.85;
     }
 
-    /* ── Mobile ──────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .lanes-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .blog-card.featured {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    /* ── Footer ──────────────────────────────────────────────────── */
+    /* ── Footer ─────────────────────────────────────────────────── */
     .footer-license {
       display: flex;
       flex-direction: column;
@@ -486,34 +722,33 @@ const isVirgil = featuredAuthor === 'Virgil' || !featuredAuthor;
       font-size: 0.95rem;
     }
 
-    .footer-license a:hover {
-      text-decoration: underline;
-    }
+    .footer-license a:hover { text-decoration: underline; }
 
     .license-text {
       color: var(--color-gray);
       font-size: 0.85rem;
       text-align: center;
     }
+
+    /* ── Mobile ──────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .cover-story { padding: 2rem 1rem; flex-direction: column; }
+      .lanes-grid { grid-template-columns: 1fr; }
+      .latest-grid { grid-template-columns: 1fr; }
+    }
   </style>
 
   <script>
-    // Mobile hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger && navLinks) {
-      hamburger.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', String(isOpen));
-        hamburger.classList.toggle('active', isOpen);
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).classList.add('revealed');
+          observer.unobserve(e.target);
+        }
       });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
   </script>
 </LandingLayout>

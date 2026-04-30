@@ -33,3 +33,4 @@ GEMINI.md
 # Editor / IDE
 .vscode/
 .idea/
+.worktrees/

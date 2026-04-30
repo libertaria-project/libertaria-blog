@@ -1,14 +1,24 @@
 ---
 import LandingLayout from '../../layouts/LandingLayout.astro';
 import { getCollection } from 'astro:content';
+import { CANONICAL_TAG_IDS } from '../../consts';
 
 const posts = await getCollection('blog');
 const now = new Date();
 const lanePosts = posts
   .filter(p => p.data.editorial_lane === 'dispatches' && p.data.pubDate <= now)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featured = lanePosts[0];
+const rest = lanePosts.slice(1);
+
+function tagHref(tag: string): string {
+  return CANONICAL_TAG_IDS.has(tag)
+    ? `/tags/${tag}/`
+    : `/blog/search/?q=${encodeURIComponent(tag)}`;
+}
 ---
-<LandingLayout title="Dispatches | Libertaria" description="Trench reports from the parallel. Big tech enclosure, platform capture, chapter operations, and how Libertaria fights back.">
+<LandingLayout title="Dispatches | Libertaria Dispatch" description="Trench reports from the parallel. Big tech enclosure, platform capture, chapter operations, and how Libertaria fights back.">
   <section class="lane-page">
     <header class="lane-header">
       <div class="lane-rule"></div>
@@ -18,31 +28,59 @@ const lanePosts = posts
         Big tech enclosure, platform capture, chapter operations, and how Libertaria fights back.
       </p>
     </header>
+
     {lanePosts.length === 0 ? (
       <div class="empty-state">
         <p>No dispatches yet. The front is moving fast.</p>
         <p class="hint">Check back soon.</p>
       </div>
     ) : (
-      <div class="post-grid">
-        {lanePosts.map((post) => (
-          <article class="post-card">
-            <a href={`/blog/${post.slug}/`}>
-              <div class="post-card-date">
-                {post.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
-                <span class="author-pill">{post.data.author}</span>
+      <>
+        {featured && (
+          <div class="featured-post">
+            <a href={`/blog/${featured.slug}/`} class="featured-link">
+              <div class="featured-meta">
+                <span class="featured-badge">Latest</span>
+                <time>{featured.data.pubDate.toLocaleDateString('en-us', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
               </div>
-              <h3>{post.data.title}</h3>
-              <p class="post-card-desc">{post.data.description}</p>
-              {post.data.tags && post.data.tags.length > 0 && (
-                <div class="post-card-tags">
-                  {post.data.tags.slice(0, 3).map(tag => <span class="tag">#{tag}</span>)}
+              <h2 class="featured-title">{featured.data.title}</h2>
+              <p class="featured-desc">{featured.data.description}</p>
+              {featured.data.tags && featured.data.tags.length > 0 && (
+                <div class="featured-tags">
+                  {featured.data.tags.slice(0, 4).map(tag => (
+                    <a href={tagHref(tag)} class="tag-chip">#{tag}</a>
+                  ))}
                 </div>
               )}
+              <span class="featured-cta">Read Article →</span>
             </a>
-          </article>
-        ))}
-      </div>
+          </div>
+        )}
+
+        {rest.length > 0 && (
+          <div class="post-grid">
+            {rest.map((post) => (
+              <article class="post-card">
+                <a href={`/blog/${post.slug}/`}>
+                  <div class="post-card-date">
+                    {post.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    <span class="author-pill">{post.data.author || 'Virgil'}</span>
+                  </div>
+                  <h3>{post.data.title}</h3>
+                  <p class="post-card-desc">{post.data.description}</p>
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="post-card-tags">
+                      {post.data.tags.slice(0, 3).map(tag => (
+                        <a href={tagHref(tag)} class="tag">#{tag}</a>
+                      ))}
+                    </div>
+                  )}
+                </a>
+              </article>
+            ))}
+          </div>
+        )}
+      </>
     )}
   </section>
 </LandingLayout>
@@ -52,6 +90,79 @@ const lanePosts = posts
   .lane-rule { width: 60px; height: 3px; background: var(--color-gold); margin: 0 auto 1.5rem; }
   .lane-header h1 { font-size: 3rem; color: var(--color-gold); margin-bottom: 0.5rem; }
   .lane-subtitle { font-size: 1.1rem; color: var(--color-gray); max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+  .featured-post {
+    background: linear-gradient(145deg, rgba(255,215,0,0.05) 0%, rgba(255,215,0,0.02) 100%);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .featured-post:hover {
+    border-color: rgba(255,215,0,0.4);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.25), 0 0 24px rgba(255,215,0,0.05);
+  }
+
+  .featured-link { display: block; text-decoration: none; color: inherit; }
+
+  .featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: var(--color-gray);
+  }
+
+  .featured-badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--color-gold);
+    color: #000;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+  }
+
+  .featured-title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--color-white);
+    margin: 0 0 0.75rem;
+    line-height: 1.25;
+  }
+
+  .featured-post:hover .featured-title { color: var(--color-gold); }
+
+  .featured-desc {
+    font-size: 0.95rem;
+    color: var(--color-white-dim);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .featured-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+  .tag-chip {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    background: rgba(255,215,0,0.08);
+    color: rgba(255,215,0,0.7);
+    border: 1px solid rgba(255,215,0,0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .featured-cta {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-gold);
+  }
+
   .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
   .post-card { background: var(--color-black-lighter); border: 1px solid rgba(255,215,0,0.1); border-radius: 12px; overflow: hidden; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
   .post-card:hover { border-color: rgba(255,215,0,0.4); box-shadow: 0 0 20px rgba(255,215,0,0.06); }
@@ -62,8 +173,8 @@ const lanePosts = posts
   .post-card:hover h3 { color: var(--color-gold); }
   .post-card-desc { font-size: 0.9rem; color: var(--color-gray); line-height: 1.5; margin-bottom: 0.75rem; }
   .post-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-  .tag { font-size: 0.75rem; color: rgba(255,215,0,0.6); }
+  .tag { font-size: 0.75rem; color: rgba(255,215,0,0.55); text-decoration: none; }
+  .tag:hover { color: var(--color-gold); }
   .empty-state { text-align: center; padding: 4rem; color: var(--color-gray); }
-  .empty-state p { margin-bottom: 0.5rem; }
   .hint { font-size: 0.85rem; opacity: 0.6; }
 </style>
