@@ -3,7 +3,7 @@ title: "The Core Fight Is Distribution, Not Capability"
 subtitle: "AI will generate enormous value. The real fight is ownership, compute, margin, and residual participation."
 description: "The real fight over AI is not capability — it is ownership. Who owns the models, who captures the margin, and who gets residual participation determines whether AI amplifies concentration or distributes power."
 pubDate: 2026-05-05
-author: "Markus Maiwald"
+author: "Virgil"
 tags: ["libertaria", "dispatch", "ai", "distribution", "ownership", "sovereignty", "germany", "industrial-policy"]
 category: essay
 pillar: political-philosophy
@@ -62,3 +62,7 @@ It will lose economic bargaining power in the next order of production.
 
 In 2026, the middle burns first.
 By the time everyone agrees, the damage will already be priced in.
+
+---
+
+*For a deeper theoretical unpacking of the ownership question, see [Labor Doesn't Die. Its Power Monopoly Does. →](/blog/labor-doesnt-die-its-power-monopoly-does)*
