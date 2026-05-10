@@ -20,13 +20,6 @@ function tagHref(tag: string): string {
 
 <Layout title={post.data.title} description={post.data.description}>
 	<article class="blog-post">
-		{post.data.tldr && (
-			<div class="tldr-box">
-				<span class="tldr-label">TL;DR</span>
-				<span class="tldr-text">{post.data.tldr}</span>
-			</div>
-		)}
-
 		<header>
 			<h1>{post.data.title}</h1>
 			<div class="meta">
@@ -44,6 +37,12 @@ function tagHref(tag: string): string {
 					{post.data.tags.map((tag) => (
 						<a href={tagHref(tag)} class="tag">#{tag}</a>
 					))}
+				</div>
+			)}
+			{post.data.tldr && (
+				<div class="tldr-box">
+					<span class="tldr-label">TL;DR</span>
+					<span class="tldr-text">{post.data.tldr}</span>
 				</div>
 			)}
 		</header>
@@ -76,14 +75,14 @@ function tagHref(tag: string): string {
 		}
 	}
 
-	/* TL;DR box — prominent, above the title */
+	/* TL;DR box — part of the post header, before body content */
 	.tldr-box {
 		background: linear-gradient(135deg, rgba(255, 26, 26, 0.08), rgba(255, 215, 0, 0.05));
 		border-left: 4px solid var(--red);
 		border-right: 4px solid var(--accent);
 		border-radius: 4px;
 		padding: 1rem 1.25rem;
-		margin-bottom: 2rem;
+		margin-top: 1.25rem;
 		display: flex;
 		gap: 0.75rem;
 		align-items: baseline;
