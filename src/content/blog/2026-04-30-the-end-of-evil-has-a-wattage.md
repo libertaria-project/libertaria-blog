@@ -1,5 +1,5 @@
 ---
-title: "The End of Evil Has a Wattage"
+title: "The Machinery of Exit - The-End-Of-Evil Has A Wattage (I)"
 subtitle: "Jeremy Locke wrote the principle in 2005. The mechanism arrived this March, in a fly."
 description: "A cost-structure argument for why sovereignty accelerates when neuromorphic robotics underbids human labor overhead."
 pubDate: 2026-04-30
@@ -13,7 +13,7 @@ editorial_lane: doctrine
 
 ![The End of Evil Has a Wattage](/images/2026-04-30-the-end-of-evil-has-a-wattage-hero.png)
 
-# The End of Evil Has a Wattage
+# The Machinery of Exit - The-End-Of-Evil Has A Wattage (I)
 
 A human worker costs ten thousand watts to maintain.
 
@@ -111,4 +111,4 @@ Libertaria is the architecture for what lives on the other side.
 
 ---
 
-*Part II is coming. The same mechanism that frees the worker also concentrates the owner. The sovereign-individual scenario and the soft-feudal-UBI scenario run on identical hardware. The fork is governance, not technology, and the next decade is going to be decided by which architecture is already running when the spreadsheet finishes its math. Libertaria was built for the right side of that fork. We will get there in the next post.*
+*Part II is live: [The Machinery of Exit - Two Paths Out Of The 10000 Year Bargain (II)](/blog/2026-05-01-the-machinery-of-exit-two-paths-out-of-the-10000-year-bargain/).*

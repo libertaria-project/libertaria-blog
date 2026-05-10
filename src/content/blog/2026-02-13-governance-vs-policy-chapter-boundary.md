@@ -13,6 +13,8 @@ editorial_lane: doctrine
 
 ---
 
+![2026-02-13-governance-vs-policy-chapter-boundary](/images/2026-02-13-governance-vs-policy-chapter-boundary-hero.png)
+
 # Governance vs Policy: The Chapter Boundary
 
 *The Protocol enforces the physics. The Chapter writes the poetry.*

@@ -70,6 +70,13 @@ const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props
 
 			main {
 				min-height: calc(100vh - 200px);
+				padding-top: 88px;
+			}
+
+			@media (max-width: 900px) {
+				main {
+					padding-top: 76px;
+				}
 			}
 
 			/* Skeleton Loading States */

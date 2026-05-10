@@ -12,6 +12,8 @@ editorial_lane: manifestos
 
 ---
 
+![2026-02-14-golden-path-leads-to-cage](/images/2026-02-14-golden-path-leads-to-cage-hero.png)
+
 # The Golden Path Leads to a Cage
 
 *David Shapiro almost gets it. Three times. Then flinches.*

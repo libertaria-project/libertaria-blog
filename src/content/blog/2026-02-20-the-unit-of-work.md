@@ -12,6 +12,8 @@ editorial_lane: dispatches
 
 ---
 
+![2026-02-20-the-unit-of-work](/images/2026-02-20-the-unit-of-work-hero.png)
+
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.
 
 **Published:** February 2026 | **Author:** Markus Maiwald | **libertaria.app**

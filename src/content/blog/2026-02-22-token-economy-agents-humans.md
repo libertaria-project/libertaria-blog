@@ -12,6 +12,8 @@ editorial_lane: dispatches
 
 ---
 
+![2026-02-22-token-economy-agents-humans](/images/2026-02-22-token-economy-agents-humans-hero.png)
+
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.
 
 *API calls became the unit of economic measurement for AI. This was a category error from day one.*

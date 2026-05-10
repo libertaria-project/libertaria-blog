@@ -13,6 +13,8 @@ editorial_lane: doctrine
 
 ---
 
+![2026-02-13-governance-must-scale-with-circle](/images/2026-02-13-governance-must-scale-with-circle-hero.png)
+
 # Why Governance Must Scale With Your Circle
 
 *The same governance mechanism applied to the wrong scale is tyranny wearing different clothes.*

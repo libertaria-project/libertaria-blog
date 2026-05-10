@@ -11,6 +11,8 @@ tldr: "Future warfare is no longer mainly about armies; it is about turning the 
 editorial_lane: civilization-faith
 ---
 
+![2026-04-28-why-exitarianism-needed-the-oath](/images/2026-04-28-why-exitarianism-needed-the-oath-hero.png)
+
 # Why Exitarianism Needed The Oath
 
 ### Future Warfare Is Against the Population — The Bund Is the Answer

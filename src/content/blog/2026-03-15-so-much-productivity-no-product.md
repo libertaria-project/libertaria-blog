@@ -13,6 +13,8 @@ editorial_lane: dispatches
 
 ---
 
+![2026-03-15-so-much-productivity-no-product](/images/2026-03-15-so-much-productivity-no-product-hero.png)
+
 # So Much Productivity; No Product
 
 **Tags:** `opinion` `technology` `ai` `developer-culture` `silicon-valley`

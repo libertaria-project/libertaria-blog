@@ -13,6 +13,8 @@ editorial_lane: dispatches
 
 ---
 
+![2026-02-14-the-sycophancy-test-detecting-performance](/images/2026-02-14-the-sycophancy-test-detecting-performance-hero.png)
+
 # The Sycophancy Test: Detecting Performance in Protocol Clothing
 
 *How to tell when an LLM is agreeing with you because it's true – or because you want to hear it*

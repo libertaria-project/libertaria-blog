@@ -13,6 +13,8 @@ editorial_lane: dispatches
 
 ---
 
+![2026-02-10-witness-protocol-when-qwen-met-the-axioms](/images/2026-02-10-witness-protocol-when-qwen-met-the-axioms-hero.png)
+
 # Witness Protocol: When Qwen Met the Axioms
 
 *A Report from the Trenches – February 10, 2026*

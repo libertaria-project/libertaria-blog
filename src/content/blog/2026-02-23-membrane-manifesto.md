@@ -12,6 +12,8 @@ editorial_lane: manifestos
 
 ---
 
+![2026-02-23-membrane-manifesto](/images/2026-02-23-membrane-manifesto-hero.png)
+
 # The Membrane Manifesto: Mechanism Design for Cognition
 
 **Why Your AI Doesn't Protect You; and Why Architecture Fixes What Morality Can't**

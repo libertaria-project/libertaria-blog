@@ -13,6 +13,8 @@ editorial_lane: doctrine
 
 ---
 
+![2026-02-13-seven-mechanisms-sovereign-governance](/images/2026-02-13-seven-mechanisms-sovereign-governance-hero.png)
+
 # The Seven Mechanisms of Sovereign Governance
 
 *Vickrey, Conviction, Delegation, Approval, Sortition – each solves one problem perfectly. The art is knowing which to use when.*
