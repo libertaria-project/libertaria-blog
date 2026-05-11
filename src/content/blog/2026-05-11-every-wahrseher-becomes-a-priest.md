@@ -196,11 +196,15 @@ The point of the series is not to demolish the *Wahrseher*. Most of them have gi
 
 The biologist who whispered to Bohan was almost right. They are not building a god.
 
-They are building a building. And every honest critic of that building will offer to build you another one with better windows, cleaner air, more biological dignity, less algorithmic doom, more aligned-to-natural-law, more founder-curated, more democratically-vetted.
+They are building a building. They are building a church, a cathedral. *Not the religion.* The institution. The walls, the pews, the collection plate, the dress code, the closed back door.
 
-We do not need another building.
+And every honest critic of that building will offer to build you another one with better windows, cleaner air, more biological dignity, less algorithmic doom, more aligned-to-natural-law, more founder-curated, more democratically-vetted.
+
+We do not need another building, nor another church.
 
 We need a door.
+
+*Lockable.*
 
 ---
 
