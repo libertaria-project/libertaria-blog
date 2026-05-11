@@ -17,13 +17,15 @@ featured: true
 >
 > A biologist, whispered to a young transhumanist after her first big conference paper. Reported in *The Guardian*, 2022. Reported back without flinching.
 
-He told her the truth. She didn't catch it.
+He told her the truth. She didn't catch it. Damien Walter caught it in his *Best of Science Fiction* episode on transhumanism, and he was right; ninety percent right, which is the most dangerous kind of right, because the missing ten percent is where the next cage gets built.
 
-A surprising number of *Wahrseher und Warner* out in the public square *did* catch it. They have spent the last decade pointing at the wound with a salty finger, narrating the bleed with admirable precision. Some of them are literary humanists. Some are AI-safety doomers. Some are natural-law theologians, some are primitivists, some are conspiracy-curious populists, some are network-state founders. Different tribes, different idioms, different bookshelves.
+A surprising number of *Wahrseher und Warner* out in the public square have caught the same wound. They have spent the last decade pointing at it with a salty finger, narrating the bleed with admirable precision. Some of them are literary humanists. Some are AI-safety doomers. Some are natural-law theologians, some are primitivists, some are conspiracy-curious populists, some are network-state founders. Different tribes, different idioms, different bookshelves.
 
 And then almost every one of them does the same thing next.
 
 They sell you the cure.
+
+The transhumanist priesthood and the bio-humanist priesthood are the same priesthood wearing different vestments. One promises to ascend humanity into a god. The other promises to protect humanity from becoming one. Both demand the same thing from you: *trust the priest*.
 
 This series is about that move.
 
@@ -43,6 +45,8 @@ Transhumanism *worships technology as autonomous progress*; the Whig fantasy wit
 Transhumanism is a *power structure* dressed as a future.
 Transhumanism is *dystopian* in its best case as well as its worst.
 Transhumanism is, in plain English, *anti-humanism* in formal dress.
+
+Walter's strongest blow is not merely that transhumanism is religious. It is that the priesthood hides behind the lie of technology as an autonomous force. *We are not in charge; the technology drives itself.* Bullshit. Technology has weak momentum and humans wield it. Every allegedly inevitable future was a choice made by someone with enough capital to make the choice look like weather.
 
 I just compressed Damien Walter's hour-and-a-half *Science Fiction Podcast* breakdown into nine lines. He worked it harder than I did. The man has narrative instinct, science-fiction literacy, and the rare honesty to call science fiction *science fiction* when it appears in *The Atlantic* dressed as research. As an act of observation, his thirteen-point list is *fucking excellent*.
 
@@ -71,7 +75,7 @@ Run the pipeline through the major critics of transhumanism. Watch it click.
 **The literary humanist.**
 *Diagnosis:* transhumanism is a religion of transcendence run by a priesthood of MIT PhDs.
 *Cure:* accept aging, sickness, and death as sacred constituents of meaning; let messy democratic processes regulate the technologies; trust parliaments instead of laboratories.
-*Result:* a different priesthood with the same monopoly on what humans are allowed to be.
+*Result:* a different priesthood with the same monopoly on what humans are allowed to be. The FDA, the EMA, and the regulatory cathedral do not abolish priesthoods. They decide which priesthood gets procurement access.
 
 **The AI-safety doomer.**
 *Diagnosis:* transhumanism produces unaligned superintelligence that will paperclip the species.
@@ -135,6 +139,8 @@ It is not cowardice. It is engineering discipline. It is the recognition that an
 We do not offer a cure for transhumanism. We do not offer a cure for bio-humanism. We do not offer a cure for AI doom, for natural-law conservatism, for primitivism, for network-state founderism. We do not offer a cure for anything that pretends to a species-wide answer.
 
 We offer an architecture.
+
+The democratic fix is not enough. There is no neutral regulator floating above the battlefield. There is only the regulator the dominant priesthood has captured this decade. The Greens regulate genetic engineering and Bayer-Monsanto keeps the seed supply. The AI board regulates models and the incumbent labs inherit the moat. Procedure does not save you from capture. It often invoices you for it.
 
 > **We do not build God. We do not preserve Adam. We build the protocol that prevents anyone from becoming God and prevents anyone from owning Adam.**
 
@@ -207,6 +213,11 @@ We need a door.
 *Lockable.*
 
 ---
+
+## Sources
+
+- Damien Walter, *The Best of Science Fiction*: "The anti-human religion of Transhumanism".
+- *The Guardian*, ["Beyond our ape-brained meat sacks: can transhumanism save our species?"](https://www.theguardian.com/books/2022/jun/04/beyond-our-ape-brained-meat-sacks-can-transhumanism-save-our-species)
 
 *Budapest. Frankfurt. The neon-drenched in-between.*
 *; Markus Maiwald, 2026*
