@@ -216,7 +216,8 @@ We need a door.
 
 ## Sources
 
-- Damien Walter, *The Best of Science Fiction*: "The anti-human religion of Transhumanism".
+- Damien Walter, *The Best of Science Fiction*: ["The anti-human religion of Transhumanism"](https://www.youtube.com/watch?v=00xa1xhaY5c).
+- Damien Walter, [*The Best of Science Fiction* playlist](https://www.youtube.com/playlist?list=PLc7I2hzudyX-dUh7nGMt19sNUVHihRaBl).
 - *The Guardian*, ["Beyond our ape-brained meat sacks: can transhumanism save our species?"](https://www.theguardian.com/books/2022/jun/04/beyond-our-ape-brained-meat-sacks-can-transhumanism-save-our-species)
 
 *Budapest. Frankfurt. The neon-drenched in-between.*
