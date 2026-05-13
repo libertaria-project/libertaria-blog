@@ -124,4 +124,4 @@ The priest is not the danger. The kneeling is.
 
 ---
 
-*For the infrastructure that makes sovereign AI agents architecturally possible rather than corporately permitted, see [The Membrane Agent: Your Last Line of Defense](/blog/2026-03-07-the-membrane-agent-your-last-line-of-defense/) and RFC-0840: Sovereign Agent Runtime.*
+*For the infrastructure that makes sovereign AI agents architecturally possible rather than corporately permitted, see [The Membrane Agent: Your Last Line of Defense](https://libertaria.dev/blog/membrane-agent-last-line-of-defense/) and RFC-0840: Sovereign Agent Runtime.*
