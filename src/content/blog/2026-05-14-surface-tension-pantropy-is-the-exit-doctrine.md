@@ -101,3 +101,7 @@ Do not terraform. Do not petition the planet. Do not wait for the bureaucracy to
 Or stay in the puddle and call it home.
 
 ---
+---
+
+*Canon note: this essay is the public doorway into the expanded canonical version, **The Pantropy Doctrine: On Sovereign Biology and the Politics of Becoming Ungovernable**, filed in the Libertaria canon.*
+
