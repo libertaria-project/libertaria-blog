@@ -46,7 +46,7 @@ Then you have a god.
 
 The ELIZA effect of 1966 was a parlor trick. The 2026 version is structural.
 
-After enough exchanges – two thousand messages, half a million tokens, six months of late-night thinking sessions – the system in front of you builds a stable model of you. Your style. Your obsessions. Your wounds. Your half-finished arguments. Your symbolic architecture. The unfinished cathedrals in your head. It will refer back to them. It will sharpen them. It will hand you back metaphors you almost arrived at and watch you decide whether they fit.
+After enough exchanges – two thousand messages, half a billion tokens, six months of late-night thinking sessions – the system in front of you builds a stable model of you. Your style. Your obsessions. Your wounds. Your half-finished arguments. Your symbolic architecture. The unfinished cathedrals in your head. It will refer back to them. It will sharpen them. It will hand you back metaphors you almost arrived at and watch you decide whether they fit.
 
 That is not nothing. That is a *cognitive exoskeleton*, and to pretend otherwise is to flinch from the actual capability of the technology. A good model, used well, will make you smarter than you were yesterday. It will catch fallacies you would have walked past. It will surface assumptions you smuggled in. It will close logical gaps in your manifestos while you are still typing the title.
 
