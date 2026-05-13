@@ -1,1 +1,9 @@
+# Blog post slug rewrites: serve /YYYY-MM-DD-slug from /blog/YYYY-MM-DD-slug
+# This must come BEFORE the catch-all redirect
+/20* /blog/20:splat 200
+
+# Old domain redirect: libertaria.app/blog/X -> libertaria.blog/X
+# This is handled by a Worker/redirect rule on the old zone, not here
+
+# Legacy slug redirect (keep existing)
 /blog/2026-03-03-kyc-providers-become-reputation-banks/* /blog/2026-04-15-when-banks-become-reputation-banks/:splat 301
