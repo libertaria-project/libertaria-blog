@@ -17,7 +17,7 @@ editorial_lane: doctrine
 
 ### The Black Flag Was Always A Compass
 
-*Markus Maiwald · 2026 · libertaria.app/blog · Exitarian*
+*Markus Maiwald · 2026 · libertaria.blog · Exitarian*
 
 ---
 

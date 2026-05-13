@@ -15,7 +15,7 @@ database_id = "9f96c763-7bd9-478e-b2ee-b2afbe6614bd"
 
 # Routes
 routes = [
-  { pattern = "api.libertaria.app", custom_domain = true }
+  { pattern = "api.libertaria.blog", custom_domain = true }
 ]
 
 # Pages build output

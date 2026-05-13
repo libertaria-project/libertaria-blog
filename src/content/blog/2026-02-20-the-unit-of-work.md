@@ -16,7 +16,7 @@ editorial_lane: dispatches
 
 # The Unit of Work Is No Longer the Instruction. It Never Should Have Been.
 
-**Published:** February 2026 | **Author:** Markus Maiwald | **libertaria.app**
+**Published:** February 2026 | **Author:** Markus Maiwald | **libertaria.blog**
 
 For sixty years, computing obeyed a single liturgy: *human writes instruction, machine executes instruction.* The developer's entire existence was translation. Business logic into machine logic. One function at a time. One Jira ticket at a time. One soul-crushing sprint review at a time. That liturgy is over. The unit of work is now the **token**. Not an instruction. Not a command. A *unit of purchased intelligence*. You describe what you want, feed it context, and buy enough cognitive horsepower to get a result. The machine figures out the steps. Your job as a human is no longer to sequence operations; it is to **specify outcomes and manage the intelligence budget** that produces them.
 

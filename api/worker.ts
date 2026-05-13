@@ -26,7 +26,7 @@ function generateToken(): string {
 
 // Send confirmation email via Gmail
 async function sendConfirmationEmail(email: string, name: string | null, token: string, env: Env): Promise<boolean> {
-  const confirmationUrl = `https://libertaria.app/api/confirm?token=${token}`;
+  const confirmationUrl = `https://libertaria.blog/api/confirm?token=${token}`;
   
   const emailBody = `
 Subject: Confirm your subscription to Libertaria
@@ -59,7 +59,7 @@ If you didn't subscribe, ignore this email.
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Libertaria <newsletter@libertaria.app>',
+        from: 'Libertaria <newsletter@libertaria.blog>',
         to: email,
         subject: 'Confirm your subscription to Libertaria',
         text: emailBody,
@@ -151,7 +151,7 @@ router.get('/api/confirm', async (request, env: Env) => {
   
   if (result.meta.changes > 0) {
     // Redirect to success page
-    return Response.redirect('https://libertaria.app/subscribed', 302);
+    return Response.redirect('https://libertaria.blog/subscribed', 302);
   } else {
     return new Response('Invalid or expired confirmation link', { status: 400 });
   }
@@ -170,7 +170,7 @@ router.get('/api/unsubscribe', async (request, env: Env) => {
     'UPDATE subscribers SET unsubscribed_at = CURRENT_TIMESTAMP WHERE email = ?'
   ).bind(email).run();
   
-  return Response.redirect('https://libertaria.app/unsubscribed', 302);
+  return Response.redirect('https://libertaria.blog/unsubscribed', 302);
 });
 
 // Get subscriber count (public stats)

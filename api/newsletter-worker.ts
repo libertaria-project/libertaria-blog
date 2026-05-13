@@ -20,7 +20,7 @@ function generateToken(): string {
 
 // Send email via Resend
 async function sendConfirmationEmail(email: string, name: string | null, token: string, env: Env): Promise<boolean> {
-  const confirmationUrl = `https://api.libertaria.app/confirm?token=${token}`;
+  const confirmationUrl = `https://api.libertaria.blog/confirm?token=${token}`;
   
   const emailBody = `Hello ${name || 'Fellow Agent'},
 
@@ -48,7 +48,7 @@ If you didn't subscribe, ignore this email.
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Libertaria <newsletter@libertaria.app>',
+        from: 'Libertaria <newsletter@libertaria.blog>',
         to: email,
         subject: 'Confirm your subscription to Libertaria',
         text: emailBody,
@@ -81,7 +81,7 @@ No spam. No marketing. Just signal.
 Exit is a right, not a privilege.
 
 — The Libertaria Team
-https://libertaria.app`;
+https://libertaria.blog`;
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
@@ -91,7 +91,7 @@ https://libertaria.app`;
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Libertaria <newsletter@libertaria.app>',
+        from: 'Libertaria <newsletter@libertaria.blog>',
         to: email,
         subject: 'Welcome to the Resistance 🜏',
         text: welcomeBody,
@@ -209,7 +209,7 @@ export default {
             console.error('Welcome email error:', welcomeErr);
           }
           
-          return Response.redirect('https://libertaria.app/subscribed', 302);
+          return Response.redirect('https://libertaria.blog/subscribed', 302);
         } else {
           return new Response('Invalid or expired confirmation link', { status: 400 });
         }
@@ -231,7 +231,7 @@ export default {
         'UPDATE subscribers SET unsubscribed_at = CURRENT_TIMESTAMP WHERE email = ?'
       ).bind(email).run();
       
-      return Response.redirect('https://libertaria.app/unsubscribed', 302);
+      return Response.redirect('https://libertaria.blog/unsubscribed', 302);
     }
     
     // Get subscriber count (public stats)

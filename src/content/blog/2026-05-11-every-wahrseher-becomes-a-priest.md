@@ -223,4 +223,4 @@ We need a door.
 *Budapest. Frankfurt. The neon-drenched in-between.*
 *; Markus Maiwald, 2026*
 
-*For libertaria.app. Share freely. Fork ruthlessly.*
+*For libertaria.blog. Share freely. Fork ruthlessly.*

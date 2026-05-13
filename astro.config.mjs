@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 import { remarkMermaid } from './plugins/remark-mermaid.mjs';
 
 export default defineConfig({
-  site: 'https://libertaria.app',
+  site: 'https://libertaria.blog',
   integrations: [mdx()],
   markdown: {
     shikiConfig: {

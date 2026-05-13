@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.textContent = 'Subscribing...';
     
     try {
-      const response = await fetch('https://api.libertaria.app/subscribe', {
+      const response = await fetch('https://api.libertaria.blog/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Track subscriber count display
 async function updateSubscriberCount() {
   try {
-    const response = await fetch('https://api.libertaria.app/stats');
+    const response = await fetch('https://api.libertaria.blog/stats');
     const data = await response.json();
     
     const countElement = document.getElementById('subscriber-count');

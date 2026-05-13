@@ -273,6 +273,6 @@ But:
 
 ---
 
-*Written in Budapest. Published on libertaria.app. This is a snapshot. Date it. Nail it to the wall. Re-read it in 2027. If it still looks correct in 2030, you are running out of time. If it still looks correct in 2035, it was already too late.*
+*Written in Budapest. Published on libertaria.blog. This is a snapshot. Date it. Nail it to the wall. Re-read it in 2027. If it still looks correct in 2030, you are running out of time. If it still looks correct in 2035, it was already too late.*
 
 *Source autopsy: [Das Ende der Arbeit: Wieso 80% ihren Job verlieren werden & was danach kommt — Post-Labor Economy](https://www.youtube.com/watch?v=6G0eOcx8gBI)*
