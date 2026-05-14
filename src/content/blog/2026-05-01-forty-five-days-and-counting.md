@@ -8,6 +8,7 @@ tags: ["libertaria", "dispatch", "surveillance", "FISA", "EU-AI-Act", "sovereign
 category: essay
 pillar: political-philosophy
 tldr: "The same week, two continents demonstrated the same dysfunction: institutions that cannot pass legislation but can extend surveillance. FISA 702 gets its second 45-day stopgap this month. The EU AI Act trilogue collapses with no deal. The pattern is the signal."
+heroImage: "/images/2026-05-01-forty-five-days-and-counting-hero.jpg"
 editorial_lane: dispatches
 ---
 

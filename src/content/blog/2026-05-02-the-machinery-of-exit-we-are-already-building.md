@@ -8,6 +8,7 @@ tags: ["exitarianism", "oath", "chapters", "federation", "libertaria", "recruitm
 category: essay
 pillar: political-philosophy
 tldr: "Part III turns doctrine into entry-point: Libertaria as oath-bound federation where exit, covenant, and protocol become operational architecture."
+heroImage: "/images/2026-05-02-the-machinery-of-exit-we-are-already-building-hero.jpg"
 editorial_lane: doctrine
 ---
 

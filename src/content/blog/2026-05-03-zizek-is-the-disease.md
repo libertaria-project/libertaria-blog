@@ -7,6 +7,7 @@ tags: ["zizek", "institutional-capture", "managerial-state", "exit", "libertaria
 category: essay
 pillar: epistemology
 tldr: "Žižek's critique diagnoses the cage and then routes power back to the institution. Libertaria's counter-thesis is simple: no exit, no freedom."
+heroImage: "/images/2026-05-03-zizek-is-the-disease-hero.jpg"
 ---
 
 ## ŽIŽEK IS THE DISEASE

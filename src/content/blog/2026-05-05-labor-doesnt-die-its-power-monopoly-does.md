@@ -9,6 +9,7 @@ category: doctrine
 pillar: political-philosophy
 editorial_lane: doctrine
 tldr: "AI eats tasks, not jobs. The wage system as a distribution mechanism is breaking. The real question is ownership: who owns the productive machine when AI and robotics dissolve the labor-income coupling? Not UBI. Not retraining. Distributed capital ownership is the spine. UBI is a crutch."
+heroImage: "/images/2026-05-05-labor-doesnt-die-its-power-monopoly-does-hero.jpg"
 source: "Inspired by 'Das Ende der Arbeit: Wieso 80% ihren Job verlieren werden & was danach kommt' — https://www.youtube.com/watch?v=6G0eOcx8gBI"
 ---
 
