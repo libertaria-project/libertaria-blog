@@ -8,6 +8,7 @@ category: "essay"
 pillar: "political-philosophy"
 editorial_lane: "doctrine"
 tldr: "Transhumanism's critics often see the wound clearly, then prescribe a new priesthood. Libertaria refuses the form itself: no species-wide cure, no universal cage, only Chapters, Federation, and the door called exit."
+heroImage: "/images/2026-05-11-every-wahrseher-becomes-a-priest-hero.jpg"
 featured: true
 ---
 

@@ -8,6 +8,7 @@ tags: ["libertaria", "dispatch", "AI-regulation", "EU-AI-Act", "Omnibus-VII", "C
 category: essay
 pillar: political-philosophy
 tldr: "Seven days ago, neither continent could close a deal on AI governance. This week, both did — but they pulled in opposite directions. Brussels agreed to simplify its own AI Act before it is fully enforced. Washington, spooked by Anthropic's Mythos, is suddenly considering FDA-style pre-deployment evaluation for frontier models. One deregulates. One regulates. Both concentrate decision-making in fewer hands. The question is not who has the better framework. The question is who owns the stack."
+heroImage: "/images/2026-05-07-the-regulators-close-in-opposite-directions-hero.jpg"
 editorial_lane: dispatches
 ---
 

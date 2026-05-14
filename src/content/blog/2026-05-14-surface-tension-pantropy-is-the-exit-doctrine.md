@@ -9,6 +9,7 @@ category: "essay"
 pillar: "political-philosophy"
 editorial_lane: "doctrine"
 tldr: "Transhumanism as practiced is captured biology and salvation-via-subscription. Sovereign pantropy is the opposite: modification only counts as exit if it can be audited, forked, refused, inherited without coercion, and exited with state intact."
+heroImage: "/images/2026-05-14-surface-tension-pantropy-is-the-exit-doctrine-hero.jpg"
 ---
 
 A colony ship cracks open above a hostile planet. The air is poison. The gravity will snap their spines. The native chemistry treats their proteins like garbage to be digested. The original crew does the only honest math left and accepts that *they* will die here. Before they go, they engineer their successors – not to be carried home, not to wait for rescue, but to be small enough, weird enough, mutated enough to live inside the puddles. The descendants spend generations as microscopic citizens of a single pond, and then one day they push against the meniscus above them and discover what *surface tension* really means.

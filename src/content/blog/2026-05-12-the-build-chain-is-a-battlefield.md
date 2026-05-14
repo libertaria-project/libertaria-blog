@@ -18,6 +18,7 @@ category: essay
 pillar: political-philosophy
 editorial_lane: dispatches
 tldr: "Modern software keeps collapsing routing, serialization, caching, authorization, package publishing, and CI identity into invisible convenience layers. The result is not merely bugs. It is architectural blast radius."
+heroImage: "/images/2026-05-12-the-build-chain-is-a-battlefield-hero.jpg"
 featured: true
 ---
 

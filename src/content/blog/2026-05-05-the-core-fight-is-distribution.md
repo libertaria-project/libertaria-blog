@@ -8,6 +8,7 @@ tags: ["libertaria", "dispatch", "ai", "distribution", "ownership", "sovereignty
 category: essay
 pillar: political-philosophy
 tldr: "AI will generate enormous value. That part is not in doubt. The real fight is ownership and distribution — who owns the models, the compute, the margin, and who gets residual participation. If this remains concentrated, the political formula is clean: more capital at the top, more transfer dependence at the bottom, a thinned-out center with reduced agency. That is not innovation. That is a stability risk."
+heroImage: "/images/2026-05-05-the-core-fight-is-distribution-hero.jpg"
 editorial_lane: dispatches
 ---
 

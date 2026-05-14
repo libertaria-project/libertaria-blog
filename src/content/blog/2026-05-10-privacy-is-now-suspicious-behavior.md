@@ -8,6 +8,7 @@ tags: ["libertaria", "dispatch", "google", "recaptcha", "cloud-fraud-defense", "
 category: essay
 pillar: political-philosophy
 tldr: "The old CAPTCHA asked if you were human. The new trust stack increasingly asks if your device belongs to the approved graph. If fraud defense requires proprietary attestation, privacy-preserving machines become suspicious by default."
+heroImage: "/images/2026-05-10-privacy-is-now-suspicious-behavior-hero.jpg"
 editorial_lane: dispatches
 ---
 
