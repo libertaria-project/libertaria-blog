@@ -8,6 +8,7 @@ featured: true
 category: essay
 pillar: political-philosophy
 tldr: "Future warfare is no longer mainly about armies; it is about turning the population against itself through misery, exhaustion, and despair. Exitarianism needed The Oath because rational architecture alone does not hold the line when the lights go out; the Bund does."
+heroImage: "/images/2026-04-28-why-exitarianism-needed-the-oath-hero.jpg"
 editorial_lane: civilization-faith
 ---
 

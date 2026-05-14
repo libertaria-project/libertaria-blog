@@ -8,6 +8,7 @@ tags: ["exitarianism", "locke", "sovereignty", "agi", "robotics", "mechanism-des
 category: essay
 pillar: political-philosophy
 tldr: "The old labor bargain is collapsing; the decisive fork is ownership topology of the productive machine stack."
+heroImage: "/images/2026-05-01-the-machinery-of-exit-two-paths-out-of-the-10000-year-bargain-hero.jpg"
 editorial_lane: doctrine
 ---
 

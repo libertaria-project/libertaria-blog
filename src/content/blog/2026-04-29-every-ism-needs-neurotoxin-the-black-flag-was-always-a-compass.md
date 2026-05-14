@@ -8,6 +8,7 @@ tags: ["anarchy", "governance", "exit", "libertaria", "exitarian", "political-ph
 category: essay
 pillar: political-philosophy
 tldr: "Anarchy should not be your destination. It should be your north-star toxin injected into every ideology that starts getting fat, holy, and centralized."
+heroImage: "/images/2026-04-29-every-ism-needs-neurotoxin-the-black-flag-was-always-a-compass-hero.jpg"
 editorial_lane: doctrine
 ---
 

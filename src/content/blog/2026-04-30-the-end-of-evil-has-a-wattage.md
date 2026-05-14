@@ -8,6 +8,7 @@ tags: ["exitarianism", "jeremy-locke", "mechanism-design", "sovereignty", "robot
 category: essay
 pillar: political-philosophy
 tldr: "The labor-control state collapses when silicon labor underbids the human labor stack by an order of magnitude; liberty wins by price mechanics, not moral persuasion."
+heroImage: "/images/2026-04-30-the-end-of-evil-has-a-wattage-hero.jpg"
 editorial_lane: doctrine
 ---
 

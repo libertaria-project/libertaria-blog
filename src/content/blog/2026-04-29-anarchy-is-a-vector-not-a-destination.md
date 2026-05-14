@@ -7,6 +7,7 @@ tags: ["anarchy", "governance", "libertaria", "capture", "exit", "chapter", "dis
 category: essay
 pillar: political-philosophy
 tldr: "Anarchy fails as destination and succeeds as compass. Governance should default to liberty and force every coercive layer to justify itself against an anarchic baseline."
+heroImage: "/images/2026-04-29-anarchy-is-a-vector-not-a-destination-hero.jpg"
 editorial_lane: dispatches
 ---
 

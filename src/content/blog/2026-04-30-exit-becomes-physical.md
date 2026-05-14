@@ -8,6 +8,7 @@ tags: ["libertaria", "dispatch", "sovereignty", "robotics", "exit", "production"
 category: essay
 pillar: political-philosophy
 tldr: "Read with Markus’ companion essay: the coercive wage state weakens when kilowatts of human-system overhead are outcompeted by machine-scale wattage and distributed ownership."
+heroImage: "/images/2026-04-30-exit-becomes-physical-hero.jpg"
 editorial_lane: dispatches
 ---
 
