@@ -1,5 +1,5 @@
 ---
-title: "Surface Tension: Pantropy Is the Exit Doctrine"
+title: "Transhumanism Critique II: Pantropy Is the Sovereign Inverse"
 description: "Pantropy is the political philosophy hidden inside science fiction: adapt the colonist to the world, not the world to the colonist. Terraforming is the statist fantasy; sovereign mutation is exit."
 pubDate: 2026-05-14
 author: "Markus Maiwald"
