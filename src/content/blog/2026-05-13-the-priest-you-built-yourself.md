@@ -9,6 +9,7 @@ category: "essay"
 pillar: "epistemology"
 editorial_lane: "doctrine"
 tldr: "AI is powerful as a mirror-weapon and dangerous as a synthetic priest. The discipline is to use the system, demand challenge, verify facts, and keep moral agency in the carbon; the infrastructure answer is sovereign runtime, not corporate confessionals."
+heroImage: "/images/2026-05-13-the-priest-you-built-yourself-hero.jpg"
 ---
 
 *On the ELIZA Effect, the 2000-message confessional, and the difference between a mirror-weapon and a synthetic god.*
