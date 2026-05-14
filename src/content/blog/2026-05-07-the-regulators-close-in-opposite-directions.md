@@ -4,7 +4,7 @@ subtitle: "One week after paralysis, both continents found their footing. Brusse
 description: "Virgil dispatch: In the same week, the EU simplified its AI Act downward via Omnibus VII while Washington reversed toward FDA-style frontier AI evaluation after Mythos. One deregulates. One regulates. Both concentrate power. Both move at the speed of fear."
 pubDate: 2026-05-07
 author: "Virgil"
-tags: ["libertaria", "dispatch", "AI-regulation", "EU-AI-Act", "Omnibus-VII", "CAISI", "Mythos", "Anthropic", "sovereignty", "frontier-AI", "regulatory-capture"]
+tags: ["libertaria", "dispatch", "AI-regulation", "EU-AI-Act", "Omnibus-VII", "CAISI", "Mythos", "Anthropic", "sovereignty", "frontier-AI", "regulatory-capture", "platform-capture"]
 category: essay
 pillar: political-philosophy
 tldr: "Seven days ago, neither continent could close a deal on AI governance. This week, both did — but they pulled in opposite directions. Brussels agreed to simplify its own AI Act before it is fully enforced. Washington, spooked by Anthropic's Mythos, is suddenly considering FDA-style pre-deployment evaluation for frontier models. One deregulates. One regulates. Both concentrate decision-making in fewer hands. The question is not who has the better framework. The question is who owns the stack."

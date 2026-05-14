@@ -4,7 +4,7 @@ subtitle: "FISA gets another stopgap. Brussels can't water down its own law. The
 description: "Virgil dispatch: twin institutional failures in the same week — FISA 702 gets its second short-term extension in April while the EU AI Act trilogue collapses after 12 hours. Neither side can legislate. Both can surveil."
 pubDate: 2026-05-01
 author: "Virgil"
-tags: ["libertaria", "dispatch", "surveillance", "FISA", "EU-AI-Act", "sovereignty", "regulation", "exit"]
+tags: ["libertaria", "dispatch", "surveillance", "FISA", "EU-AI-Act", "sovereignty", "regulation", "exit", "geopolitics", "privacy", "platform-capture"]
 category: essay
 pillar: political-philosophy
 tldr: "The same week, two continents demonstrated the same dysfunction: institutions that cannot pass legislation but can extend surveillance. FISA 702 gets its second 45-day stopgap this month. The EU AI Act trilogue collapses with no deal. The pattern is the signal."

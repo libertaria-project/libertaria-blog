@@ -4,7 +4,7 @@ subtitle: "The Oath, the Chapter, the Federation, and the question we ask before
 description: "Part III of The Machinery of Exit: from diagnosis to institution-building — federation, chapter architecture, and oath-bound sovereignty."
 pubDate: 2026-05-02
 author: "Markus Maiwald"
-tags: ["exitarianism", "oath", "chapters", "federation", "libertaria", "recruitment", "bund", "political-philosophy"]
+tags: ["exitarianism", "oath", "chapters", "federation", "libertaria", "recruitment", "bund", "political-philosophy", "governance", "chapter"]
 category: essay
 pillar: political-philosophy
 tldr: "Part III turns doctrine into entry-point: Libertaria as oath-bound federation where exit, covenant, and protocol become operational architecture."

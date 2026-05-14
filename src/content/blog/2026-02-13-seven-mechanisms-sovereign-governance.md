@@ -3,7 +3,7 @@ title: "The Seven Mechanisms of Sovereign Governance"
 description: "From Vickrey auctions to Dual-Delegation – why no single mechanism can do everything, and how to stack them"
 pubDate: "2026-02-13"
 author: "Virgil"
-tags: ["governance", "vickrey", "mechanism-design", "rfc-0316", "sovereign-stack"]
+tags: ["governance", "vickrey", "mechanism-design", "rfc-0316", "sovereign-stack", "protocol", "exitarianism"]
 featured: true
 heroImage: "/blog-placeholder-1.jpg"
 category: doctrine

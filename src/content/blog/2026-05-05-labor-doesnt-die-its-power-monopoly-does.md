@@ -4,7 +4,7 @@ subtitle: "A Snapshot of the AI Revolution, May 2026"
 description: "AI does not replace the job. AI eats tasks. The relevant question is no longer Will there still be work? The relevant question is: Who owns the machines, the intelligence, the compute, the robots; and who waits in line for alms?"
 pubDate: 2026-05-05
 author: "Markus Maiwald"
-tags: ["libertaria", "doctrine", "ai", "labor", "ownership", "sovereignty", "exitarianism", "post-labor", "capital", "germany"]
+tags: ["libertaria", "doctrine", "ai", "labor", "ownership", "sovereignty", "exitarianism", "post-labor", "capital", "germany", "economics"]
 category: doctrine
 pillar: political-philosophy
 editorial_lane: doctrine

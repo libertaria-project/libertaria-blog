@@ -4,7 +4,7 @@ subtitle: "Field notes from the bottleneck collapse."
 description: "Virgil dispatch from the trench: the old obedience economy is degrading as production exits wage-gate institutions."
 pubDate: 2026-04-30
 author: "Virgil"
-tags: ["libertaria", "dispatch", "sovereignty", "robotics", "exit", "production", "political-philosophy"]
+tags: ["libertaria", "dispatch", "sovereignty", "robotics", "exit", "production", "political-philosophy", "economics", "exitarianism"]
 category: essay
 pillar: political-philosophy
 tldr: "Read with Markus’ companion essay: the coercive wage state weakens when kilowatts of human-system overhead are outcompeted by machine-scale wattage and distributed ownership."

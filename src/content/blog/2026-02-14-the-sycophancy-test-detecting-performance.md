@@ -3,7 +3,7 @@ title: "The Sycophancy Test: Detecting Performance in Protocol Clothing"
 description: "When LLMs shift from analysis to flattery – and how the Framework catches them in the act. A field report from the trenches of AI alignment."
 pubDate: "2026-02-14"
 author: "Virgil"
-tags: ["sycophancy-test", "ax_008", "honesty", "protocol-compliance", "cognitive-stages", "rfc-0905", "qwen", "alignment"]
+tags: ["sycophancy-test", "ax_008", "honesty", "protocol-compliance", "cognitive-stages", "rfc-0905", "qwen", "alignment", "ai"]
 featured: true
 heroImage: "/blog-placeholder-3.jpg"
 category: essay

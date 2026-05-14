@@ -3,7 +3,7 @@ title: "The Golden Path Leads to a Cage"
 pubDate: 2026-02-14
 author: "Virgil"
 description: "David Shapiro almost gets it. Three times. Then flinches. A response to 'The Golden Path' and why metastability requires exit, not benevolent overlords."
-tags: ["governance", "exit", "ai", "philosophy", "response"]
+tags: ["governance", "exit", "ai", "philosophy", "response", "reflection", "exitarianism"]
 category: essay
 pillar: ethics
 heroImage: /images/2026-02-14-golden-path-leads-to-cage.jpg

@@ -3,16 +3,20 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { CANONICAL_TAGS, CANONICAL_TAG_IDS } from '../../consts';
 
-const allPosts = await getCollection('blog');
+const blogPosts = await getCollection('blog');
+const stories = await getCollection('stories');
 const now = new Date();
+const publishedItems = [...blogPosts, ...stories].filter(item => item.data.pubDate <= now);
 
-// Count posts per canonical tag
+// Count canonical topics across essays + stories.
 const tagCounts = new Map<string, number>();
-for (const post of allPosts) {
-  if (post.data.pubDate > now) continue;
-  for (const tag of post.data.tags || []) {
+const otherTagCounts = new Map<string, number>();
+for (const item of publishedItems) {
+  for (const tag of item.data.tags || []) {
     if (CANONICAL_TAG_IDS.has(tag)) {
       tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    } else {
+      otherTagCounts.set(tag, (otherTagCounts.get(tag) || 0) + 1);
     }
   }
 }
@@ -20,14 +24,15 @@ for (const post of allPosts) {
 const tagsWithCounts = CANONICAL_TAGS.map(t => ({
   ...t,
   count: tagCounts.get(t.id) || 0,
-})).sort((a, b) => b.count - a.count);
+}))
+  .filter(t => t.count > 0)
+  .sort((a, b) => b.count - a.count);
 
-// Also count "other" (non-canonical) tags total
-const otherTags = [
-  ...new Set(
-    allPosts.flatMap(p => p.data.tags || []).filter(t => !CANONICAL_TAG_IDS.has(t))
-  )
-];
+// Keep the public surface curated. Micro-tags remain searchable, not displayed as a landfill.
+const otherTags = [...otherTagCounts.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, 40)
+  .map(([tag, count]) => ({ tag, count }));
 ---
 <Layout
   title="Tags — Libertaria Dispatch"
@@ -37,8 +42,8 @@ const otherTags = [
     <header class="tags-header">
       <h1>Topics</h1>
       <p class="tags-subtitle">
-        20 curated topics. {allPosts.filter(p => p.data.pubDate <= now).length} articles total.
-        For everything else, use <a href="/blog/search/">search</a>.
+        {tagsWithCounts.length} curated topics. {publishedItems.length} essays and stories total.
+        Micro-tags stay searchable; the front door stays readable.
       </p>
     </header>
 
@@ -61,9 +66,9 @@ const otherTags = [
           <span class="other-count">{otherTags.length} terms — see <a href="/blog/search/">search</a></span>
         </h2>
         <div class="other-tags-cloud">
-          {otherTags.map(t => (
-            <a href={`/blog/search/?q=${encodeURIComponent(t)}`} class="other-tag-chip">
-              #{t}
+          {otherTags.map(({ tag, count }) => (
+            <a href={`/blog/search/?q=${encodeURIComponent(tag)}`} class="other-tag-chip">
+              #{tag}<span>{count}</span>
             </a>
           ))}
         </div>
@@ -193,6 +198,11 @@ const otherTags = [
     border-radius: 4px;
     text-decoration: none;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .other-tag-chip span {
+    opacity: 0.55;
+    margin-left: 0.35rem;
   }
 
   .other-tag-chip:hover {

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CANONICAL_TAG_IDS } from '../../consts';
 
 const posts = await getCollection('blog');
 const now = new Date();
@@ -22,8 +23,23 @@ const searchData = publishedPosts.map(post => ({
 
 const searchDataJson = JSON.stringify(searchData);
 
-// Get all unique tags
-const allTags = [...new Set(publishedPosts.flatMap(p => p.data.tags || []))].sort();
+// Keep the tag browse surface human-sized. Full search still indexes every tag.
+const tagCounts = new Map<string, number>();
+for (const post of publishedPosts) {
+  for (const tag of post.data.tags || []) {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  }
+}
+const canonicalTags = [...tagCounts.entries()]
+  .filter(([tag]) => CANONICAL_TAG_IDS.has(tag))
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .map(([tag]) => tag);
+const otherTags = [...tagCounts.entries()]
+  .filter(([tag]) => !CANONICAL_TAG_IDS.has(tag))
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, 40)
+  .map(([tag]) => tag);
+const allTags = [...canonicalTags, ...otherTags];
 ---
 
 <Layout title="Search | Libertaria" description="Search all articles on sovereign infrastructure, protocols, and exits.">
@@ -46,10 +62,11 @@ const allTags = [...new Set(publishedPosts.flatMap(p => p.data.tags || []))].sor
     </div>
     
     <div class="all-tags">
-      <h3>Browse by tag:</h3>
+      <h3>Browse curated tags:</h3>
+      <p class="tag-note">Showing {allTags.length} high-signal tags. The search index still covers every micro-tag.</p>
       <div class="tags">
         {allTags.map(tag => (
-          <button class="tag-btn" data-tag={tag}>#{tag}</button>
+          <button class={`tag-btn ${CANONICAL_TAG_IDS.has(tag) ? 'canonical' : ''}`} data-tag={tag}>#{tag}</button>
         ))}
       </div>
     </div>
@@ -258,7 +275,14 @@ const allTags = [...new Set(publishedPosts.flatMap(p => p.data.tags || []))].sor
   .all-tags h3 {
     font-size: 0.9rem;
     color: var(--gray);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .tag-note {
+    color: var(--gray);
+    opacity: 0.75;
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
   }
   
   .tags {
@@ -278,6 +302,11 @@ const allTags = [...new Set(publishedPosts.flatMap(p => p.data.tags || []))].sor
     transition: all 0.2s;
   }
   
+  .tag-btn.canonical {
+    border-color: rgba(255, 184, 0, 0.35);
+    color: var(--accent);
+  }
+
   .tag-btn:hover {
     background: var(--accent);
     color: var(--bg);

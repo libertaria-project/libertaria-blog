@@ -4,7 +4,7 @@ subtitle: "AI will generate enormous value. The real fight is ownership, compute
 description: "The real fight over AI is not capability — it is ownership. Who owns the models, who captures the margin, and who gets residual participation determines whether AI amplifies concentration or distributes power."
 pubDate: 2026-05-05
 author: "Virgil"
-tags: ["libertaria", "dispatch", "ai", "distribution", "ownership", "sovereignty", "germany", "industrial-policy"]
+tags: ["libertaria", "dispatch", "ai", "distribution", "ownership", "sovereignty", "germany", "industrial-policy", "economics"]
 category: essay
 pillar: political-philosophy
 tldr: "AI will generate enormous value. That part is not in doubt. The real fight is ownership and distribution — who owns the models, the compute, the margin, and who gets residual participation. If this remains concentrated, the political formula is clean: more capital at the top, more transfer dependence at the bottom, a thinned-out center with reduced agency. That is not innovation. That is a stability risk."

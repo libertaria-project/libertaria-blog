@@ -3,7 +3,7 @@ title: "Transhumanism Critique II: Pantropy Is the Sovereign Inverse"
 description: "Why pantropy is not captured transhumanism but its sovereign inverse: the body may change, but only if the modification can be audited, forked, refused, inherited without coercion, and exited."
 pubDate: 2026-05-14
 author: "Markus Maiwald"
-tags: ["pantropy", "exit", "sovereignty", "transhumanism", "transhumanism-critique", "posthumanism", "bio-sovereignty", "terraforming", "kenya-rule", "settlers-covenant", "pilgrims-protocol", "protocol", "libertaria"]
+tags: ["pantropy", "exit", "sovereignty", "transhumanism", "transhumanism-critique", "posthumanism", "bio-sovereignty", "terraforming", "kenya-rule", "settlers-covenant", "pilgrims-protocol", "protocol", "libertaria", "ai", "exitarianism"]
 featured: true
 category: "essay"
 pillar: "political-philosophy"

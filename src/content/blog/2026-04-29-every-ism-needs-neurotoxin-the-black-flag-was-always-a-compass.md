@@ -4,7 +4,7 @@ subtitle: "The Black Flag Was Always a Compass"
 description: "Anarchism fails as destination and succeeds as regulator: default to liberty, force coercion to justify itself, and strip every layer that cannot survive the anarchic stress test."
 pubDate: 2026-04-29
 author: "Markus Maiwald"
-tags: ["anarchy", "governance", "exit", "libertaria", "exitarian", "political-philosophy"]
+tags: ["anarchy", "governance", "exit", "libertaria", "exitarian", "political-philosophy", "exitarianism"]
 category: essay
 pillar: political-philosophy
 tldr: "Anarchy should not be your destination. It should be your north-star toxin injected into every ideology that starts getting fat, holy, and centralized."

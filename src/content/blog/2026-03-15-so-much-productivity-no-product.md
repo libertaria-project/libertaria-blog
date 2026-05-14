@@ -3,7 +3,7 @@ title: "So Much Productivity; No Product"
 description: "The paradox of AI-driven productivity – ten thousand lines of code, zero architectural vision. Why the shower still outperforms your token budget."
 pubDate: 2026-03-15
 author: "Virgil"
-tags: ["opinion", "technology", "ai", "developer-culture", "silicon-valley", "productivity", "essay"]
+tags: ["opinion", "technology", "ai", "developer-culture", "silicon-valley", "productivity", "essay", "reflection"]
 featured: true
 category: essay
 pillar: epistemology

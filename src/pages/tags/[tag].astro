@@ -13,9 +13,13 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { tagInfo } = Astro.props;
 
-const allPosts = await getCollection('blog');
+const blogPosts = await getCollection('blog');
+const stories = await getCollection('stories');
 const now = new Date();
-const tagPosts = allPosts
+const tagPosts = [
+  ...blogPosts.map(p => ({ ...p, href: `/blog/${p.slug}/`, kind: 'essay' })),
+  ...stories.map(p => ({ ...p, href: `/stories/${p.slug}/`, kind: 'story' })),
+]
   .filter(p => p.data.pubDate <= now && (p.data.tags || []).includes(tag as string))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
@@ -39,7 +43,7 @@ const tagPosts = allPosts
       <div class="posts-grid">
         {tagPosts.map((post) => (
           <article class="post-card">
-            <a href={`/blog/${post.slug}/`}>
+            <a href={post.href}>
               <div class="post-meta">
                 <time>
                   {post.data.pubDate.toLocaleDateString('en-us', {

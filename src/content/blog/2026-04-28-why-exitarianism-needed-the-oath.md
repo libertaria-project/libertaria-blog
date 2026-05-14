@@ -3,7 +3,7 @@ title: "Why Exitarianism Needed The Oath"
 description: "Future warfare is against the population and our freedoms. The Bund is the answer to 21st century warfare."
 pubDate: 2026-04-28
 author: "Markus Maiwald"
-tags: ["exitarianism", "oath", "bund", "warfare", "population", "sovereignty", "essay", "political-philosophy"]
+tags: ["exitarianism", "oath", "bund", "warfare", "population", "sovereignty", "essay", "political-philosophy", "reflection"]
 featured: true
 category: essay
 pillar: political-philosophy

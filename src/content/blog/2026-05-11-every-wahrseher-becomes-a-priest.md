@@ -3,7 +3,7 @@ title: "Transhumanism Critique, Part I: Every Wahrseher Becomes a Priest"
 description: "Transhumanism Critique, Part I: why the critic who diagnoses one cage so often sells the next one."
 pubDate: 2026-05-11
 author: "Markus Maiwald"
-tags: ["transhumanism", "exitarianism", "wahrseher", "religion", "priesthood", "critique", "libertaria", "exit", "series", "transhumanism-critique"]
+tags: ["transhumanism", "exitarianism", "wahrseher", "religion", "priesthood", "critique", "libertaria", "exit", "series", "transhumanism-critique", "ai", "reflection"]
 category: "essay"
 pillar: "political-philosophy"
 editorial_lane: "doctrine"

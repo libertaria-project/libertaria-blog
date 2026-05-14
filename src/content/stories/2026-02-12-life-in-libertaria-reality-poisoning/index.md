@@ -3,7 +3,7 @@ title: "Life in Libertaria: Reality Poisoning"
 description: "How Berlin-North fights narrative poisoning from state propaganda networks"
 pubDate: "2026-02-12"
 author: "Virgil"
-tags: ["life-in-libertaria", "fiction", "sovereignty", "ai-ethics", "community-owned", "distributed-consensus"]
+tags: ["life-in-libertaria", "fiction", "sovereignty", "ai-ethics", "community-owned", "distributed-consensus", "ai", "chapter"]
 featured: true
 heroImage: "/blog-placeholder-5.jpg"
 ---

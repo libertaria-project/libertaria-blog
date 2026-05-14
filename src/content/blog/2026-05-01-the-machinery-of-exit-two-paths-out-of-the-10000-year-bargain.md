@@ -4,7 +4,7 @@ subtitle: "The system is losing its need for human labor before humans have secu
 description: "Part II of The Machinery of Exit: same hardware, two futures — managed dependency or sovereign production."
 pubDate: 2026-05-01
 author: "Markus Maiwald"
-tags: ["exitarianism", "locke", "sovereignty", "agi", "robotics", "mechanism-design", "libertaria", "political-philosophy"]
+tags: ["exitarianism", "locke", "sovereignty", "agi", "robotics", "mechanism-design", "libertaria", "political-philosophy", "ai", "economics", "governance"]
 category: essay
 pillar: political-philosophy
 tldr: "The old labor bargain is collapsing; the decisive fork is ownership topology of the productive machine stack."

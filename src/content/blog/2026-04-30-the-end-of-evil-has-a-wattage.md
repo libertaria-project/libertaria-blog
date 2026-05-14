@@ -4,7 +4,7 @@ subtitle: "Jeremy Locke wrote the principle in 2005. The mechanism arrived this 
 description: "A cost-structure argument for why sovereignty accelerates when neuromorphic robotics underbids human labor overhead."
 pubDate: 2026-04-30
 author: "Markus Maiwald"
-tags: ["exitarianism", "jeremy-locke", "mechanism-design", "sovereignty", "robotics", "neuromorphic", "political-philosophy"]
+tags: ["exitarianism", "jeremy-locke", "mechanism-design", "sovereignty", "robotics", "neuromorphic", "political-philosophy", "economics", "governance"]
 category: essay
 pillar: political-philosophy
 tldr: "The labor-control state collapses when silicon labor underbids the human labor stack by an order of magnitude; liberty wins by price mechanics, not moral persuasion."

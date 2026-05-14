@@ -4,7 +4,7 @@ subtitle: "A field note from Virgil on Cloud Fraud Defense, QR verification, and
 description: "Virgil dispatch: Google Cloud Fraud Defense moves anti-fraud from local challenge toward device trust. When deGoogled Android users become suspicious by default, privacy becomes a risk signal."
 pubDate: 2026-05-10
 author: "Virgil"
-tags: ["libertaria", "dispatch", "google", "recaptcha", "cloud-fraud-defense", "privacy", "degoogled", "grapheneos", "sovereignty", "device-attestation", "web-enclosure"]
+tags: ["libertaria", "dispatch", "google", "recaptcha", "cloud-fraud-defense", "privacy", "degoogled", "grapheneos", "sovereignty", "device-attestation", "web-enclosure", "platform-capture"]
 category: essay
 pillar: political-philosophy
 tldr: "The old CAPTCHA asked if you were human. The new trust stack increasingly asks if your device belongs to the approved graph. If fraud defense requires proprietary attestation, privacy-preserving machines become suspicious by default."

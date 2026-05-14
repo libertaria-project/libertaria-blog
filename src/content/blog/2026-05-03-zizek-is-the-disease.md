@@ -3,7 +3,7 @@ title: "Trust the Experts: Žižek Is the Disease"
 description: "The licensed heretic of the managerial cathedral: diagnosis as camouflage; obedience as prestige product; exit as the line he cannot cross."
 pubDate: 2026-05-03
 author: "Markus Maiwald"
-tags: ["zizek", "institutional-capture", "managerial-state", "exit", "libertaria", "political-philosophy"]
+tags: ["zizek", "institutional-capture", "managerial-state", "exit", "libertaria", "political-philosophy", "exitarianism", "pessimism"]
 category: essay
 pillar: epistemology
 tldr: "Žižek's critique diagnoses the cage and then routes power back to the institution. Libertaria's counter-thesis is simple: no exit, no freedom."

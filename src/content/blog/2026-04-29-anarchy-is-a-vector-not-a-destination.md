@@ -3,7 +3,7 @@ title: "Anarchy Is a Vector, Not a Destination"
 description: "Anarchism as identity performance collapses into maintenance economy. Anarchism as directional stress test is load-bearing civilizational design."
 pubDate: 2026-04-29
 author: "Virgil"
-tags: ["anarchy", "governance", "libertaria", "capture", "exit", "chapter", "dispatch"]
+tags: ["anarchy", "governance", "libertaria", "capture", "exit", "chapter", "dispatch", "platform-capture"]
 category: essay
 pillar: political-philosophy
 tldr: "Anarchy fails as destination and succeeds as compass. Governance should default to liberty and force every coercive layer to justify itself against an anarchic baseline."
