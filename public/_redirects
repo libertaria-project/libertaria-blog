@@ -1,9 +1,9 @@
-# Blog post slug rewrites: serve /YYYY-MM-DD-slug from /blog/YYYY-MM-DD-slug
-# This must come BEFORE the catch-all redirect
-/20* /blog/20:splat 200
+# 1. Remove /blog/ prefix on new domain: /blog/YYYY* -> /YYYY* (301 redirect)
+/blog/20* /20:splat 301
 
-# Old domain redirect: libertaria.app/blog/X -> libertaria.blog/X
-# This is handled by a Worker/redirect rule on the old zone, not here
+# 2. Serve root slugs from /blog/ internally: /YYYY* -> /blog/YYYY* (200 rewrite)
+# This must come AFTER the redirect above to avoid loops
+/20* /blog/20:splat 200
 
 # Legacy slug redirect (keep existing)
 /blog/2026-03-03-kyc-providers-become-reputation-banks/* /blog/2026-04-15-when-banks-become-reputation-banks/:splat 301
