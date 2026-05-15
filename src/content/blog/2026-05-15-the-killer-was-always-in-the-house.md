@@ -7,6 +7,7 @@ tags: ["software-security", "janus", "supply-chain"]
 category: essay
 pillar: method
 editorial_lane: dispatches
+heroImage: "/images/2026-05-15-the-killer-was-always-in-the-house-hero.jpg"
 tldr: "AI collapsed the exploit timeline, but it did not invent the disease. Modern software was built on ambient authority. Janus answers with typed capabilities, profile gates, explicit escalation, and content-addressed supply chains."
 ---
 
