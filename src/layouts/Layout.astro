@@ -6,15 +6,16 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 }
 
-const { title, description = 'Sovereign; Kinetic; Anti-Fragile.' } = Astro.props;
+const { title, description = 'Sovereign; Kinetic; Anti-Fragile.', image } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={image} />
 		<link rel="stylesheet" href="/styles.css?v=2">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1tBCUTl+gw4KCgdJfXjdkm3l+ug7" crossorigin="anonymous">
 		<style is:global>

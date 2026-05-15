@@ -4,6 +4,7 @@ description: "Act I of a Libertaria science fiction novella about a generation s
 pubDate: 2026-05-15
 author: "Markus Maiwald"
 tags: ["fiction", "resource-governance", "generation-ship"]
+heroImage: "/images/2026-05-15-the-last-atmosphere-tax-act-i-hero.jpg"
 era: "Interstellar Transit"
 theme: "resource-governance"
 ---

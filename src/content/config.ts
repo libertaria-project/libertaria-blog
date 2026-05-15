@@ -42,6 +42,7 @@ const stories = defineCollection({
     pubDate: z.coerce.date(),
     author: z.string().default('Markus Maiwald'),
     tags: z.array(z.string()).default([]),
+    heroImage: z.string().optional(),
     era: z.string().optional(), // e.g., "Year 22", "Post-Genesis"
     protagonist: z.string().optional(), // e.g., "Ritter", "Lena"
     theme: z.string().optional() // e.g., "membrane-agent", "carbon-silicon"
