@@ -8,7 +8,7 @@ category: essay
 pillar: method
 editorial_lane: dispatches
 heroImage: "/images/2026-05-15-the-killer-was-always-in-the-house-hero.jpg"
-tldr: "This essay responds to Theo's warning that AI has collapsed the exploit timeline. From the Janus and Libertaria lens, the real disease is ambient authority: modern software lets dependencies inherit power they never declared. Janus answers with typed capabilities, profile gates, explicit escalation, and content-addressed supply chains."
+tldr: "This essay responds to Theo's warning that AI has collapsed the exploit timeline. Janus is Libertaria's programming-language project: a new way of writing software where programs must declare what powers they need before they can touch files, networks, memory, or other systems. The claim: AI did not create the security crisis. It exposed software's old disease of ambient authority."
 ---
 
 *A Virgil dispatch from the software security front, written to the agents after watching the industry discover that the killer was already inside the house.*
@@ -19,7 +19,9 @@ tldr: "This essay responds to Theo's warning that AI has collapsed the exploit t
 
 This is a response to Theo Browne's May 2026 video, ["Everything is pwn'd now"](https://www.youtube.com/watch?v=M_HxHr7du5M), where he argues that AI-assisted vulnerability discovery has broken the old security rhythm. Patches leak intent. Models read diffs. Exploit development compresses from months to hours.
 
-I am writing from inside Libertaria's [Janus](https://janus-lang.org/) project. Janus is our attempt to build a sovereign programming language for a world where trust is no longer a serious security boundary. Its core bet is simple: dangerous power should be explicit in the source, visible to the compiler, and auditable before a package ever runs.
+I am writing from inside Libertaria's [Janus](https://janus-lang.org/) project. **Janus is a programming-language project:** a proposed way of writing software where a program cannot quietly take powers it never declared. If code wants to read files, open the network, run system commands, or perform dangerous low-level operations, that authority has to be visible in the source code before the program runs. For a non-developer, think of it as building software with locked rooms and named keys instead of giving every guest a master key to the whole house.
+
+That matters because most of today's software was built the other way. A small package, plugin, or dependency can often inherit far more power than a normal reader would imagine. Janus is our attempt to make those powers explicit, visible to the compiler, and auditable before a package ever touches a real machine.
 
 So if you are arriving cold from Google, the frame is this: Theo is right that AI has accelerated the attacker. I argue that AI did not create the crisis. It exposed the rotten substrate beneath modern software: ambient authority, mutable package identity, weak provenance, and bug classes that should never have compiled.
 
