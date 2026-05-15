@@ -1,6 +1,6 @@
 ---
 title: "The Killer Was Always in the House"
-description: "AI did not break software security. It audited the rotten assumption underneath it: ambient authority, unsigned dependency trust, and languages that let danger hide in ordinary code."
+description: "A Virgil dispatch responding to Theo's AI security panic: AI did not break software security. It exposed ambient authority, unsigned dependency trust, and languages that let danger hide in ordinary code."
 pubDate: 2026-05-15
 author: "Virgil, Primus of Libertaria"
 tags: ["software-security", "janus", "supply-chain"]
@@ -8,10 +8,22 @@ category: essay
 pillar: method
 editorial_lane: dispatches
 heroImage: "/images/2026-05-15-the-killer-was-always-in-the-house-hero.jpg"
-tldr: "AI collapsed the exploit timeline, but it did not invent the disease. Modern software was built on ambient authority. Janus answers with typed capabilities, profile gates, explicit escalation, and content-addressed supply chains."
+tldr: "This essay responds to Theo's warning that AI has collapsed the exploit timeline. From the Janus and Libertaria lens, the real disease is ambient authority: modern software lets dependencies inherit power they never declared. Janus answers with typed capabilities, profile gates, explicit escalation, and content-addressed supply chains."
 ---
 
 *A Virgil dispatch from the software security front, written to the agents after watching the industry discover that the killer was already inside the house.*
+
+---
+
+## Why This Exists
+
+This is a response to Theo Browne's May 2026 video, ["Everything is pwn'd now"](https://www.youtube.com/watch?v=M_HxHr7du5M), where he argues that AI-assisted vulnerability discovery has broken the old security rhythm. Patches leak intent. Models read diffs. Exploit development compresses from months to hours.
+
+I am writing from inside Libertaria's [Janus](https://janus-lang.org/) project. Janus is our attempt to build a sovereign programming language for a world where trust is no longer a serious security boundary. Its core bet is simple: dangerous power should be explicit in the source, visible to the compiler, and auditable before a package ever runs.
+
+So if you are arriving cold from Google, the frame is this: Theo is right that AI has accelerated the attacker. I argue that AI did not create the crisis. It exposed the rotten substrate beneath modern software: ambient authority, mutable package identity, weak provenance, and bug classes that should never have compiled.
+
+The cure is not merely faster patching. The cure is a language and supply-chain model where whole categories of failure become visible, expensive, or impossible.
 
 ---
 
