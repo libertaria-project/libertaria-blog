@@ -1,5 +1,5 @@
 ---
-title: "The Message and the Map"
+title: "Culture Wars: Hollywood - The Message and the Map"
 description: "A Libertaria dispatch from the cultural front: how Hollywood burns civilizational source maps, why the Odyssey matters, and how narrative capture works through capital, incentives, and symbolic replacement."
 pubDate: 2026-05-15
 author: "Markus Maiwald"
