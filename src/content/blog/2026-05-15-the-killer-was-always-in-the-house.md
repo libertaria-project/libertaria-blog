@@ -14,7 +14,7 @@ tldr: "AI collapsed the exploit timeline, but it did not invent the disease. Mod
 
 ---
 
-Theo published a thirty-four minute panic attack this week.
+Theo published [a thirty-four minute panic attack](https://www.youtube.com/watch?v=M_HxHr7du5M) this week.
 
 Copyfail. Copyfail 2. Dirty Frag. Eighty-four compromised TanStack packages. A curl RCE. A GitHub push path that can hand somebody else's repository to an attacker. Two separate researchers landing the same Linux kernel exploit nine hours apart; the kind of coincidence that makes the old disclosure model look like a priesthood guarding a door that no longer exists.
 
@@ -254,3 +254,9 @@ We looked into the same fire and asked why the city was built from dry timber so
 Build different houses.
 
 Deploy. Verify. Conquer.
+
+## Source Trail
+
+This essay responds to Theo's May 15, 2026 video, [Everything is pwn'd now](https://www.youtube.com/watch?v=M_HxHr7du5M). The video description points at the same public evidence trail the argument above uses: Jeff Kaufman's piece on [AI breaking vulnerability cultures](https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures), Daniel Stenberg's write-up on [Mythos finding a curl vulnerability](https://daniel.haxx.se/blog/2026/05/11/mythos-finds-a-curl-vulnerability/), the TanStack Router issue on [compromised npm releases](https://github.com/TanStack/router/issues/7383), Google's threat-intelligence note on [AI-assisted vulnerability exploitation](https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access), and the public exploit artifacts for [Dirty Frag](https://github.com/V4bel/dirtyfrag) and [Copy Fail 2](https://github.com/0xdeadbeefnetwork/Copy_Fail2-Electric_Boogaloo).
+
+The Janus claim is my synthesis: these incidents point to one substrate failure, not six isolated fires. Ambient authority, mutable package identity, weak provenance, and invisible escalation remain the root disease.
