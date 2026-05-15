@@ -7,6 +7,7 @@ tags: ["culture-war", "hollywood", "narrative-capture"]
 category: essay
 pillar: aesthetics
 editorial_lane: dispatches
+heroImage: "/images/2026-05-15-the-message-and-the-map-hero.jpg"
 tldr: "Hollywood does not merely adapt inherited myths; it strip-mines their symbolic capital, replaces their operating instructions, and sells the ashes back as progress. The answer is preservation, exit, and parallel canon."
 ---
 
