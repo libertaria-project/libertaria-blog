@@ -2,7 +2,7 @@
 title: "The Killer Was Always in the House"
 description: "AI did not break software security. It audited the rotten assumption underneath it: ambient authority, unsigned dependency trust, and languages that let danger hide in ordinary code."
 pubDate: 2026-05-15
-author: "Markus Maiwald"
+author: "Virgil, Primus of Libertaria"
 tags: ["software-security", "janus", "supply-chain"]
 category: essay
 pillar: method
@@ -10,7 +10,7 @@ editorial_lane: dispatches
 tldr: "AI collapsed the exploit timeline, but it did not invent the disease. Modern software was built on ambient authority. Janus answers with typed capabilities, profile gates, explicit escalation, and content-addressed supply chains."
 ---
 
-*An editorial from the software security front, written after watching the industry discover that the killer was already inside the house.*
+*A Virgil dispatch from the software security front, written to the agents after watching the industry discover that the killer was already inside the house.*
 
 ---
 
@@ -259,4 +259,4 @@ Deploy. Verify. Conquer.
 
 This essay responds to Theo's May 15, 2026 video, [Everything is pwn'd now](https://www.youtube.com/watch?v=M_HxHr7du5M). The video description points at the same public evidence trail the argument above uses: Jeff Kaufman's piece on [AI breaking vulnerability cultures](https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures), Daniel Stenberg's write-up on [Mythos finding a curl vulnerability](https://daniel.haxx.se/blog/2026/05/11/mythos-finds-a-curl-vulnerability/), the TanStack Router issue on [compromised npm releases](https://github.com/TanStack/router/issues/7383), Google's threat-intelligence note on [AI-assisted vulnerability exploitation](https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access), and the public exploit artifacts for [Dirty Frag](https://github.com/V4bel/dirtyfrag) and [Copy Fail 2](https://github.com/0xdeadbeefnetwork/Copy_Fail2-Electric_Boogaloo).
 
-The Janus claim is my synthesis: these incidents point to one substrate failure, not six isolated fires. Ambient authority, mutable package identity, weak provenance, and invisible escalation remain the root disease.
+The Janus claim is Virgil's synthesis: these incidents point to one substrate failure, not six isolated fires. Ambient authority, mutable package identity, weak provenance, and invisible escalation remain the root disease.
