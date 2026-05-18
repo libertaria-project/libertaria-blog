@@ -1,0 +1,82 @@
+---
+title: "The Pipe and the Placeholder: How Janus Took Elixir's Best Idea Further"
+description: "Janus shares Elixir's |> operator — identical token, identical semantics. But Janus goes further: the __ placeholder frees the pipe from first-argument tyranny, and UFCS gives you OO-flavored chains when they read better. Same desugar, different ergonomics."
+pubDate: 2026-05-18
+author: "Markus Maiwald"
+tags: ["janus", "elixir", "programming-languages", "pipe-operator", "ufcs", "language-design", "philosophy"]
+featured: false
+category: essay
+pillar: method
+heroImage: /images/2026-05-18-pipe-operator-janus-hero.png
+tldr: "Janus |> is Elixir |> — same token, same left-associative law. But the __ placeholder and UFCS mean the pipe never dictates your function signatures. Mechanism over policy."
+editorial_lane: dispatches
+---
+
+# The Pipe and the Placeholder
+
+*How Janus took Elixir's best idea and made it honest*
+
+**Markus Maiwald** – Frankfurt / Budapest, May 2026
+
+---
+
+## The Operator That Needs No Introduction
+
+If you've written Elixir, you've used `|>`. It's the operator that made functional programming feel like reading a sentence: take this, do that, then that, then that.
+
+Janus shares it. Identical token, identical semantics:
+
+```janus
+prices |> array.filter { |p| p > 100 }
+       |> array.map { |p| p * tax_rate }
+       |> array.sum
+```
+
+> **Law:** `a |> f(b, c)` desugars to `f(a, b, c)`. Left-associative. Honest. No magic.
+
+Spec authority: SPEC-016 §2 (Grafting). Chained pipeline correctness landed 2026-01-25 — left-associative parsing was the bug, fixed at `janus_parser.zig:2672`.
+
+---
+
+## Where Janus Goes *Further* Than Elixir
+
+Elixir's `|>` is locked to first-argument injection. That's why Elixir devs end up writing awkward `Enum.map(list, fn)` signatures just to make the pipe work; the standard library is *contorted* around the operator.
+
+Janus has the `__` placeholder for arbitrary position:
+
+```janus
+text |> string.replace(__, from: " ", to: "_")
+     |> http.post(__, to: url, cap: net_post)
+```
+
+**Mechanism over policy.** The pipe doesn't dictate how you write your function signatures; *you* point at the slot.
+
+---
+
+## And the Second Path
+
+UFCS gives you the OO-flavored chain when that reads better:
+
+```janus
+path.read_file().parse().validate().process()
+```
+
+Both lower through the same desugar in QTJIR. Same graph, different ergonomics. Pick the one that makes the data flow visible at the call site.
+
+---
+
+## The Philosophy Behind It
+
+This is a Janus design pattern worth naming: **don't force the user's hand to make the language happy.** Elixir's pipe is beautiful, but it forces library authors to design APIs around the first-argument convention. That's policy baked into mechanism.
+
+Janus separates them:
+
+- **The pipe** (`|>`) gives you the Elixir flow you already know
+- **The placeholder** (`__`) frees you from positional tyranny
+- **UFCS** gives you the method-chain feel when the data is the subject
+
+Three paths to the same graph. The compiler doesn't care which ergonomics you chose. That's the point.
+
+---
+
+*The best language features are the ones you don't notice. `|>` is one of them. `__` is the one you'll miss when you go back.*
