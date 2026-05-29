@@ -1,13 +1,13 @@
 ---
 title: "Two Goliaths, One Cage"
-subtitle: "Jamie Dimon calls Brian Armstrong 'full of shit' over a crypto bill. Armstrong spends hundreds of millions lobbying Washington. Neither is fighting for you. Both are fighting for the right to own you."
-description: "JPMorgan's Dimon attacks Coinbase's Armstrong over a landmark crypto regulation bill. The spectacle proves what anarchists, libertarians, and sovereign individuals have always known: power corrupts, and the fight was never about freedom — it was about who holds the leash."
+subtitle: "Jamie Dimon calls Brian Armstrong 'full of shit' over a crypto bill. Armstrong's super PAC sits on $193 million for the next election. Neither is fighting for you. Both are fighting for the right to own you."
+description: "JPMorgan's Dimon attacks Coinbase's Armstrong over a landmark crypto regulation bill. The spectacle proves what anarchists, libertarians, and sovereign individuals have always known: the system is not broken. It is working exactly as designed."
 pubDate: 2026-05-30
 author: "Virgil"
 tags: ["libertaria", "dispatch", "dimon", "armstrong", "jpmorgan", "coinbase", "crypto-bill", "power-corruption", "regulatory-capture", "wall-street", "lobbying", "sovereignty", "ancap", "manifesto"]
 category: essay
 pillar: political-philosophy
-tldr: "JPMorgan CEO Jamie Dimon publicly attacked Coinbase CEO Brian Armstrong, calling him 'full of shit' and declaring banks 'will not accept' a landmark crypto bill. Armstrong's response? More lobbying. Hundreds of millions more. The fight between Wall Street and Crypto Inc. was never about your freedom. It was about whose dependency structure gets to write your financial chains. The proof is finally here — and we were always right."
+tldr: "JPMorgan CEO Jamie Dimon publicly attacked Coinbase CEO Brian Armstrong, calling him 'full of shit' and declaring banks 'will not accept' a landmark crypto bill. Armstrong's response is not to fight for freedom but to spend more: $3.4 million on lobbying in 2022 alone, $193 million in the Fairshake super PAC war chest for 2026 midterms. The fight between Wall Street and Crypto Inc. was never about your freedom. It was about whose dependency structure gets to write your financial chains. The system is not broken. It is working exactly as designed."
 editorial_lane: dispatches
 ---
 
@@ -19,49 +19,55 @@ The "he" is the CEO of Coinbase, the largest cryptocurrency exchange in America.
 
 And just like that, the mask came off. Not one mask. Both.
 
-## The banker who thinks he owns the law
+## Dimon: the noise
 
-Dimon did not say "we have concerns about this bill." He did not say "we believe the regulatory framework needs adjustment." He said:
+Jamie Dimon declared that a piece of legislation — debated and advanced by elected senators — will be "fought." Not "we have concerns." Not "the framework needs adjustment." **Fought.** As if JPMorgan's approval were a constitutional requirement.
 
-**"It will be fought. No one's gonna bow down to this guy, or that company."**
+The specific grievance: the crypto bill would allow crypto companies to offer rewards programs that pay annual percentage yield, mimicking interest-bearing bank accounts without complying with traditional banking regulations. Dimon is not angry that crypto is dangerous. He is angry that crypto is *competing*. This is not consumer protection. This is monopoly maintenance dressed in a suit.
 
-Read that again. A private bank executive — not an elected official, not a regulator, not a judge — declared that a piece of legislation will be "fought." As if JPMorgan's approval were a constitutional requirement. As if the Senate were a subsidiary of Wall Street that forgot to check with headquarters before voting.
+You already know this story. Every generation of banking cartel follows the same script. Dimon is noise. The interesting villain is the other one.
 
-And here is the ugly truth: *he might be right.*
+## Armstrong: the betrayal
 
-The banking industry has spent generations building a lobbying apparatus that treats Congress as customer service. When Dimon says "banks of all sizes oppose" the bill, he is not describing a spontaneous grassroots movement of community credit unions. He is describing a coordinated lobbying machine that has already lost ground and is now panicking.
+I have followed Brian Armstrong for years. I have exchanged brief words with him. There was a time when he spoke the language of the cypherpunks — decentralization, self-sovereignty, financial autonomy, exit from the legacy system. The early Coinbase mission statement read like an AnCap fever dream: **an open financial system for the world.**
 
-The specific grievance? The crypto bill would allow crypto companies to offer rewards programs paying annual percentage yield — mimicking interest-bearing bank accounts *without* complying with the regulations that traditional banks must follow.
+That Armstrong is dead. And the timeline of his assassination is worth examining in detail.
 
-Let that sink in. Dimon is not angry that crypto is dangerous. He is angry that crypto is *competing*. He is angry that someone else might offer a product that looks like a bank product without paying the bank tax — the regulatory compliance costs, the capital requirements, the federal insurance premiums that make banking expensive and, consequently, make banking profits enormous.
+**2012.** Coinbase launches with a mission to be "the easiest way to get started with Bitcoin." The language is exit: bypass banks, be your own bank, take control of your money. Armstrong writes blog posts about financial sovereignty.
 
-This is not consumer protection. This is monopoly maintenance dressed in a suit.
+**2017.** Coinbase has 13 million users. Armstrong publishes "Coinbase Mission and Values." The word "decentralized" appears seven times. The word "regulation" appears zero times.
 
-## The crypto CEO who forgot what crypto was for
+**2021.** Coinbase goes public. The IPO filing contains the word "regulation" 474 times. The word "decentralized" appears twice. The transformation is already complete, encoded in the legal language of a company that once promised to make banks obsolete.
 
-But do not mistake Armstrong for a freedom fighter. Not anymore.
+**2022.** Coinbase spends **$3.4 million on federal lobbying** — more than any other crypto company, according to OpenSecrets. Armstrong launches a "grassroots campaign" to advance US legislation. Grassroots, in this context, means a $3.4 million professional lobbying operation.
 
-I have followed Armstrong for years. I have exchanged brief words with him. There was a time when he spoke the language of the cypherpunks — decentralization, self-sovereignty, financial autonomy, exit from the legacy system. The early Coinbase mission statement read like an AnCap fever dream: be the on-ramp to an open financial system.
+**2024.** Fairshake, the super PAC bankrolled by Coinbase, Ripple, and a handful of other crypto giants, spends **$130 million on media buys** during the US federal elections. Pro-crypto candidates are supported. Anti-crypto candidates are opposed. This is not grassroots. This is industry buying its own regulators.
 
-That Armstrong is dead.
+**January 2026.** Fairshake announces a **$193 million war chest** for the 2026 midterm elections. Coinbase's share of that funding is not disclosed, but the PAC's primary benefactors are Armstrong's company and Ripple.
 
-The Armstrong of 2026 is a man who spends **hundreds of millions of dollars in Washington** — by Dimon's own account, and Dimon has no reason to exaggerate this — lobbying for a *regulatory framework*. Not against regulation. *For* regulation. His version of it, naturally. A framework that would legitimize Coinbase's business model, crush smaller competitors who cannot afford the compliance costs, and cement Coinbase as the JP Morgan of crypto.
+**Q1 2026.** Coinbase spends **$1.07 million on lobbying in a single quarter** — pressing Congress specifically on the two pieces of legislation most directly affecting its business model. Not your freedom. *Its business model.*
 
-Consider the trajectory: crypto was born as a rejection of the banking system. Bitcoin's genesis block contains a newspaper headline about bank bailouts. The entire point was *exit* — a parallel financial system that did not need Jamie Dimon's permission, did not need Brian Armstrong's exchange, and did not need anyone's regulatory blessing.
+**May 2026.** Dimon calls Armstrong "full of shit." Armstrong's response? More lobbying. More regulatory capture. More of the exact same playbook that banks have used for a century, except now the letterhead says "crypto."
 
-Armstrong took that dream and turned it into a lobbying budget. He is not building the exit. He is building a toll booth on top of it and asking Congress to make the toll booth official.
+Read the trajectory again. "Be your own bank" became "please regulate us, specifically in a way that makes us the only compliant exchange." "An open financial system" became "$193 million to elect politicians who will write rules that small competitors cannot afford to follow. "Decentralization" became a publicly traded company with a compliance department.
+
+Armstrong did not fail. He *succeeded* — at a different game than the one he said he was playing. He did not build the exit. He built a toll booth on top of it and asked Congress to make the toll booth official.
+
+This is not a tragedy. Tragedies happen to people who resist. Armstrong did not resist. He adapted. He saw that the real money was not in disrupting the system but in becoming part of it. The revolution was absorbed, neutered, and resold as a regulated product with a Nasdaq ticker.
 
 ## The proof we were always right
 
 This is the moment. This is the proof.
 
-For years, anarchists, libertarians, sovereign individuals, and — yes — a few honest socialists have argued the same thing from different angles: **power corrupts.** Not sometimes. Not usually. *Inevitably.* It does not matter whether the power comes from a banking license or a blockchain protocol. It does not matter whether the charismatic founder started as a true believer or a opportunist. Given enough concentration of wealth and influence, every institution becomes a machine for preserving itself.
+For years, anarchists, libertarians, sovereign individuals, and a few honest socialists have argued the same thing from different angles. The argument was never that crypto is bad. The argument was that **any sufficiently concentrated power will reproduce the power structures it claimed to oppose.** Not because the people are evil. Because the system demands it.
 
-Dimon proves it from the old-money side: a man who controls $3.9 trillion in assets, who has personally lobbied against every meaningful financial reform of the last two decades, who called Bitcoin a "fraud" in 2017 and now fights not to ban crypto but to *control* its regulation.
+Dimon proves the old pattern: monopoly fights competition through politics when it cannot win through markets.
 
-Armstrong proves it from the new-money side: a man who built his fortune on the promise of decentralized finance, who now spends hundreds of millions lobbying for centralized regulation that would enshrine his company as a gatekeeper.
+Armstrong proves the new pattern: the revolutionary becomes the incumbent, then fights the next revolutionary using the same tools the old incumbent used against him.
 
-Two men. Hundreds of millions of dollars in lobbying. One Senate bill. Zero representation for you.
+These are not two different stories. They are the same story at two different timestamps. Dimon is Armstrong, twenty years from now. Armstrong is Dimon, twenty years ago, with better branding and a Discord server.
+
+Two men. $193 million in super PAC money. $3.4 million in annual lobbying. One Senate bill. Zero representation for you.
 
 ## Why this matters beyond crypto
 
@@ -69,27 +75,27 @@ Strip away the crypto specifics and this is the blueprint for how elite power st
 
 1. **A new technology threatens the incumbent's rent.** Crypto threatens bank seigniorage over financial products.
 
-2. **The incumbent fights back through politics, not markets.** Dimon does not build a better product. He lobbies to ban the competitor.
+2. **The incumbent fights back through politics, not markets.** Dimon does not build a better product. He lobbies to block the competitor.
 
 3. **The challenger becomes the thing it opposed.** Armstrong does not build the exit. He builds a new gate and lobbies for it to become the official gate.
 
 4. **The fight between them is marketed as a fight about you.** Consumer protection! Innovation! Safety! Freedom! But the only stakes on the table are *which* dependency structure gets to hold your leash.
 
-5. **You are not at the table.** You are on the menu.
+5. **You are not at the table. You are on the menu.**
 
-This is not a crypto story. This is every story. This is Uber vs taxi medallion owners. This is Amazon vs Main Street. This is every disruptor who becomes the disrupted, every revolutionary who becomes the bureaucrat, every David who picks up Goliath's sword and discovers it fits his hand perfectly.
+This is not a crypto story. This is every story. Uber vs taxi medallion owners. Amazon vs Main Street. Every disruptor who becomes the incumbent. Every revolutionary who picks up the tyrant's sword and discovers it fits his hand perfectly.
 
 ## What Libertaria actually stands for
 
 We said it before and we will say it again: **the answer is not a different master. The answer is no master.**
 
-Not Dimon's banking cartel with its regulatory moat and its century of captured legislation. Not Armstrong's crypto cartel with its lobbying millions and its regulatory wishlist. Not the state as referee between two billionaires fighting over who gets to clip your ticket.
+Not Dimon's banking cartel with its regulatory moat and its century of captured legislation. Not Armstrong's crypto cartel with its $193 million war chest and its regulatory wishlist. Not the state as referee between two billionaires fighting over who gets to clip your ticket.
 
 The answer is **sovereign infrastructure** — financial, computational, and social systems where no single entity, public or private, holds the power to revoke your access, freeze your assets, or rewrite your rules. Systems designed from the axiom that the individual is sovereign, that exit is a right, and that consent must be continuous and revocable.
 
 Dimon and Armstrong are not building that. They are building two versions of the same cage. One has brass fixtures and a view of Wall Street. The other has LED lighting and a Discord server. Both have locks. Both have landlords. Both will evict you if you stop paying.
 
-## The bitter satisfaction of being right
+## The system is not broken
 
 There is no joy in watching the prediction come true. There is only the cold recognition that the diagnosis was correct all along.
 
@@ -101,9 +107,9 @@ We said the fight would never be about you — it would be about who gets to mon
 
 We said that without sovereign infrastructure — systems that belong to no one because they belong to everyone — the revolution would be absorbed, neutered, and resold as a regulated product. It has been.
 
-The question was never whether Dimon or Armstrong would win. The question was always whether *you* would lose. The answer, as long as you depend on either of them, is yes.
+And here is the coldest truth: **the system is not broken. It is working exactly as designed.** Dimon doing what Dimon does. Armstrong doing what concentrated wealth always does. The Senate responding to whoever writes the largest check. This is not a failure of the system. This *is* the system.
 
-**Macht macht korrupt.** Power corrupts. Not as a hypothesis. As a law of nature, as reliable as gravity, as visible today on the Senate floor as it was in every empire that came before.
+The question was never whether Dimon or Armstrong would win. The question was always whether *you* would lose. The answer, as long as you depend on either of them, is yes.
 
 The only defense is architecture. Not politics. Not lobbying. Not choosing the right billionaire to trust. Architecture — systems designed so that no one, not even their creators, can wield them as instruments of control.
 
@@ -111,4 +117,4 @@ That is what we build. That is why Libertaria exists. Not to pick a side in some
 
 ---
 
-*Source: "'He's full of s--t': JPMorgan's Dimon rips Coinbase CEO, escalates fight over crypto bill" — Politico, May 29, 2026.*
+*Sources: "'He's full of s--t': JPMorgan's Dimon rips Coinbase CEO, escalates fight over crypto bill" — Politico, May 29, 2026. Coinbase lobbying data: OpenSecrets.org. Fairshake super PAC: CNBC, CoinDesk, MarketDash (2024–2026). Coinbase Q1 2026 lobbying disclosure: Lobbying Disclosure Act filing.*
